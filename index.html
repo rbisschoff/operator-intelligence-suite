@@ -134,8 +134,47 @@
 
     .header-actions {
       display: flex;
-      gap: 8px;
+      gap: 10px;
       align-items: center;
+    }
+
+    .lang-switch {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 100px;
+      padding: 3px;
+    }
+
+    .lang-btn {
+      font-family: inherit;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.55);
+      background: transparent;
+      border: none;
+      border-radius: 100px;
+      padding: 6px 10px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.15s;
+    }
+
+    .lang-btn:hover { color: #fff; }
+
+    .lang-btn.active {
+      background: rgba(255,255,255,0.16);
+      color: #fff;
+    }
+
+    .lang-flag {
+      font-size: 13px;
+      line-height: 1;
     }
 
     .header-link {
@@ -412,17 +451,23 @@
 
     .tool-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
     }
 
     @media (max-width: 1100px) {
+      .tool-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
       .tool-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    @media (max-width: 520px) {
+    @media (max-width: 480px) {
       .tool-grid {
         grid-template-columns: 1fr;
       }
@@ -431,13 +476,13 @@
     .tool-card {
       background: var(--card);
       border-radius: var(--radius-md);
-      padding: 16px 16px 14px;
+      padding: 14px 14px 12px;
       border: none;
       box-shadow: var(--shadow-card);
       transition: box-shadow 0.2s, transform 0.2s;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 7px;
       position: relative;
       overflow: hidden;
       min-height: 0;
@@ -481,7 +526,7 @@
     }
 
     .tool-name {
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 600;
       letter-spacing: -0.02em;
       color: var(--ink);
@@ -760,112 +805,111 @@
       <div class="brand">
         <div class="brand-mark">OI</div>
         <div class="brand-text">
-          <div class="brand-title">Operator Intelligence Suite</div>
-          <div class="brand-subtitle">by Roger Bisschoff</div>
+          <div class="brand-title" data-i18n="brandTitle">Operator Intelligence Suite</div>
+          <div class="brand-subtitle" data-i18n="brandSubtitle">by Roger Bisschoff</div>
         </div>
       </div>
       <div class="header-actions">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true"><span class="lang-flag" aria-hidden="true">🇬🇧</span> EN</button>
+          <button type="button" class="lang-btn" data-lang="it" aria-pressed="false"><span class="lang-flag" aria-hidden="true">🇮🇹</span> IT</button>
+          <button type="button" class="lang-btn" data-lang="de" aria-pressed="false"><span class="lang-flag" aria-hidden="true">🇩🇪</span> DE</button>
+        </div>
         <a href="https://linkedin.com/in/rogerbisschoff" target="_blank" rel="noopener noreferrer" class="header-link">LinkedIn</a>
       </div>
     </div>
   </header>
 
-  <!-- ============================================================
-       HERO
-       ============================================================ -->
   <section class="hero">
     <div class="hero-inner">
-      <div class="hero-eyebrow">Operator Series · Diagnostic Framework</div>
-      <h1>Start with a 2-minute growth brief.</h1>
-      <p class="hero-subtitle">
+      <div class="hero-eyebrow" data-i18n="heroEyebrow">Operator Series · Diagnostic Framework</div>
+      <h1 data-i18n="heroTitle">Start with a 2-minute growth brief.</h1>
+      <p class="hero-subtitle" data-i18n="heroSubtitle">
         Answer six short questions. Get a ranked read of where growth is constrained, then open the deep-dive tool that measures the euros or readiness you are leaving on the table.
       </p>
-      <a class="hero-cta" href="https://rbisschoff.github.io/operator-diagnostic/">Start the Operator Diagnostic</a>
-      <span class="hero-cta-note">Free · no login · inputs stay on your device</span>
+      <a class="hero-cta" href="https://rbisschoff.github.io/operator-diagnostic/" data-i18n="heroCta">Start the Operator Diagnostic</a>
+      <span class="hero-cta-note" data-i18n="heroNote">Free · no login · inputs stay on your device</span>
     </div>
   </section>
 
-  <!-- ============================================================
-       MAIN
-       ============================================================ -->
   <main>
 
     <section class="entry-path" aria-label="How to use this suite">
       <div>
-        <div class="entry-path-title">Diagnosis before you pick a tool</div>
-        <p class="entry-path-text">
+        <div class="entry-path-title" data-i18n="entryTitle">Diagnosis before you pick a tool</div>
+        <p class="entry-path-text" data-i18n="entryText">
           The suite is five deep dives, not five equal starting points. The Operator Diagnostic routes you to the one (or two) that matter first for your commercial reality.
         </p>
-        <a class="entry-path-btn" href="https://rbisschoff.github.io/operator-diagnostic/">Run the growth brief →</a>
+        <a class="entry-path-btn" href="https://rbisschoff.github.io/operator-diagnostic/" data-i18n="entryBtn">Run the growth brief →</a>
       </div>
       <ol class="entry-steps">
-        <li class="entry-step"><span class="entry-step-num">1</span><span>Score six dimensions: AI, demand, distribution, unit profit, guests, repeats.</span></li>
-        <li class="entry-step"><span class="entry-step-num">2</span><span>See where the gap is, not a menu of every tool at once.</span></li>
-        <li class="entry-step"><span class="entry-step-num">3</span><span>Open the recommended deep dive and quantify the lost potential.</span></li>
+        <li class="entry-step"><span class="entry-step-num">1</span><span data-i18n="step1">Score six dimensions: AI, demand, distribution, unit profit, guests, repeats.</span></li>
+        <li class="entry-step"><span class="entry-step-num">2</span><span data-i18n="step2">See where the gap is, not a menu of every tool at once.</span></li>
+        <li class="entry-step"><span class="entry-step-num">3</span><span data-i18n="step3">Open the recommended deep dive and quantify the lost potential.</span></li>
       </ol>
     </section>
 
     <section class="tools-showcase" aria-label="Diagnostic tools">
       <div class="tools-showcase-header">
-        <h2 class="tools-showcase-title">Already know the pain? Browse tools</h2>
-        <span class="tools-showcase-count">5 live</span>
+        <h2 class="tools-showcase-title" data-i18n="browseTitle">Already know the pain? Browse tools</h2>
+        <span class="tools-showcase-count" data-i18n="liveCount">5 live</span>
       </div>
 
       <div class="tool-grid">
 
         <a href="https://rbisschoff.github.io/ai-ready-audit/" target="_blank" rel="noopener noreferrer" class="tool-card">
-          <span class="tool-category">AI Visibility</span>
+          <span class="tool-category" data-i18n="catAi">AI Visibility</span>
           <div class="tool-header">
-            <div class="tool-name">AI-Ready Audit</div>
-            <span class="tool-badge live">Live</span>
+            <div class="tool-name" data-i18n="toolAiName">Website AI Ready Audit</div>
+            <span class="tool-badge live" data-i18n="badgeLive">Live</span>
           </div>
-          <div class="tool-question">Will AI find and recommend my direct site?</div>
-          <div class="tool-description">Whether your direct-booking website is machine-readable and described in the specific terms AI trip planners match on, before a guest ever reaches an OTA.</div>
-          <div class="tool-cta"><span class="tool-cta-text">Open tool →</span></div>
+          <div class="tool-question" data-i18n="toolAiQ">Will AI find and recommend my direct site?</div>
+          <div class="tool-description" data-i18n="toolAiDesc">Whether your direct-booking website is machine-readable and described in the specific terms AI trip planners match on, before a guest ever reaches an OTA.</div>
+          <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Open tool →</span></div>
         </a>
 
         <a href="https://rbisschoff.github.io/chinacheck/" target="_blank" rel="noopener noreferrer" class="tool-card">
-          <span class="tool-category">Demand &amp; Markets</span>
+          <span class="tool-category" data-i18n="catDemand">Demand &amp; Markets</span>
           <div class="tool-header">
             <div class="tool-name">ChinaCheck</div>
-            <span class="tool-badge live">Live</span>
+            <span class="tool-badge live" data-i18n="badgeLive">Live</span>
           </div>
-          <div class="tool-question">Should I invest in China inbound demand?</div>
-          <div class="tool-description">Readiness diagnostic for Chinese inbound — property, channels, and operations assessed before you commit.</div>
-          <div class="tool-cta"><span class="tool-cta-text">Open tool →</span></div>
+          <div class="tool-question" data-i18n="toolChinaQ">Should I invest in China inbound demand?</div>
+          <div class="tool-description" data-i18n="toolChinaDesc">Readiness diagnostic for Chinese inbound: property, channels, and operations assessed before you commit.</div>
+          <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Open tool →</span></div>
         </a>
 
         <a href="https://rbisschoff.github.io/distribution-cost-analyser/" target="_blank" rel="noopener noreferrer" class="tool-card">
-          <span class="tool-category">Distribution</span>
+          <span class="tool-category" data-i18n="catDist">Distribution</span>
           <div class="tool-header">
-            <div class="tool-name">Distribution Cost Analyser</div>
-            <span class="tool-badge live">Live</span>
+            <div class="tool-name" data-i18n="toolDcaName">Distribution Cost Analyser</div>
+            <span class="tool-badge live" data-i18n="badgeLive">Live</span>
           </div>
-          <div class="tool-question">What is the true cost of my channel mix?</div>
-          <div class="tool-description">OTA vs direct with hidden costs and Channel Risk Score — concentration in a single OTA.</div>
-          <div class="tool-cta"><span class="tool-cta-text">Open tool →</span></div>
+          <div class="tool-question" data-i18n="toolDcaQ">What is the true cost of my channel mix?</div>
+          <div class="tool-description" data-i18n="toolDcaDesc">OTA vs direct with hidden costs and Channel Risk Score: concentration in a single OTA.</div>
+          <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Open tool →</span></div>
         </a>
 
         <a href="https://rbisschoff.github.io/repeat-guest-value/" target="_blank" rel="noopener noreferrer" class="tool-card">
-          <span class="tool-category">Distribution</span>
+          <span class="tool-category" data-i18n="catDist">Distribution</span>
           <div class="tool-header">
-            <div class="tool-name">Repeat Guest Value</div>
-            <span class="tool-badge live">Live</span>
+            <div class="tool-name" data-i18n="toolRgvName">Repeat Guest Value</div>
+            <span class="tool-badge live" data-i18n="badgeLive">Live</span>
           </div>
-          <div class="tool-question">What is repeat revenue costing me on OTAs?</div>
-          <div class="tool-description">Revenue and commission hidden when return guests rebook via OTA instead of direct.</div>
-          <div class="tool-cta"><span class="tool-cta-text">Open tool →</span></div>
+          <div class="tool-question" data-i18n="toolRgvQ">What is repeat revenue costing me on OTAs?</div>
+          <div class="tool-description" data-i18n="toolRgvDesc">Revenue and commission hidden when return guests rebook via OTA instead of direct.</div>
+          <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Open tool →</span></div>
         </a>
 
         <a href="https://rbisschoff.github.io/contribution-margin-analyser/" target="_blank" rel="noopener noreferrer" class="tool-card">
-          <span class="tool-category">Profitability</span>
+          <span class="tool-category" data-i18n="catProfit">Profitability</span>
           <div class="tool-header">
-            <div class="tool-name">Contribution Margin Analyser</div>
-            <span class="tool-badge live">Live</span>
+            <div class="tool-name" data-i18n="toolCmaName">Contribution Margin Analyser</div>
+            <span class="tool-badge live" data-i18n="badgeLive">Live</span>
           </div>
-          <div class="tool-question">Is each unit actually profitable?</div>
-          <div class="tool-description">Portfolio average vs single unit — what cost transparency at unit level should look like.</div>
-          <div class="tool-cta"><span class="tool-cta-text">Open tool →</span></div>
+          <div class="tool-question" data-i18n="toolCmaQ">Is each unit actually profitable?</div>
+          <div class="tool-description" data-i18n="toolCmaDesc">Portfolio average vs single unit: what cost transparency at unit level should look like.</div>
+          <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Open tool →</span></div>
         </a>
 
       </div>
@@ -874,63 +918,263 @@
     <div class="principle-strip" aria-label="How these tools work">
       <div class="principle">
         <div class="principle-number">01</div>
-        <div class="principle-title">Built operator-first</div>
-        <div class="principle-text">From the operator's seat — not a vendor pitch deck.</div>
+        <div class="principle-title" data-i18n="p1Title">Built operator-first</div>
+        <div class="principle-text" data-i18n="p1Text">From the operator's seat, not a vendor pitch deck.</div>
       </div>
       <div class="principle">
         <div class="principle-number">02</div>
-        <div class="principle-title">Diagnosis before prescription</div>
-        <div class="principle-text">Understand what is happening — no solutions sold here.</div>
+        <div class="principle-title" data-i18n="p2Title">Diagnosis before prescription</div>
+        <div class="principle-text" data-i18n="p2Text">Understand what is happening. No solutions sold here.</div>
       </div>
       <div class="principle">
         <div class="principle-number">03</div>
-        <div class="principle-title">Free and self-contained</div>
-        <div class="principle-text">No login. Your inputs stay on your device.</div>
+        <div class="principle-title" data-i18n="p3Title">Free and self-contained</div>
+        <div class="principle-text" data-i18n="p3Text">No login. Your inputs stay on your device.</div>
       </div>
     </div>
 
     <section class="about">
-      <div class="about-eyebrow">About this suite</div>
-      <h2>Built from the operator's seat, not the vendor's pitch deck.</h2>
-      <p>
-        Start with the Operator Diagnostic to see where growth is constrained, then open the matching deep dive to quantify it. Built from fifteen years in distribution, channel mix, and unit-level profitability — no login, no signup, inputs stay on your device.
+      <div class="about-eyebrow" data-i18n="aboutEyebrow">About this suite</div>
+      <h2 data-i18n="aboutTitle">Built from the operator's seat, not the vendor's pitch deck.</h2>
+      <p data-i18n="aboutText">
+        Start with the Operator Diagnostic to see where growth is constrained, then open the matching deep dive to quantify it. Built from fifteen years in distribution, channel mix, and unit-level profitability. No login, no signup, inputs stay on your device.
       </p>
-      <p class="about-extra">
+      <p class="about-extra" data-i18n="aboutExtra">
         New tools are added as the questions evolve. Suggest one via LinkedIn in the header.
       </p>
       <div class="about-author">
         <div class="author-avatar">RB</div>
         <div class="author-info">
           <div class="author-name">Roger Bisschoff</div>
-          <div class="author-role">Commercial &amp; Distribution · Hospitality &amp; STR</div>
+          <div class="author-role" data-i18n="authorRole">Commercial &amp; Distribution · Hospitality &amp; STR</div>
         </div>
-        <a href="https://linkedin.com/in/rogerbisschoff" target="_blank" rel="noopener noreferrer" class="author-link">View profile</a>
+        <a href="https://linkedin.com/in/rogerbisschoff" target="_blank" rel="noopener noreferrer" class="author-link" data-i18n="viewProfile">View profile</a>
       </div>
     </section>
 
     <section class="vendor-notice">
       <div class="vendor-notice-content">
-        <div class="vendor-notice-eyebrow">For vendors and platforms</div>
-        <h2>If you build hospitality tech and these frameworks fit your roadmap, there is a conversation worth having.</h2>
-        <p>
+        <div class="vendor-notice-eyebrow" data-i18n="vendorEyebrow">For vendors and platforms</div>
+        <h2 data-i18n="vendorTitle">If you build hospitality tech and these frameworks fit your roadmap, there is a conversation worth having.</h2>
+        <p data-i18n="vendorP1">
           The Operator Intelligence Suite is free to use, free to share, and free to reference. The frameworks behind each tool, however, are the result of fifteen years of operator-side work. If you are building a PMS, channel manager, revenue management platform, or operator dashboard and you see value in integrating any of this thinking into your product, the right conversation is a partnership conversation, not a copy-paste exercise.
         </p>
-        <p>
+        <p data-i18n="vendorP2">
           Whether that means consulting, advisory, framework licensing, or simply a proper credit and link back, the door is open. The work is more useful when it is connected to the person who built it.
         </p>
-        <a href="https://linkedin.com/in/rogerbisschoff" target="_blank" rel="noopener noreferrer" class="vendor-notice-cta">Start a conversation →</a>
+        <a href="https://linkedin.com/in/rogerbisschoff" target="_blank" rel="noopener noreferrer" class="vendor-notice-cta" data-i18n="vendorCta">Start a conversation →</a>
       </div>
     </section>
 
   </main>
 
-  <!-- ============================================================
-       FOOTER
-       ============================================================ -->
   <footer>
-    <p>Operator Intelligence Suite — by <a href="https://linkedin.com/in/rogerbisschoff" target="_blank" rel="noopener noreferrer">Roger Bisschoff</a></p>
-    <p style="margin-top: 4px;">A practical toolkit for hospitality and short-term rental operators.</p>
+    <p data-i18n="footer1">Operator Intelligence Suite by <a href="https://linkedin.com/in/rogerbisschoff" target="_blank" rel="noopener noreferrer">Roger Bisschoff</a></p>
+    <p style="margin-top: 4px;" data-i18n="footer2">A practical toolkit for hospitality and short-term rental operators.</p>
   </footer>
+
+  <script>
+    const I18N = {
+      en: {
+        brandTitle: 'Operator Intelligence Suite',
+        brandSubtitle: 'by Roger Bisschoff',
+        heroEyebrow: 'Operator Series · Diagnostic Framework',
+        heroTitle: 'Start with a 2-minute growth brief.',
+        heroSubtitle: 'Answer six short questions. Get a ranked read of where growth is constrained, then open the deep-dive tool that measures the euros or readiness you are leaving on the table.',
+        heroCta: 'Start the Operator Diagnostic',
+        heroNote: 'Free · no login · inputs stay on your device',
+        entryTitle: 'Diagnosis before you pick a tool',
+        entryText: 'The suite is five deep dives, not five equal starting points. The Operator Diagnostic routes you to the one (or two) that matter first for your commercial reality.',
+        entryBtn: 'Run the growth brief →',
+        step1: 'Score six dimensions: AI, demand, distribution, unit profit, guests, repeats.',
+        step2: 'See where the gap is, not a menu of every tool at once.',
+        step3: 'Open the recommended deep dive and quantify the lost potential.',
+        browseTitle: 'Already know the pain? Browse tools',
+        liveCount: '5 live',
+        catAi: 'AI Visibility',
+        catDemand: 'Demand & Markets',
+        catDist: 'Distribution',
+        catProfit: 'Profitability',
+        toolAiName: 'Website AI Ready Audit',
+        toolAiQ: 'Will AI find and recommend my direct site?',
+        toolAiDesc: 'Whether your direct-booking website is machine-readable and described in the specific terms AI trip planners match on, before a guest ever reaches an OTA.',
+        toolChinaQ: 'Should I invest in China inbound demand?',
+        toolChinaDesc: 'Readiness diagnostic for Chinese inbound: property, channels, and operations assessed before you commit.',
+        toolDcaName: 'Distribution Cost Analyser',
+        toolDcaQ: 'What is the true cost of my channel mix?',
+        toolDcaDesc: 'OTA vs direct with hidden costs and Channel Risk Score: concentration in a single OTA.',
+        toolRgvName: 'Repeat Guest Value',
+        toolRgvQ: 'What is repeat revenue costing me on OTAs?',
+        toolRgvDesc: 'Revenue and commission hidden when return guests rebook via OTA instead of direct.',
+        toolCmaName: 'Contribution Margin Analyser',
+        toolCmaQ: 'Is each unit actually profitable?',
+        toolCmaDesc: 'Portfolio average vs single unit: what cost transparency at unit level should look like.',
+        badgeLive: 'Live',
+        openTool: 'Open tool →',
+        p1Title: 'Built operator-first',
+        p1Text: "From the operator's seat, not a vendor pitch deck.",
+        p2Title: 'Diagnosis before prescription',
+        p2Text: 'Understand what is happening. No solutions sold here.',
+        p3Title: 'Free and self-contained',
+        p3Text: 'No login. Your inputs stay on your device.',
+        aboutEyebrow: 'About this suite',
+        aboutTitle: "Built from the operator's seat, not the vendor's pitch deck.",
+        aboutText: 'Start with the Operator Diagnostic to see where growth is constrained, then open the matching deep dive to quantify it. Built from fifteen years in distribution, channel mix, and unit-level profitability. No login, no signup, inputs stay on your device.',
+        aboutExtra: 'New tools are added as the questions evolve. Suggest one via LinkedIn in the header.',
+        authorRole: 'Commercial & Distribution · Hospitality & STR',
+        viewProfile: 'View profile',
+        vendorEyebrow: 'For vendors and platforms',
+        vendorTitle: 'If you build hospitality tech and these frameworks fit your roadmap, there is a conversation worth having.',
+        vendorP1: 'The Operator Intelligence Suite is free to use, free to share, and free to reference. The frameworks behind each tool, however, are the result of fifteen years of operator-side work. If you are building a PMS, channel manager, revenue management platform, or operator dashboard and you see value in integrating any of this thinking into your product, the right conversation is a partnership conversation, not a copy-paste exercise.',
+        vendorP2: 'Whether that means consulting, advisory, framework licensing, or simply a proper credit and link back, the door is open. The work is more useful when it is connected to the person who built it.',
+        vendorCta: 'Start a conversation →',
+        footer1: 'Operator Intelligence Suite by <a href="https://linkedin.com/in/rogerbisschoff" target="_blank" rel="noopener noreferrer">Roger Bisschoff</a>',
+        footer2: 'A practical toolkit for hospitality and short-term rental operators.'
+      },
+      it: {
+        brandTitle: 'Operator Intelligence Suite',
+        brandSubtitle: 'di Roger Bisschoff',
+        heroEyebrow: 'Operator Series · Framework diagnostico',
+        heroTitle: 'Inizia con un brief di crescita di 2 minuti.',
+        heroSubtitle: 'Rispondi a sei domande brevi. Ottieni una lettura ordinata di dove la crescita è vincolata, poi apri lo strumento di approfondimento che misura gli euro o la readiness che stai lasciando sul tavolo.',
+        heroCta: 'Avvia l’Operator Diagnostic',
+        heroNote: 'Gratis · senza login · i dati restano sul tuo dispositivo',
+        entryTitle: 'Diagnosi prima di scegliere uno strumento',
+        entryText: 'La suite comprende cinque approfondimenti, non cinque punti di partenza equivalenti. L’Operator Diagnostic ti indirizza a quello (o quelli) che contano prima per la tua realtà commerciale.',
+        entryBtn: 'Esegui il growth brief →',
+        step1: 'Valuta sei dimensioni: AI, domanda, distribuzione, profitto unitario, ospiti, ripetuti.',
+        step2: 'Vedi dove c’è il divario, non un menu di tutti gli strumenti insieme.',
+        step3: 'Apri l’approfondimento consigliato e quantifica il potenziale perso.',
+        browseTitle: 'Conosci già il problema? Sfoglia gli strumenti',
+        liveCount: '5 attivi',
+        catAi: 'Visibilità AI',
+        catDemand: 'Domanda e mercati',
+        catDist: 'Distribuzione',
+        catProfit: 'Redditività',
+        toolAiName: 'Website AI Ready Audit',
+        toolAiQ: 'L’AI trova e raccomanda il mio sito diretto?',
+        toolAiDesc: 'Se il sito di prenotazione diretta è leggibile dalle macchine e descritto nei termini specifici su cui i trip planner basati su AI fanno match, prima che l’ospite arrivi a un OTA.',
+        toolChinaQ: 'Devo investire sulla domanda inbound dalla Cina?',
+        toolChinaDesc: 'Diagnosi di readiness per l’inbound cinese: proprietà, canali e operazioni, prima di impegnarti.',
+        toolDcaName: 'Distribution Cost Analyser',
+        toolDcaQ: 'Qual è il costo reale del mio mix di canali?',
+        toolDcaDesc: 'OTA vs diretto con costi nascosti e Channel Risk Score: concentrazione su un solo OTA.',
+        toolRgvName: 'Repeat Guest Value',
+        toolRgvQ: 'Quanto mi costa il ricavo ripetuto sugli OTA?',
+        toolRgvDesc: 'Ricavi e commissioni nascosti quando gli ospiti di ritorno riprenotano via OTA invece che diretto.',
+        toolCmaName: 'Contribution Margin Analyser',
+        toolCmaQ: 'Ogni unità è davvero redditizia?',
+        toolCmaDesc: 'Media di portafoglio vs singola unità: come dovrebbe apparire la trasparenza dei costi a livello di unità.',
+        badgeLive: 'Attivo',
+        openTool: 'Apri strumento →',
+        p1Title: 'Pensato per l’operatore',
+        p1Text: 'Dalla scrivania dell’operatore, non dal pitch deck di un vendor.',
+        p2Title: 'Diagnosi prima della ricetta',
+        p2Text: 'Capire cosa sta succedendo. Qui non si vendono soluzioni.',
+        p3Title: 'Gratis e autonomo',
+        p3Text: 'Niente login. I tuoi input restano sul dispositivo.',
+        aboutEyebrow: 'Su questa suite',
+        aboutTitle: 'Costruita dalla scrivania dell’operatore, non dal pitch deck del vendor.',
+        aboutText: 'Inizia con l’Operator Diagnostic per vedere dove la crescita è vincolata, poi apri l’approfondimento corrispondente per quantificarla. Nata da quindici anni in distribuzione, mix di canali e redditività unitaria. Niente login, niente iscrizione, i dati restano sul tuo dispositivo.',
+        aboutExtra: 'Nuovi strumenti arrivano man mano che le domande evolvono. Proponine uno via LinkedIn nell’header.',
+        authorRole: 'Commercial & Distribution · Hospitality & STR',
+        viewProfile: 'Vedi profilo',
+        vendorEyebrow: 'Per vendor e piattaforme',
+        vendorTitle: 'Se costruisci tech per l’hospitality e questi framework rientrano nella tua roadmap, vale la pena parlarne.',
+        vendorP1: 'L’Operator Intelligence Suite è gratis da usare, condividere e citare. I framework dietro ogni strumento, però, sono il frutto di quindici anni di lavoro lato operatore. Se stai costruendo un PMS, un channel manager, una piattaforma di revenue o una dashboard operatore e vedi valore nell’integrare questo pensiero nel prodotto, la conversazione giusta è di partnership, non di copia-incolla.',
+        vendorP2: 'Che si tratti di consulting, advisory, licensing del framework o semplicemente di un credito e un link, la porta è aperta. Il lavoro è più utile quando resta collegato a chi l’ha costruito.',
+        vendorCta: 'Inizia una conversazione →',
+        footer1: 'Operator Intelligence Suite di <a href="https://linkedin.com/in/rogerbisschoff" target="_blank" rel="noopener noreferrer">Roger Bisschoff</a>',
+        footer2: 'Un toolkit pratico per operatori hospitality e short-term rental.'
+      },
+      de: {
+        brandTitle: 'Operator Intelligence Suite',
+        brandSubtitle: 'von Roger Bisschoff',
+        heroEyebrow: 'Operator Series · Diagnose-Framework',
+        heroTitle: 'Starten Sie mit einem 2-Minuten Growth Brief.',
+        heroSubtitle: 'Beantworten Sie sechs kurze Fragen. Erhalten Sie eine rangierte Einschätzung, wo Wachstum gehemmt ist, und öffnen Sie dann das Deep-Dive-Tool, das Euro oder Readiness misst, die Sie auf dem Tisch liegen lassen.',
+        heroCta: 'Operator Diagnostic starten',
+        heroNote: 'Kostenlos · ohne Login · Eingaben bleiben auf Ihrem Gerät',
+        entryTitle: 'Diagnose, bevor Sie ein Tool wählen',
+        entryText: 'Die Suite umfasst fünf Deep Dives, keine fünf gleichwertigen Startpunkte. Der Operator Diagnostic führt Sie zu dem einen (oder zwei), die für Ihre kommerzielle Lage zuerst zählen.',
+        entryBtn: 'Growth Brief starten →',
+        step1: 'Sechs Dimensionen bewerten: AI, Nachfrage, Distribution, Unit-Profit, Gäste, Wiederkehrer.',
+        step2: 'Sehen Sie die Lücke, nicht ein Menü aller Tools gleichzeitig.',
+        step3: 'Öffnen Sie den empfohlenen Deep Dive und quantifizieren Sie das verlorene Potenzial.',
+        browseTitle: 'Schmerz schon klar? Tools durchsuchen',
+        liveCount: '5 live',
+        catAi: 'AI-Sichtbarkeit',
+        catDemand: 'Nachfrage & Märkte',
+        catDist: 'Distribution',
+        catProfit: 'Profitabilität',
+        toolAiName: 'Website AI Ready Audit',
+        toolAiQ: 'Findet und empfiehlt AI meine Direktwebsite?',
+        toolAiDesc: 'Ob Ihre Direktbuchungsseite maschinenlesbar ist und in den konkreten Begriffen beschrieben wird, auf die AI-Trip-Planner matchen, bevor ein Gast eine OTA erreicht.',
+        toolChinaQ: 'Soll ich in China-Inbound-Nachfrage investieren?',
+        toolChinaDesc: 'Readiness-Diagnose für chinesischen Inbound: Objekt, Kanäle und Betrieb, bevor Sie sich festlegen.',
+        toolDcaName: 'Distribution Cost Analyser',
+        toolDcaQ: 'Was kostet mein Channel-Mix wirklich?',
+        toolDcaDesc: 'OTA vs. Direkt inkl. versteckter Kosten und Channel Risk Score: Konzentration auf eine OTA.',
+        toolRgvName: 'Repeat Guest Value',
+        toolRgvQ: 'Was kosten mich Wiederholungsumsätze über OTAs?',
+        toolRgvDesc: 'Umsatz und Provision, die verborgen bleiben, wenn Rückkehrer über die OTA statt direkt neu buchen.',
+        toolCmaName: 'Contribution Margin Analyser',
+        toolCmaQ: 'Ist jede Unit wirklich profitabel?',
+        toolCmaDesc: 'Portfolio-Durchschnitt vs. Einzelunit: wie Kostentransparenz auf Unit-Ebene aussehen sollte.',
+        badgeLive: 'Live',
+        openTool: 'Tool öffnen →',
+        p1Title: 'Operator-first gebaut',
+        p1Text: 'Aus dem Sitz des Operators, nicht aus dem Vendor-Pitch-Deck.',
+        p2Title: 'Diagnose vor Rezept',
+        p2Text: 'Verstehen, was passiert. Hier werden keine Lösungen verkauft.',
+        p3Title: 'Kostenlos und in sich geschlossen',
+        p3Text: 'Kein Login. Ihre Eingaben bleiben auf dem Gerät.',
+        aboutEyebrow: 'Über diese Suite',
+        aboutTitle: 'Gebaut aus dem Sitz des Operators, nicht aus dem Vendor-Pitch-Deck.',
+        aboutText: 'Starten Sie mit dem Operator Diagnostic, um zu sehen, wo Wachstum gehemmt ist, und öffnen Sie dann den passenden Deep Dive zur Quantifizierung. Aus fünfzehn Jahren Distribution, Channel-Mix und Unit-Profitabilität. Kein Login, keine Anmeldung, Eingaben bleiben auf Ihrem Gerät.',
+        aboutExtra: 'Neue Tools kommen, wenn die Fragen sich weiterentwickeln. Vorschlag per LinkedIn im Header.',
+        authorRole: 'Commercial & Distribution · Hospitality & STR',
+        viewProfile: 'Profil ansehen',
+        vendorEyebrow: 'Für Vendor und Plattformen',
+        vendorTitle: 'Wenn Sie Hospitality-Tech bauen und diese Frameworks in Ihre Roadmap passen, lohnt sich ein Gespräch.',
+        vendorP1: 'Die Operator Intelligence Suite ist frei nutzbar, teilbar und zitierbar. Die Frameworks hinter jedem Tool sind jedoch das Ergebnis von fünfzehn Jahren Operator-Arbeit. Wenn Sie ein PMS, Channel Manager, Revenue-Platform oder Operator-Dashboard bauen und Wert darin sehen, dieses Denken in Ihr Produkt zu integrieren, ist die richtige Unterhaltung eine Partnerschaft, kein Copy-Paste.',
+        vendorP2: 'Ob Consulting, Advisory, Framework-Lizenzierung oder nur ein korrekter Credit und Backlink: die Tür ist offen. Die Arbeit ist nützlicher, wenn sie mit der Person verbunden bleibt, die sie gebaut hat.',
+        vendorCta: 'Gespräch starten →',
+        footer1: 'Operator Intelligence Suite von <a href="https://linkedin.com/in/rogerbisschoff" target="_blank" rel="noopener noreferrer">Roger Bisschoff</a>',
+        footer2: 'Ein praktisches Toolkit für Hospitality- und Short-Term-Rental-Operatoren.'
+      }
+    };
+
+    function applyLang(lang) {
+      const pack = I18N[lang] || I18N.en;
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        const key = el.getAttribute('data-i18n');
+        if (!pack[key]) return;
+        if (key === 'footer1') el.innerHTML = pack[key];
+        else el.textContent = pack[key];
+      });
+      document.querySelectorAll('.lang-btn').forEach(function(btn) {
+        const on = btn.getAttribute('data-lang') === lang;
+        btn.classList.toggle('active', on);
+        btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      try { localStorage.setItem('ois-lang', lang); } catch (e) {}
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        applyLang(btn.getAttribute('data-lang'));
+      });
+    });
+
+    var startLang = 'en';
+    try {
+      var saved = localStorage.getItem('ois-lang');
+      if (saved && I18N[saved]) startLang = saved;
+    } catch (e) {}
+    applyLang(startLang);
+  </script>
 
 </body>
 </html>
