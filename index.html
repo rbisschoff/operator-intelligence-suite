@@ -349,62 +349,20 @@
     }
 
     /* ============================================================
-       LOGIC DIAGRAM — diagnose first, then deep dive
+       LOGIC DIAGRAM — clustered revenue flow
        ============================================================ */
     .logic-diagram {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
+      justify-content: center;
       margin: 8px 0 36px;
       padding: 8px 0 4px;
     }
 
-    .logic-source {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--accent);
-      background: var(--accent-light);
-      border: 1px solid rgba(0, 122, 255, 0.18);
-      padding: 8px 14px;
-      border-radius: 100px;
-      letter-spacing: -0.01em;
-    }
-
-    .logic-arrow {
-      width: 20px;
-      height: 28px;
-      color: var(--muted2);
-    }
-
-    .logic-arrow svg {
+    .logic-diagram svg {
       display: block;
       width: 100%;
-      height: 100%;
-    }
-
-    .logic-chips {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 8px;
-      max-width: 640px;
-    }
-
-    .logic-chip {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--ink2);
-      background: var(--card);
-      border: 1px solid var(--border);
-      padding: 6px 11px;
-      border-radius: 100px;
-      letter-spacing: -0.01em;
-      box-shadow: var(--shadow-sm);
-      white-space: nowrap;
+      max-width: 1020px;
+      height: auto;
     }
 
     /* ============================================================
@@ -782,8 +740,6 @@
         padding-right: max(12px, env(safe-area-inset-right));
       }
       .logic-diagram { margin: 4px 0 28px; }
-      .logic-chips { gap: 6px; }
-      .logic-chip { font-size: 10px; padding: 5px 9px; }
       .tool-card { padding: 18px 16px; min-height: 0; }
       .claim-line { margin-bottom: 32px; }
       .about { margin-bottom: 28px; }
@@ -834,21 +790,70 @@
 
   <main>
 
-    <section class="logic-diagram" aria-labelledby="logicLabel">
-      <span id="logicLabel" class="logic-source" data-i18n="logicSource">Operator Diagnostic</span>
-      <div class="logic-arrow" aria-hidden="true">
-        <svg viewBox="0 0 20 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10 2v20M10 22l-5-5M10 22l5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <div class="logic-chips">
-        <span class="logic-chip" data-i18n="dimAi">AI</span>
-        <span class="logic-chip" data-i18n="dimDemand">domanda</span>
-        <span class="logic-chip" data-i18n="dimDist">distribuzione</span>
-        <span class="logic-chip" data-i18n="dimProfit">profitto unitario</span>
-        <span class="logic-chip" data-i18n="dimGuests">ospiti</span>
-        <span class="logic-chip" data-i18n="dimRepeats">ripetuti</span>
-      </div>
+    <section class="logic-diagram">
+      <svg viewBox="0 0 1020 400" width="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="flowTitle flowDesc">
+        <title id="flowTitle">Operator Diagnostic routes to two revenue clusters</title>
+        <desc id="flowDesc">The Operator Diagnostic fans into revenue creators, which are website AI readiness, demand and guest satisfaction, and revenue optimisers, which are OTA distribution, unit profitability and repeating guests.</desc>
+
+        <rect x="369" y="30" width="280" height="52" rx="26" fill="#1B4F72"/>
+        <text x="509" y="56" text-anchor="middle" dominant-baseline="central" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="15" font-weight="500" fill="#FFFFFF" data-i18n="flowRoot">Operator Diagnostic</text>
+
+        <path d="M509 82 L509 116" stroke="#8A94A6" stroke-width="1.2" fill="none"/>
+        <circle cx="509" cy="118" r="2.5" fill="#8A94A6"/>
+        <path d="M509 118 C 509 140 280 130 280 150" stroke="#0E8C86" stroke-width="1.2" stroke-opacity="0.55" fill="none"/>
+        <path d="M509 118 C 509 140 740 130 740 150" stroke="#4C4B9E" stroke-width="1.2" stroke-opacity="0.55" fill="none"/>
+
+        <rect x="80" y="150" width="400" height="214" rx="14" fill="#0E8C86" fill-opacity="0.05" stroke="#0E8C86" stroke-opacity="0.22" stroke-width="1"/>
+        <text x="100" y="176" dominant-baseline="central" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#0E8C86" data-i18n="flowClusterCreate">Revenue creators</text>
+
+        <rect x="100" y="192" width="360" height="44" rx="10" fill="#FFFFFF" stroke="#0E8C86" stroke-opacity="0.35" stroke-width="1"/>
+        <g transform="translate(116, 206)" stroke="#0E8C86" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="6.5" cy="6.5" r="5"/>
+          <path d="M10.5 10.5 L15 15"/>
+        </g>
+        <text x="140" y="214" dominant-baseline="central" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#0E8C86" data-i18n="flowAi">Website AI readiness</text>
+
+        <rect x="100" y="248" width="360" height="44" rx="10" fill="#FFFFFF" stroke="#0E8C86" stroke-opacity="0.35" stroke-width="1"/>
+        <g transform="translate(116, 262)" stroke="#0E8C86" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M1 12 L5.5 7.5 L8.5 10.5 L15 4"/>
+          <path d="M11 4 L15 4 L15 8"/>
+        </g>
+        <text x="140" y="270" dominant-baseline="central" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#0E8C86" data-i18n="flowDemand">Demand</text>
+
+        <rect x="100" y="304" width="360" height="44" rx="10" fill="#FFFFFF" stroke="#0E8C86" stroke-opacity="0.35" stroke-width="1"/>
+        <g transform="translate(116, 318)" stroke="#0E8C86" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 1.5 L10 5.9 L14.8 6.5 L11.3 9.8 L12.2 14.5 L8 12.2 L3.8 14.5 L4.7 9.8 L1.2 6.5 L6 5.9 Z"/>
+        </g>
+        <text x="140" y="326" dominant-baseline="central" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#0E8C86" data-i18n="flowGuests">Guest satisfaction</text>
+
+        <rect x="540" y="150" width="400" height="214" rx="14" fill="#4C4B9E" fill-opacity="0.05" stroke="#4C4B9E" stroke-opacity="0.22" stroke-width="1"/>
+        <text x="560" y="176" dominant-baseline="central" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#4C4B9E" data-i18n="flowClusterOptimise">Revenue optimisers</text>
+
+        <rect x="560" y="192" width="360" height="44" rx="10" fill="#FFFFFF" stroke="#4C4B9E" stroke-opacity="0.35" stroke-width="1"/>
+        <g transform="translate(576, 206)" stroke="#4C4B9E" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 15 L8 9"/>
+          <path d="M8 9 L2.5 3.5"/>
+          <path d="M8 9 L13.5 3.5"/>
+          <circle cx="2.5" cy="2.5" r="1.6"/>
+          <circle cx="13.5" cy="2.5" r="1.6"/>
+        </g>
+        <text x="600" y="214" dominant-baseline="central" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#4C4B9E" data-i18n="flowDistribution">OTA distribution</text>
+
+        <rect x="560" y="248" width="360" height="44" rx="10" fill="#FFFFFF" stroke="#4C4B9E" stroke-opacity="0.35" stroke-width="1"/>
+        <g transform="translate(576, 262)" stroke="#4C4B9E" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <ellipse cx="8" cy="4" rx="6" ry="2.5"/>
+          <path d="M2 4 L2 12 C2 13.4 4.7 14.5 8 14.5 C11.3 14.5 14 13.4 14 12 L14 4"/>
+          <path d="M2 8 C2 9.4 4.7 10.5 8 10.5 C11.3 10.5 14 9.4 14 8"/>
+        </g>
+        <text x="600" y="270" dominant-baseline="central" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#4C4B9E" data-i18n="flowUnitProfit">Unit profitability</text>
+
+        <rect x="560" y="304" width="360" height="44" rx="10" fill="#FFFFFF" stroke="#4C4B9E" stroke-opacity="0.35" stroke-width="1"/>
+        <g transform="translate(576, 318)" stroke="#4C4B9E" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14.2 8 A6.2 6.2 0 1 1 12 3.4"/>
+          <path d="M14.5 1 L14.5 4.2 L11.3 4.2"/>
+        </g>
+        <text x="600" y="326" dominant-baseline="central" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#4C4B9E" data-i18n="flowRepeats">Repeating guests</text>
+      </svg>
     </section>
 
     <section class="tools-showcase" aria-label="Diagnostic tools">
@@ -952,6 +957,15 @@
         heroSubtitle: 'Six questions. A ranked read of where growth is constrained.',
         heroCta: 'Start the Operator Diagnostic',
         heroNote: 'Free · no login · inputs stay on your device',
+        flowRoot: 'Operator Diagnostic',
+        flowClusterCreate: 'Revenue creators',
+        flowClusterOptimise: 'Revenue optimisers',
+        flowAi: 'Website AI readiness',
+        flowDemand: 'Demand',
+        flowGuests: 'Guest satisfaction',
+        flowDistribution: 'OTA distribution',
+        flowUnitProfit: 'Unit profitability',
+        flowRepeats: 'Repeating guests',
         logicSource: 'Operator Diagnostic',
         dimAi: 'AI',
         dimDemand: 'demand',
@@ -993,6 +1007,15 @@
         heroSubtitle: 'Sei domande. Una lettura ordinata di dove la crescita è vincolata.',
         heroCta: 'Avvia l’Operator Diagnostic',
         heroNote: 'Gratis · senza login · i dati restano sul tuo dispositivo',
+        flowRoot: 'Operator Diagnostic',
+        flowClusterCreate: 'Creatori di ricavo',
+        flowClusterOptimise: 'Ottimizzatori di ricavo',
+        flowAi: 'Readiness AI del sito',
+        flowDemand: 'Domanda',
+        flowGuests: 'Soddisfazione ospiti',
+        flowDistribution: 'Distribuzione OTA',
+        flowUnitProfit: 'Redditività per unità',
+        flowRepeats: 'Ospiti di ritorno',
         logicSource: 'Operator Diagnostic',
         dimAi: 'AI',
         dimDemand: 'domanda',
@@ -1034,6 +1057,15 @@
         heroSubtitle: 'Sechs Fragen. Eine rangierte Einschätzung, wo Wachstum gehemmt ist.',
         heroCta: 'Operator Diagnostic starten',
         heroNote: 'Kostenlos · ohne Login · Eingaben bleiben auf Ihrem Gerät',
+        flowRoot: 'Operator Diagnostic',
+        flowClusterCreate: 'Umsatztreiber',
+        flowClusterOptimise: 'Umsatzoptimierer',
+        flowAi: 'KI-Readiness der Website',
+        flowDemand: 'Nachfrage',
+        flowGuests: 'Gastzufriedenheit',
+        flowDistribution: 'OTA-Vertrieb',
+        flowUnitProfit: 'Rentabilität pro Einheit',
+        flowRepeats: 'Wiederkehrende Gäste',
         logicSource: 'Operator Diagnostic',
         dimAi: 'AI',
         dimDemand: 'Nachfrage',
