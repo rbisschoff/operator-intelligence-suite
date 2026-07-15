@@ -263,7 +263,7 @@
        ============================================================ */
     .hero {
       background: linear-gradient(180deg, white 0%, var(--bg) 100%);
-      padding: 40px 20px 28px;
+      padding: 40px 20px 16px;
       text-align: center;
     }
 
@@ -318,7 +318,7 @@
 
     @media (max-width: 640px) {
       .hero {
-        padding: 28px 16px 20px;
+        padding: 28px 16px 12px;
       }
 
       .hero h1 {
@@ -345,24 +345,124 @@
     main {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 8px 20px 48px;
+      padding: 4px 20px 32px;
     }
 
     /* ============================================================
-       LOGIC DIAGRAM — clustered revenue flow
+       FLOW DIAGRAM — HTML clustered revenue flow
        ============================================================ */
     .logic-diagram {
-      display: flex;
-      justify-content: center;
-      margin: 8px 0 36px;
-      padding: 8px 0 4px;
+      margin: 0 0 20px;
+      padding: 0;
     }
 
-    .logic-diagram svg {
+    .flow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .flow-root {
+      background: #1B4F72;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 12px 26px;
+      border-radius: 999px;
+    }
+
+    .flow-fan {
       display: block;
       width: 100%;
-      max-width: 1020px;
-      height: auto;
+      max-width: 560px;
+      height: 22px;
+      margin-top: 6px;
+    }
+
+    .flow-stem {
+      display: none;
+      width: 1px;
+      height: 18px;
+      background: #8A94A6;
+    }
+
+    .flow-clusters {
+      display: flex;
+      gap: 14px;
+      width: 100%;
+      margin-top: 6px;
+    }
+
+    .flow-cluster {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      padding: 12px;
+      border-radius: 14px;
+    }
+
+    .flow-create {
+      background: rgba(14, 140, 134, 0.05);
+      border: 1px solid rgba(14, 140, 134, 0.22);
+    }
+
+    .flow-optimise {
+      background: rgba(76, 75, 158, 0.05);
+      border: 1px solid rgba(76, 75, 158, 0.22);
+    }
+
+    .flow-cluster-label {
+      font-size: 12px;
+      font-weight: 500;
+      padding-left: 2px;
+    }
+
+    .flow-create .flow-cluster-label { color: #0E8C86; }
+    .flow-optimise .flow-cluster-label { color: #4C4B9E; }
+
+    .flow-chip {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      background: #fff;
+      border-radius: 10px;
+      padding: 9px 12px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .flow-chip svg {
+      width: 15px;
+      height: 15px;
+      flex: none;
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .flow-create .flow-chip {
+      border: 1px solid rgba(14, 140, 134, 0.35);
+      color: #0E8C86;
+    }
+
+    .flow-create .flow-chip svg { stroke: #0E8C86; }
+
+    .flow-optimise .flow-chip {
+      border: 1px solid rgba(76, 75, 158, 0.35);
+      color: #4C4B9E;
+    }
+
+    .flow-optimise .flow-chip svg { stroke: #4C4B9E; }
+
+    @media (max-width: 640px) {
+      .flow-fan { display: none; }
+      .flow-stem { display: block; }
+      .flow-clusters { flex-direction: column; gap: 10px; }
+      .flow-root { font-size: 14px; padding: 10px 20px; }
     }
 
     /* ============================================================
@@ -370,7 +470,7 @@
        ============================================================ */
     .claim-line {
       max-width: 520px;
-      margin: 0 auto 40px;
+      margin: 0 auto 20px;
       padding: 0 12px;
       text-align: center;
       font-size: 13px;
@@ -382,7 +482,7 @@
        TOOLS SHOWCASE — single grid
        ============================================================ */
     .tools-showcase {
-      margin-bottom: 40px;
+      margin-bottom: 24px;
     }
 
     .tools-showcase-header {
@@ -542,7 +642,7 @@
       padding: 18px 20px;
       border: none;
       box-shadow: var(--shadow-card);
-      margin-bottom: 36px;
+      margin-bottom: 24px;
     }
 
     .about-author {
@@ -736,13 +836,13 @@
         align-items: center;
       }
       main {
-        padding: 4px max(12px, env(safe-area-inset-left)) calc(36px + env(safe-area-inset-bottom));
+        padding: 0 max(12px, env(safe-area-inset-left)) calc(28px + env(safe-area-inset-bottom));
         padding-right: max(12px, env(safe-area-inset-right));
       }
-      .logic-diagram { margin: 4px 0 28px; }
+      .logic-diagram { margin: 0 0 16px; }
       .tool-card { padding: 18px 16px; min-height: 0; }
-      .claim-line { margin-bottom: 32px; }
-      .about { margin-bottom: 28px; }
+      .claim-line { margin-bottom: 16px; }
+      .about { margin-bottom: 20px; }
       .vendor-notice { padding: 26px 18px; }
       .vendor-notice-cta { width: 100%; text-align: center; box-sizing: border-box; }
     }
@@ -790,70 +890,47 @@
 
   <main>
 
-    <section class="logic-diagram">
-      <svg viewBox="0 0 1020 400" width="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="flowTitle flowDesc">
-        <title id="flowTitle">Operator Diagnostic routes to two revenue clusters</title>
-        <desc id="flowDesc">The Operator Diagnostic fans into revenue creators, which are website AI readiness, demand and guest satisfaction, and revenue optimisers, which are OTA distribution, unit profitability and repeating guests.</desc>
-
-        <rect x="369" y="30" width="280" height="52" rx="26" fill="#1B4F72"/>
-        <text x="509" y="56" text-anchor="middle" dominant-baseline="central" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="15" font-weight="500" fill="#FFFFFF" data-i18n="flowRoot">Operator Diagnostic</text>
-
-        <path d="M509 82 L509 116" stroke="#8A94A6" stroke-width="1.2" fill="none"/>
-        <circle cx="509" cy="118" r="2.5" fill="#8A94A6"/>
-        <path d="M509 118 C 509 140 280 130 280 150" stroke="#0E8C86" stroke-width="1.2" stroke-opacity="0.55" fill="none"/>
-        <path d="M509 118 C 509 140 740 130 740 150" stroke="#4C4B9E" stroke-width="1.2" stroke-opacity="0.55" fill="none"/>
-
-        <rect x="80" y="150" width="400" height="214" rx="14" fill="#0E8C86" fill-opacity="0.05" stroke="#0E8C86" stroke-opacity="0.22" stroke-width="1"/>
-        <text x="100" y="176" dominant-baseline="central" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#0E8C86" data-i18n="flowClusterCreate">Revenue creators</text>
-
-        <rect x="100" y="192" width="360" height="44" rx="10" fill="#FFFFFF" stroke="#0E8C86" stroke-opacity="0.35" stroke-width="1"/>
-        <g transform="translate(116, 206)" stroke="#0E8C86" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="6.5" cy="6.5" r="5"/>
-          <path d="M10.5 10.5 L15 15"/>
-        </g>
-        <text x="140" y="214" dominant-baseline="central" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#0E8C86" data-i18n="flowAi">Website AI readiness</text>
-
-        <rect x="100" y="248" width="360" height="44" rx="10" fill="#FFFFFF" stroke="#0E8C86" stroke-opacity="0.35" stroke-width="1"/>
-        <g transform="translate(116, 262)" stroke="#0E8C86" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M1 12 L5.5 7.5 L8.5 10.5 L15 4"/>
-          <path d="M11 4 L15 4 L15 8"/>
-        </g>
-        <text x="140" y="270" dominant-baseline="central" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#0E8C86" data-i18n="flowDemand">Demand</text>
-
-        <rect x="100" y="304" width="360" height="44" rx="10" fill="#FFFFFF" stroke="#0E8C86" stroke-opacity="0.35" stroke-width="1"/>
-        <g transform="translate(116, 318)" stroke="#0E8C86" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M8 1.5 L10 5.9 L14.8 6.5 L11.3 9.8 L12.2 14.5 L8 12.2 L3.8 14.5 L4.7 9.8 L1.2 6.5 L6 5.9 Z"/>
-        </g>
-        <text x="140" y="326" dominant-baseline="central" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#0E8C86" data-i18n="flowGuests">Guest satisfaction</text>
-
-        <rect x="540" y="150" width="400" height="214" rx="14" fill="#4C4B9E" fill-opacity="0.05" stroke="#4C4B9E" stroke-opacity="0.22" stroke-width="1"/>
-        <text x="560" y="176" dominant-baseline="central" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#4C4B9E" data-i18n="flowClusterOptimise">Revenue optimisers</text>
-
-        <rect x="560" y="192" width="360" height="44" rx="10" fill="#FFFFFF" stroke="#4C4B9E" stroke-opacity="0.35" stroke-width="1"/>
-        <g transform="translate(576, 206)" stroke="#4C4B9E" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M8 15 L8 9"/>
-          <path d="M8 9 L2.5 3.5"/>
-          <path d="M8 9 L13.5 3.5"/>
-          <circle cx="2.5" cy="2.5" r="1.6"/>
-          <circle cx="13.5" cy="2.5" r="1.6"/>
-        </g>
-        <text x="600" y="214" dominant-baseline="central" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#4C4B9E" data-i18n="flowDistribution">OTA distribution</text>
-
-        <rect x="560" y="248" width="360" height="44" rx="10" fill="#FFFFFF" stroke="#4C4B9E" stroke-opacity="0.35" stroke-width="1"/>
-        <g transform="translate(576, 262)" stroke="#4C4B9E" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <ellipse cx="8" cy="4" rx="6" ry="2.5"/>
-          <path d="M2 4 L2 12 C2 13.4 4.7 14.5 8 14.5 C11.3 14.5 14 13.4 14 12 L14 4"/>
-          <path d="M2 8 C2 9.4 4.7 10.5 8 10.5 C11.3 10.5 14 9.4 14 8"/>
-        </g>
-        <text x="600" y="270" dominant-baseline="central" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#4C4B9E" data-i18n="flowUnitProfit">Unit profitability</text>
-
-        <rect x="560" y="304" width="360" height="44" rx="10" fill="#FFFFFF" stroke="#4C4B9E" stroke-opacity="0.35" stroke-width="1"/>
-        <g transform="translate(576, 318)" stroke="#4C4B9E" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M14.2 8 A6.2 6.2 0 1 1 12 3.4"/>
-          <path d="M14.5 1 L14.5 4.2 L11.3 4.2"/>
-        </g>
-        <text x="600" y="326" dominant-baseline="central" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#4C4B9E" data-i18n="flowRepeats">Repeating guests</text>
-      </svg>
+    <section class="logic-diagram" aria-label="Diagnostic flow">
+      <div class="flow">
+        <div class="flow-root" data-i18n="flowRoot">Operator Diagnostic</div>
+        <svg class="flow-fan" viewBox="0 0 100 22" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M50 0 C50 12 25 10 25 22" fill="none" stroke="#0E8C86" stroke-opacity="0.55" stroke-width="0.4" vector-effect="non-scaling-stroke"/>
+          <path d="M50 0 C50 12 75 10 75 22" fill="none" stroke="#4C4B9E" stroke-opacity="0.55" stroke-width="0.4" vector-effect="non-scaling-stroke"/>
+        </svg>
+        <div class="flow-stem" aria-hidden="true"></div>
+        <div class="flow-clusters">
+          <div class="flow-cluster flow-create">
+            <span class="flow-cluster-label" data-i18n="flowClusterCreate">Revenue creators</span>
+            <span class="flow-chip">
+              <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="6.5" cy="6.5" r="5"/><path d="M10.5 10.5 L15 15"/></svg>
+              <span data-i18n="flowAi">Website AI readiness</span>
+            </span>
+            <span class="flow-chip">
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 12 L5.5 7.5 L8.5 10.5 L15 4"/><path d="M11 4 L15 4 L15 8"/></svg>
+              <span data-i18n="flowDemand">Demand</span>
+            </span>
+            <span class="flow-chip">
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5 L10 5.9 L14.8 6.5 L11.3 9.8 L12.2 14.5 L8 12.2 L3.8 14.5 L4.7 9.8 L1.2 6.5 L6 5.9 Z"/></svg>
+              <span data-i18n="flowGuests">Guest satisfaction</span>
+            </span>
+          </div>
+          <div class="flow-cluster flow-optimise">
+            <span class="flow-cluster-label" data-i18n="flowClusterOptimise">Revenue optimisers</span>
+            <span class="flow-chip">
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 15 L8 9"/><path d="M8 9 L2.5 3.5"/><path d="M8 9 L13.5 3.5"/><circle cx="2.5" cy="2.5" r="1.6"/><circle cx="13.5" cy="2.5" r="1.6"/></svg>
+              <span data-i18n="flowDistribution">OTA distribution</span>
+            </span>
+            <span class="flow-chip">
+              <svg viewBox="0 0 16 16" aria-hidden="true"><ellipse cx="8" cy="4" rx="6" ry="2.5"/><path d="M2 4 L2 12 C2 13.4 4.7 14.5 8 14.5 C11.3 14.5 14 13.4 14 12 L14 4"/><path d="M2 8 C2 9.4 4.7 10.5 8 10.5 C11.3 10.5 14 9.4 14 8"/></svg>
+              <span data-i18n="flowUnitProfit">Unit profitability</span>
+            </span>
+            <span class="flow-chip">
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M14.2 8 A6.2 6.2 0 1 1 12 3.4"/><path d="M14.5 1 L14.5 4.2 L11.3 4.2"/></svg>
+              <span data-i18n="flowRepeats">Repeating guests</span>
+            </span>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="tools-showcase" aria-label="Diagnostic tools">
