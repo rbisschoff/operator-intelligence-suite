@@ -262,14 +262,25 @@
        HERO — compact
        ============================================================ */
     .hero {
-      background: linear-gradient(180deg, white 0%, var(--bg) 100%);
+      background: linear-gradient(170deg, #0F1B2E 0%, #14243D 55%, #0F1B2E 100%);
       padding: 40px 20px 16px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(0, 122, 255, 0.22) 0%, transparent 65%);
+      pointer-events: none;
     }
 
     .hero-inner {
       max-width: 640px;
       margin: 0 auto;
+      position: relative;
     }
 
     .hero h1 {
@@ -278,13 +289,13 @@
       letter-spacing: -0.04em;
       line-height: 1.15;
       margin-bottom: 12px;
-      color: var(--ink);
+      color: #fff;
     }
 
     .hero-subtitle {
       font-size: 15px;
-      color: var(--muted);
-      line-height: 1.5;
+      color: rgba(180,200,225,0.85);
+      line-height: 1.65;
       max-width: 420px;
       margin: 0 auto 22px;
     }
@@ -313,7 +324,7 @@
       display: block;
       margin-top: 12px;
       font-size: 12px;
-      color: var(--muted);
+      color: rgba(180,200,225,0.75);
     }
 
     @media (max-width: 640px) {
