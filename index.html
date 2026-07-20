@@ -401,7 +401,7 @@
 
     .flow-clusters {
       display: flex;
-      gap: 14px;
+      gap: 32px;
       width: 100%;
       margin-top: 6px;
     }
@@ -586,6 +586,11 @@
       color: var(--accent);
       margin-top: 2px;
     }
+
+    .tool-card.cluster-create::before { background: #0E8C86; }
+    .tool-card.cluster-optimise::before { background: #4C4B9E; }
+    .tool-card.cluster-create .tool-category { color: #0E8C86; }
+    .tool-card.cluster-optimise .tool-category { color: #4C4B9E; }
 
     .tool-header {
       display: flex;
@@ -952,7 +957,7 @@
 
       <div class="tool-grid">
 
-        <a href="https://rbisschoff.github.io/ai-ready-audit/" target="_blank" rel="noopener noreferrer" class="tool-card">
+        <a href="https://rbisschoff.github.io/ai-ready-audit/" target="_blank" rel="noopener noreferrer" class="tool-card cluster-create">
           <span class="tool-category" data-i18n="catAi">Visibilità AI</span>
           <div class="tool-header">
             <div class="tool-name" data-i18n="toolAiName">Website AI Ready Audit</div>
@@ -962,7 +967,7 @@
           <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Apri strumento →</span></div>
         </a>
 
-        <a href="https://rbisschoff.github.io/chinacheck/" target="_blank" rel="noopener noreferrer" class="tool-card">
+        <a href="https://rbisschoff.github.io/chinacheck/" target="_blank" rel="noopener noreferrer" class="tool-card cluster-create">
           <span class="tool-category" data-i18n="catDemand">Domanda e mercati</span>
           <div class="tool-header">
             <div class="tool-name">ChinaCheck</div>
@@ -972,7 +977,7 @@
           <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Apri strumento →</span></div>
         </a>
 
-        <a href="https://rbisschoff.github.io/distribution-cost-analyser/" target="_blank" rel="noopener noreferrer" class="tool-card">
+        <a href="https://rbisschoff.github.io/distribution-cost-analyser/" target="_blank" rel="noopener noreferrer" class="tool-card cluster-optimise">
           <span class="tool-category" data-i18n="catDist">Distribuzione</span>
           <div class="tool-header">
             <div class="tool-name" data-i18n="toolDcaName">Distribution Cost Analyser</div>
@@ -982,8 +987,8 @@
           <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Apri strumento →</span></div>
         </a>
 
-        <a href="https://rbisschoff.github.io/repeat-guest-value/" target="_blank" rel="noopener noreferrer" class="tool-card">
-          <span class="tool-category" data-i18n="catDist">Distribuzione</span>
+        <a href="https://rbisschoff.github.io/repeat-guest-value/" target="_blank" rel="noopener noreferrer" class="tool-card cluster-optimise">
+          <span class="tool-category" data-i18n="catRepeat">Repeat Guests</span>
           <div class="tool-header">
             <div class="tool-name" data-i18n="toolRgvName">Repeat Guest Value</div>
             <span class="tool-badge live" data-i18n="badgeLive">Attivo</span>
@@ -992,7 +997,7 @@
           <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Apri strumento →</span></div>
         </a>
 
-        <a href="https://rbisschoff.github.io/contribution-margin-analyser/" target="_blank" rel="noopener noreferrer" class="tool-card">
+        <a href="https://rbisschoff.github.io/contribution-margin-analyser/" target="_blank" rel="noopener noreferrer" class="tool-card cluster-optimise">
           <span class="tool-category" data-i18n="catProfit">Redditività</span>
           <div class="tool-header">
             <div class="tool-name" data-i18n="toolCmaName">Contribution Margin Analyser</div>
@@ -1066,6 +1071,7 @@
         catAi: 'AI Visibility',
         catDemand: 'Demand & Markets',
         catDist: 'Distribution',
+        catRepeat: 'Repeat Guests',
         catProfit: 'Profitability',
         toolAiName: 'Website AI Ready Audit',
         toolAiQ: 'Will AI find and recommend my direct site?',
@@ -1116,6 +1122,7 @@
         catAi: 'Visibilità AI',
         catDemand: 'Domanda e mercati',
         catDist: 'Distribuzione',
+        catRepeat: 'Ospiti ricorrenti',
         catProfit: 'Redditività',
         toolAiName: 'Website AI Ready Audit',
         toolAiQ: 'L’AI trova e raccomanda il mio sito diretto?',
@@ -1166,6 +1173,7 @@
         catAi: 'AI-Sichtbarkeit',
         catDemand: 'Nachfrage & Märkte',
         catDist: 'Distribution',
+        catRepeat: 'Wiederkehrende Gäste',
         catProfit: 'Profitabilität',
         toolAiName: 'Website AI Ready Audit',
         toolAiQ: 'Findet und empfiehlt AI meine Direktwebsite?',
