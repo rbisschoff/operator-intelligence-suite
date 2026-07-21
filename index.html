@@ -621,6 +621,18 @@
       background: rgba(52, 199, 89, 0.12);
       color: var(--positive);
     }
+    .tool-badge.soon {
+      background: rgba(142, 142, 147, 0.12);
+      color: var(--muted);
+    }
+    .tool-card.not-ready {
+      cursor: default;
+      opacity: 0.85;
+    }
+    .tool-card.not-ready:hover {
+      box-shadow: none;
+      transform: none;
+    }
 
     .tool-question {
       font-size: 13px;
@@ -951,7 +963,7 @@
 
     <section class="tools-showcase" aria-label="Diagnostic tools">
       <div class="tools-showcase-header">
-        <h2 class="tools-showcase-title" data-i18n="browseTitle">Conosci già il problema? Sfoglia gli strumenti</h2>
+        <h2 class="tools-showcase-title" data-i18n="browseTitle">Already know what you need? Browse the tools</h2>
         <span class="tools-showcase-count" data-i18n="liveCount">5 attivi</span>
       </div>
 
@@ -1006,6 +1018,16 @@
           <div class="tool-question" data-i18n="toolCmaQ">Ogni unità è davvero redditizia?</div>
           <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Apri strumento →</span></div>
         </a>
+
+        <div class="tool-card not-ready cluster-create">
+          <span class="tool-category" data-i18n="catGuestExp">Guest Experience</span>
+          <div class="tool-header">
+            <div class="tool-name" data-i18n="toolGuestExpName">Guest Experience Score</div>
+            <span class="tool-badge soon" data-i18n="badgeSoon">Soon</span>
+          </div>
+          <div class="tool-question" data-i18n="toolGuestExpQ">Are guests actually satisfied, or just not complaining?</div>
+          <div class="tool-cta"><span class="tool-cta-text" data-i18n="comingSoonText">In development</span></div>
+        </div>
 
       </div>
     </section>
@@ -1066,7 +1088,7 @@
         dimProfit: 'unit profit',
         dimGuests: 'guests',
         dimRepeats: 'repeats',
-        browseTitle: 'Already know the pain? Browse tools',
+        browseTitle: 'Already know what you need? Browse the tools',
         liveCount: '5 live',
         catAi: 'AI Visibility',
         catDemand: 'Demand & Markets',
@@ -1082,6 +1104,11 @@
         toolRgvQ: 'What is repeat revenue costing me on OTAs?',
         toolCmaName: 'Contribution Margin Analyser',
         toolCmaQ: 'Is each unit actually profitable?',
+        catGuestExp: 'Guest Experience',
+        toolGuestExpName: 'Guest Experience Score',
+        toolGuestExpQ: 'Are guests actually satisfied, or just not complaining?',
+        badgeSoon: 'Soon',
+        comingSoonText: 'In development',
         badgeLive: 'Live',
         openTool: 'Open tool →',
         claimLine: "From the operator's desk. No login, no pitch. Data stays on your device.",
@@ -1117,7 +1144,7 @@
         dimProfit: 'profitto unitario',
         dimGuests: 'ospiti',
         dimRepeats: 'ripetuti',
-        browseTitle: 'Conosci già il problema? Sfoglia gli strumenti',
+        browseTitle: 'Sai già cosa ti serve? Sfoglia gli strumenti',
         liveCount: '5 attivi',
         catAi: 'Visibilità AI',
         catDemand: 'Domanda e mercati',
@@ -1133,6 +1160,11 @@
         toolRgvQ: 'Quanto mi costa il ricavo ripetuto sugli OTA?',
         toolCmaName: 'Contribution Margin Analyser',
         toolCmaQ: 'Ogni unità è davvero redditizia?',
+        catGuestExp: 'Esperienza Ospite',
+        toolGuestExpName: 'Guest Experience Score',
+        toolGuestExpQ: 'Gli ospiti sono davvero soddisfatti, o semplicemente non si lamentano?',
+        badgeSoon: 'Presto',
+        comingSoonText: 'In sviluppo',
         badgeLive: 'Attivo',
         openTool: 'Apri strumento →',
         claimLine: 'Dalla scrivania dell’operatore. Niente login, niente pitch. I dati restano sul tuo dispositivo.',
@@ -1168,7 +1200,7 @@
         dimProfit: 'Unit-Profit',
         dimGuests: 'Gäste',
         dimRepeats: 'Wiederkehrer',
-        browseTitle: 'Schmerz schon klar? Tools durchsuchen',
+        browseTitle: 'Wissen Sie schon, was Sie brauchen? Tools durchsuchen',
         liveCount: '5 live',
         catAi: 'AI-Sichtbarkeit',
         catDemand: 'Nachfrage & Märkte',
@@ -1184,6 +1216,11 @@
         toolRgvQ: 'Was kosten mich Wiederholungsumsätze über OTAs?',
         toolCmaName: 'Contribution Margin Analyser',
         toolCmaQ: 'Ist jede Unit wirklich profitabel?',
+        catGuestExp: 'Gästeerlebnis',
+        toolGuestExpName: 'Guest Experience Score',
+        toolGuestExpQ: 'Sind Gäste wirklich zufrieden, oder beschweren sie sich einfach nicht?',
+        badgeSoon: 'Bald',
+        comingSoonText: 'In Entwicklung',
         badgeLive: 'Live',
         openTool: 'Tool öffnen →',
         claimLine: 'Vom Schreibtisch des Operators. Kein Login, kein Pitch. Daten bleiben auf Ihrem Gerät.',
