@@ -401,7 +401,8 @@
 
     .flow-clusters {
       display: flex;
-      gap: 32px;
+      flex-wrap: wrap;
+      gap: 24px;
       width: 100%;
       margin-top: 6px;
     }
@@ -425,6 +426,11 @@
       border: 1px solid rgba(76, 75, 158, 0.22);
     }
 
+    .flow-foundation {
+      background: rgba(92, 111, 130, 0.05);
+      border: 1px solid rgba(92, 111, 130, 0.22);
+    }
+
     .flow-cluster-label {
       font-size: 12px;
       font-weight: 500;
@@ -433,6 +439,7 @@
 
     .flow-create .flow-cluster-label { color: #0E8C86; }
     .flow-optimise .flow-cluster-label { color: #4C4B9E; }
+    .flow-foundation .flow-cluster-label { color: #5C6F82; }
 
     .flow-chip {
       display: flex;
@@ -468,6 +475,13 @@
     }
 
     .flow-optimise .flow-chip svg { stroke: #4C4B9E; }
+
+    .flow-foundation .flow-chip {
+      border: 1px solid rgba(92, 111, 130, 0.35);
+      color: #5C6F82;
+    }
+
+    .flow-foundation .flow-chip svg { stroke: #5C6F82; }
 
     @media (max-width: 640px) {
       .flow-fan { display: none; }
@@ -525,7 +539,7 @@
 
     .tool-grid {
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 14px;
     }
 
@@ -589,8 +603,10 @@
 
     .tool-card.cluster-create::before { background: #0E8C86; }
     .tool-card.cluster-optimise::before { background: #4C4B9E; }
+    .tool-card.cluster-foundation::before { background: #5C6F82; }
     .tool-card.cluster-create .tool-category { color: #0E8C86; }
     .tool-card.cluster-optimise .tool-category { color: #4C4B9E; }
+    .tool-card.cluster-foundation .tool-category { color: #5C6F82; }
 
     .tool-header {
       display: flex;
@@ -957,6 +973,13 @@
               <span data-i18n="flowRepeats">Repeating guests</span>
             </span>
           </div>
+          <div class="flow-cluster flow-foundation">
+            <span class="flow-cluster-label" data-i18n="flowClusterFoundation">Business foundation</span>
+            <span class="flow-chip">
+              <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="5" r="2.2"/><path d="M8 7.2v6.3"/><path d="M4.8 13.5h6.4"/></svg>
+              <span data-i18n="flowOwnerRetention">Owner retention</span>
+            </span>
+          </div>
         </div>
       </div>
     </section>
@@ -964,7 +987,7 @@
     <section class="tools-showcase" aria-label="Diagnostic tools">
       <div class="tools-showcase-header">
         <h2 class="tools-showcase-title" data-i18n="browseTitle">Already know what you need? Browse the tools</h2>
-        <span class="tools-showcase-count" data-i18n="liveCount">6 live</span>
+        <span class="tools-showcase-count" data-i18n="liveCount">7 live</span>
       </div>
 
       <div class="tool-grid">
@@ -1029,6 +1052,16 @@
           <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Apri strumento →</span></div>
         </a>
 
+        <a href="https://rbisschoff.github.io/owner-retention-diagnostic/" target="_blank" rel="noopener noreferrer" class="tool-card cluster-foundation">
+          <span class="tool-category" data-i18n="catOwnerRetention">Owner Retention</span>
+          <div class="tool-header">
+            <div class="tool-name" data-i18n="toolOwnerRetentionName">Owner Retention Diagnostic</div>
+            <span class="tool-badge live" data-i18n="badgeLive">Live</span>
+          </div>
+          <div class="tool-question" data-i18n="toolOwnerRetentionQ">Are you losing owners faster than you realise?</div>
+          <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Open tool →</span></div>
+        </a>
+
       </div>
     </section>
 
@@ -1075,12 +1108,14 @@
         flowRoot: 'Operator Diagnostic',
         flowClusterCreate: 'Revenue creators',
         flowClusterOptimise: 'Revenue optimisers',
+        flowClusterFoundation: 'Business foundation',
         flowAi: 'Website AI readiness',
         flowDemand: 'Demand',
         flowGuests: 'Guest satisfaction',
         flowDistribution: 'OTA distribution',
         flowUnitProfit: 'Unit profitability',
         flowRepeats: 'Repeating guests',
+        flowOwnerRetention: 'Owner retention',
         logicSource: 'Operator Diagnostic',
         dimAi: 'AI',
         dimDemand: 'demand',
@@ -1089,7 +1124,7 @@
         dimGuests: 'guests',
         dimRepeats: 'repeats',
         browseTitle: 'Already know what you need? Browse the tools',
-        liveCount: '6 live',
+        liveCount: '7 live',
         catAi: 'AI Visibility',
         catDemand: 'Demand & Markets',
         catDist: 'Distribution',
@@ -1107,6 +1142,9 @@
         catGuestExp: 'Guest Experience',
         toolGuestExpName: 'Guest Experience Score',
         toolGuestExpQ: 'Are guests actually satisfied, or just not complaining?',
+        catOwnerRetention: 'Owner Retention',
+        toolOwnerRetentionName: 'Owner Retention Diagnostic',
+        toolOwnerRetentionQ: 'Are you losing owners faster than you realise?',
         badgeSoon: 'Soon',
         comingSoonText: 'In development',
         badgeLive: 'Live',
@@ -1131,12 +1169,14 @@
         flowRoot: 'Operator Diagnostic',
         flowClusterCreate: 'Creatori di ricavo',
         flowClusterOptimise: 'Ottimizzatori di ricavo',
+        flowClusterFoundation: 'Fondamenta del business',
         flowAi: 'Readiness AI del sito',
         flowDemand: 'Domanda',
         flowGuests: 'Soddisfazione ospiti',
         flowDistribution: 'Distribuzione OTA',
         flowUnitProfit: 'Redditività per unità',
         flowRepeats: 'Ospiti di ritorno',
+        flowOwnerRetention: 'Fidelizzazione proprietari',
         logicSource: 'Operator Diagnostic',
         dimAi: 'AI',
         dimDemand: 'domanda',
@@ -1145,7 +1185,7 @@
         dimGuests: 'ospiti',
         dimRepeats: 'ripetuti',
         browseTitle: 'Sai già cosa ti serve? Sfoglia gli strumenti',
-        liveCount: '6 attivi',
+        liveCount: '7 attivi',
         catAi: 'Visibilità AI',
         catDemand: 'Domanda e mercati',
         catDist: 'Distribuzione',
@@ -1163,6 +1203,9 @@
         catGuestExp: 'Esperienza Ospite',
         toolGuestExpName: 'Guest Experience Score',
         toolGuestExpQ: 'Gli ospiti sono davvero soddisfatti, o semplicemente non si lamentano?',
+        catOwnerRetention: 'Fidelizzazione Proprietari',
+        toolOwnerRetentionName: 'Owner Retention Diagnostic',
+        toolOwnerRetentionQ: 'Stai perdendo proprietari più velocemente di quanto pensi?',
         badgeSoon: 'Presto',
         comingSoonText: 'In sviluppo',
         badgeLive: 'Attivo',
@@ -1187,12 +1230,14 @@
         flowRoot: 'Operator Diagnostic',
         flowClusterCreate: 'Umsatztreiber',
         flowClusterOptimise: 'Umsatzoptimierer',
+        flowClusterFoundation: 'Geschäftsfundament',
         flowAi: 'KI-Readiness der Website',
         flowDemand: 'Nachfrage',
         flowGuests: 'Gastzufriedenheit',
         flowDistribution: 'OTA-Vertrieb',
         flowUnitProfit: 'Rentabilität pro Einheit',
         flowRepeats: 'Wiederkehrende Gäste',
+        flowOwnerRetention: 'Eigentümerbindung',
         logicSource: 'Operator Diagnostic',
         dimAi: 'AI',
         dimDemand: 'Nachfrage',
@@ -1201,7 +1246,7 @@
         dimGuests: 'Gäste',
         dimRepeats: 'Wiederkehrer',
         browseTitle: 'Wissen Sie schon, was Sie brauchen? Tools durchsuchen',
-        liveCount: '6 live',
+        liveCount: '7 live',
         catAi: 'AI-Sichtbarkeit',
         catDemand: 'Nachfrage & Märkte',
         catDist: 'Distribution',
@@ -1219,6 +1264,9 @@
         catGuestExp: 'Gästeerlebnis',
         toolGuestExpName: 'Guest Experience Score',
         toolGuestExpQ: 'Sind Gäste wirklich zufrieden, oder beschweren sie sich einfach nicht?',
+        catOwnerRetention: 'Eigentümerbindung',
+        toolOwnerRetentionName: 'Owner Retention Diagnostic',
+        toolOwnerRetentionQ: 'Verlieren Sie Eigentümer schneller, als Ihnen bewusst ist?',
         badgeSoon: 'Bald',
         comingSoonText: 'In Entwicklung',
         badgeLive: 'Live',
