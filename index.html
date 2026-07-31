@@ -719,30 +719,36 @@
       margin: 16px 0;
     }
 
-    .about-method-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-      gap: 10px;
-      margin-bottom: 16px;
+    .about-top-wrap {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 20px 20px 0;
     }
 
-    .about-method-card {
-      background: var(--card-tint);
-      border-radius: var(--radius-sm);
-      padding: 10px 12px;
-    }
-
-    .about-method-title {
+    .about-method-line {
       font-size: 12px;
+      color: var(--muted);
+      line-height: 1.5;
+      margin: 0 0 14px;
+      white-space: nowrap;
+      overflow-x: auto;
+    }
+
+    .about-method-line span[data-i18n$="Title"] {
       font-weight: 600;
       color: var(--ink);
-      margin-bottom: 3px;
     }
 
-    .about-method-body {
-      font-size: 11px;
-      color: var(--muted);
-      line-height: 1.4;
+    .about-method-arrow {
+      margin: 0 6px;
+      color: var(--muted2);
+    }
+
+    @media (max-width: 640px) {
+      .about-method-line {
+        white-space: normal;
+        overflow-x: visible;
+      }
     }
 
     .author-link {
@@ -768,21 +774,32 @@
     }
 
     .about-services-list {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
       gap: 8px;
       list-style: none;
       margin: 0;
       padding: 0;
     }
 
+    @media (max-width: 640px) {
+      .about-services-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     .about-service-tag {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
       color: var(--ink2);
       background: var(--card-tint);
-      padding: 6px 12px;
-      border-radius: 100px;
+      padding: 8px 10px;
+      border-radius: 8px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1.3;
     }
 
     /* ============================================================
@@ -948,6 +965,35 @@
     </div>
   </header>
 
+  <div class="about-top-wrap">
+    <section class="about">
+      <div class="about-author">
+        <div class="author-avatar">RB</div>
+        <div class="author-info">
+          <div class="author-name">Roger Bisschoff</div>
+          <div class="author-role" data-i18n="authorRole">Distribution and revenue consulting for short-term rental and serviced apartment operators</div>
+        </div>
+        <a href="https://www.linkedin.com/in/roger-bisschoff/" target="_blank" rel="noopener noreferrer" class="author-link" data-i18n="viewProfile">View profile</a>
+      </div>
+      <p class="about-outcome" data-i18n="aboutOutcome">I look across an operator's whole commercial picture, revenue, distribution, guest experience, owner retention, tech stack, to find where the real growth opportunity is.</p>
+      <p class="about-method-line">
+        <span data-i18n="methodMapTitle">Map</span> <span data-i18n="methodLineMap">everything</span>
+        <span class="about-method-arrow">→</span>
+        <span data-i18n="methodIdentifyTitle">identify</span> <span data-i18n="methodLineIdentify">the opportunity</span>
+        <span class="about-method-arrow">→</span>
+        <span data-i18n="methodQuantifyTitle">quantify</span> <span data-i18n="methodLineQuantify">its value</span>
+        <span class="about-method-arrow">→</span>
+        <span data-i18n="methodDirectTitle">direct</span> <span data-i18n="methodLineDirect">what to do first</span>
+      </p>
+      <ul class="about-services-list">
+        <li class="about-service-tag" data-i18n="aboutService1">Distribution &amp; OTA cost strategy</li>
+        <li class="about-service-tag" data-i18n="aboutService2">Owner retention &amp; supply stability</li>
+        <li class="about-service-tag" data-i18n="aboutService3">Guest experience &amp; repeat guest value</li>
+        <li class="about-service-tag" data-i18n="aboutService4">Tech stack &amp; portfolio profitability</li>
+      </ul>
+    </section>
+  </div>
+
   <section class="hero">
     <div class="hero-inner">
       <h1 data-i18n="heroTitle">Most operators have more room to grow than their reports show.</h1>
@@ -1108,41 +1154,7 @@
 
     <p class="claim-line" data-i18n="claimLine">From the operator's desk. No login, no pitch. Data stays on your device.</p>
 
-    <section class="about">
-      <div class="about-author">
-        <div class="author-avatar">RB</div>
-        <div class="author-info">
-          <div class="author-name">Roger Bisschoff</div>
-          <div class="author-role" data-i18n="authorRole">Distribution and revenue consulting for short-term rental and serviced apartment operators, covering OTA cost strategy, owner retention, and tech stack performance.</div>
-        </div>
-        <a href="https://www.linkedin.com/in/roger-bisschoff/" target="_blank" rel="noopener noreferrer" class="author-link" data-i18n="viewProfile">View profile</a>
-      </div>
-      <p class="about-outcome" data-i18n="aboutOutcome">I look across an operator's whole commercial picture, revenue, distribution, guest experience, owner retention, tech stack, to find where the real growth opportunity is.</p>
-      <div class="about-method-grid">
-        <div class="about-method-card">
-          <div class="about-method-title" data-i18n="methodMapTitle">Map</div>
-          <div class="about-method-body" data-i18n="methodMapBody">Everything that affects your commercial result.</div>
-        </div>
-        <div class="about-method-card">
-          <div class="about-method-title" data-i18n="methodIdentifyTitle">Identify</div>
-          <div class="about-method-body" data-i18n="methodIdentifyBody">Where the biggest opportunity for growth actually is.</div>
-        </div>
-        <div class="about-method-card">
-          <div class="about-method-title" data-i18n="methodQuantifyTitle">Quantify</div>
-          <div class="about-method-body" data-i18n="methodQuantifyBody">What that opportunity is worth.</div>
-        </div>
-        <div class="about-method-card">
-          <div class="about-method-title" data-i18n="methodDirectTitle">Direct</div>
-          <div class="about-method-body" data-i18n="methodDirectBody">You to the one thing worth doing first.</div>
-        </div>
-      </div>
-      <ul class="about-services-list">
-        <li class="about-service-tag" data-i18n="aboutService1">Distribution &amp; OTA cost strategy</li>
-        <li class="about-service-tag" data-i18n="aboutService2">Owner retention &amp; supply stability</li>
-        <li class="about-service-tag" data-i18n="aboutService3">Guest experience &amp; repeat guest value</li>
-        <li class="about-service-tag" data-i18n="aboutService4">Tech stack &amp; portfolio profitability</li>
-      </ul>
-    </section>
+
 
     <section class="vendor-notice">
       <div class="vendor-notice-content">
@@ -1219,7 +1231,7 @@
         badgeLive: 'Live',
         openTool: 'Open tool →',
         claimLine: "From the operator's desk. No login, no pitch. Data stays on your device.",
-        authorRole: 'Distribution and revenue consulting for short-term rental and serviced apartment operators, covering OTA cost strategy, owner retention, and tech stack performance.',
+        authorRole: 'Distribution and revenue consulting for short-term rental and serviced apartment operators',
         viewProfile: 'View profile',
         aboutOutcome: 'I look across an operator\'s whole commercial picture, revenue, distribution, guest experience, owner retention, tech stack, to find where the real growth opportunity is.',
         methodMapTitle: 'Map',
@@ -1230,6 +1242,10 @@
         methodQuantifyBody: 'What that opportunity is worth.',
         methodDirectTitle: 'Direct',
         methodDirectBody: 'You to the one thing worth doing first.',
+        methodLineMap: 'everything',
+        methodLineIdentify: 'the opportunity',
+        methodLineQuantify: 'its value',
+        methodLineDirect: 'what to do first',
         aboutService1: 'Distribution & OTA cost strategy',
         aboutService2: 'Owner retention & supply stability',
         aboutService3: 'Guest experience & repeat guest value',
@@ -1296,7 +1312,7 @@
         badgeLive: 'Attivo',
         openTool: 'Apri strumento →',
         claimLine: 'Dalla scrivania dell’operatore. Niente login, niente pitch. I dati restano sul tuo dispositivo.',
-        authorRole: 'Consulenza in distribuzione e revenue per operatori di short-term rental e appartamenti in gestione, su strategia dei costi OTA, retention dei proprietari e performance dello stack tecnologico.',
+        authorRole: 'Consulenza in distribuzione e revenue per operatori di short-term rental e appartamenti in gestione',
         viewProfile: 'Vedi profilo',
         aboutOutcome: 'Guardo all\'intero quadro commerciale di un operatore, ricavi, distribuzione, guest experience, retention dei proprietari, stack tecnologico, per trovare dove si trova la vera opportunità di crescita.',
         methodMapTitle: 'Map',
@@ -1307,6 +1323,10 @@
         methodQuantifyBody: 'Quanto vale quella opportunità.',
         methodDirectTitle: 'Direct',
         methodDirectBody: 'Verso l\'unica cosa che vale la pena fare per prima.',
+        methodLineMap: 'tutto',
+        methodLineIdentify: 'l\'opportunità',
+        methodLineQuantify: 'il suo valore',
+        methodLineDirect: 'cosa fare per prima',
         aboutService1: 'Distribuzione e costi OTA',
         aboutService2: 'Retention proprietari e stabilità dell’offerta',
         aboutService3: 'Guest experience e valore ospiti ricorrenti',
@@ -1373,7 +1393,7 @@
         badgeLive: 'Live',
         openTool: 'Tool öffnen →',
         claimLine: 'Vom Schreibtisch des Operators. Kein Login, kein Pitch. Daten bleiben auf Ihrem Gerät.',
-        authorRole: 'Vertriebs- und Revenue-Beratung für Short-Term-Rental- und Serviced-Apartment-Betreiber, zu OTA-Kostenstrategie, Owner Retention und Tech-Stack-Performance.',
+        authorRole: 'Vertriebs- und Revenue-Beratung für Short-Term-Rental- und Serviced-Apartment-Betreiber',
         viewProfile: 'Profil ansehen',
         aboutOutcome: 'Ich betrachte das gesamte kommerzielle Bild eines Betreibers, Umsatz, Distribution, Gästeerlebnis, Owner Retention, Tech-Stack, um herauszufinden, wo die eigentliche Wachstumschance liegt.',
         methodMapTitle: 'Map',
@@ -1384,6 +1404,10 @@
         methodQuantifyBody: 'Was diese Chance wert ist.',
         methodDirectTitle: 'Direct',
         methodDirectBody: 'Auf die eine Sache, die es zuerst zu tun lohnt.',
+        methodLineMap: 'alles',
+        methodLineIdentify: 'die Chance',
+        methodLineQuantify: 'ihren Wert',
+        methodLineDirect: 'was zuerst zu tun ist',
         aboutService1: 'Distribution & OTA-Kostenstrategie',
         aboutService2: 'Owner Retention & Angebotsstabilität',
         aboutService3: 'Guest Experience & wiederkehrende Gäste',
