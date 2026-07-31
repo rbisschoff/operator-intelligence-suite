@@ -77,23 +77,24 @@
        OPERATOR SERIES BRANDING
        ============================================================ */
     :root {
-      --accent: #007AFF;
-      --accent-dark: #0051D5;
-      --accent-light: rgba(0, 122, 255, 0.12);
-      --accent-secondary: #5856D6;
-      --alert: #FF3B30;
-      --positive: #34C759;
-      --warning: #FF9500;
+      --accent: #C9A961;
+      --accent-dark: #A8863F;
+      --accent-light: rgba(201, 169, 97, 0.15);
+      --accent-secondary: #5C6B62;
+      --alert: #B33A3A;
+      --positive: #3D8C6F;
+      --warning: #C9A961;
 
-      --ink: #1C1C1E;
-      --ink2: #3A3A3C;
-      --muted: #8E8E93;
-      --muted2: #AEAEB2;
+      --ink: #1E2F28;
+      --ink2: #3A4A42;
+      --muted: #5C6B62;
+      --muted2: #8A968E;
 
-      --bg: #F2F2F7;
+      --bg: #FAF8F4;
       --card: #FFFFFF;
-      --border: rgba(60, 60, 67, 0.12);
-      --border-light: rgba(60, 60, 67, 0.08);
+      --card-tint: #EDEFE9;
+      --border: rgba(30, 47, 40, 0.12);
+      --border-light: rgba(30, 47, 40, 0.08);
 
       --radius-lg: 20px;
       --radius-md: 16px;
@@ -134,7 +135,7 @@
        HEADER
        ============================================================ */
     header {
-      background: rgba(8,8,14,0.96);
+      background: rgba(30,47,40,0.97);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       position: sticky;
@@ -262,19 +263,11 @@
        HERO — compact
        ============================================================ */
     .hero {
-      background: linear-gradient(170deg, #0F1B2E 0%, #14243D 55%, #0F1B2E 100%);
-      padding: 40px 20px 16px;
+      background: var(--bg);
+      padding: 48px 20px 20px;
       text-align: center;
       position: relative;
       overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(0, 122, 255, 0.22) 0%, transparent 65%);
-      pointer-events: none;
     }
 
     .hero-inner {
@@ -286,15 +279,15 @@
     .hero h1 {
       font-size: clamp(24px, 4vw, 34px);
       font-weight: 700;
-      letter-spacing: -0.04em;
-      line-height: 1.15;
+      letter-spacing: -0.03em;
+      line-height: 1.3;
       margin-bottom: 12px;
-      color: #fff;
+      color: var(--ink);
     }
 
     .hero-subtitle {
       font-size: 15px;
-      color: rgba(180,200,225,0.85);
+      color: var(--muted);
       line-height: 1.65;
       max-width: 420px;
       margin: 0 auto 22px;
@@ -307,16 +300,17 @@
       gap: 8px;
       font-size: 15px;
       font-weight: 600;
-      color: #fff;
+      color: var(--ink);
       background: var(--accent);
       padding: 14px 22px;
       border-radius: 100px;
-      box-shadow: 0 8px 24px rgba(0, 122, 255, 0.28);
+      box-shadow: 0 8px 24px rgba(201, 169, 97, 0.28);
       transition: background 0.2s, transform 0.15s;
     }
 
     .hero-cta:hover {
       background: var(--accent-dark);
+      color: #fff;
       transform: translateY(-1px);
     }
 
@@ -324,7 +318,7 @@
       display: block;
       margin-top: 12px;
       font-size: 12px;
-      color: rgba(180,200,225,0.75);
+      color: var(--muted);
     }
 
     @media (max-width: 640px) {
@@ -376,7 +370,7 @@
     }
 
     .flow-root {
-      background: #1B4F72;
+      background: var(--ink);
       color: #fff;
       font-size: 15px;
       font-weight: 500;
@@ -712,9 +706,43 @@
     }
 
     .author-role {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+      line-height: 1.4;
+    }
+
+    .about-outcome {
+      font-size: 14px;
+      color: var(--ink2);
+      line-height: 1.65;
+      margin: 16px 0;
+    }
+
+    .about-method-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .about-method-card {
+      background: var(--card-tint);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+    }
+
+    .about-method-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 3px;
+    }
+
+    .about-method-body {
       font-size: 11px;
       color: var(--muted);
-      margin-top: 1px;
+      line-height: 1.4;
     }
 
     .author-link {
@@ -739,13 +767,6 @@
       outline-offset: 2px;
     }
 
-    .about-services-intro {
-      font-size: 12px;
-      color: var(--muted);
-      margin: 14px 0 8px;
-      line-height: 1.5;
-    }
-
     .about-services-list {
       display: flex;
       flex-wrap: wrap;
@@ -758,8 +779,8 @@
     .about-service-tag {
       font-size: 12px;
       font-weight: 600;
-      color: var(--ink);
-      background: var(--accent-light);
+      color: var(--ink2);
+      background: var(--card-tint);
       padding: 6px 12px;
       border-radius: 100px;
     }
@@ -793,7 +814,7 @@
        VENDOR INQUIRY PANEL
        ============================================================ */
     .vendor-notice {
-      background: #1C1C1E;
+      background: var(--ink);
       color: white;
       border-radius: var(--radius-lg);
       padding: 32px 28px;
@@ -801,17 +822,7 @@
       position: relative;
       overflow: hidden;
       box-shadow: var(--shadow-card);
-    }
-
-    .vendor-notice::before {
-      content: '';
-      position: absolute;
-      top: -80px;
-      right: -80px;
-      width: 280px;
-      height: 280px;
-      background: radial-gradient(circle, rgba(0, 122, 255, 0.35) 0%, transparent 60%);
-      pointer-events: none;
+      border-top: 2px solid var(--accent);
     }
 
     .vendor-notice-content {
@@ -825,7 +836,7 @@
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      color: #64B5FF;
+      color: var(--accent);
       margin-bottom: 10px;
     }
 
@@ -939,9 +950,9 @@
 
   <section class="hero">
     <div class="hero-inner">
-      <h1 data-i18n="heroTitle">Start with a 2-minute growth brief.</h1>
+      <h1 data-i18n="heroTitle">Most operators have more room to grow than their reports show.</h1>
       <p class="hero-subtitle" data-i18n="heroSubtitle">
-        Six questions. A ranked read of where growth is constrained.
+        Six questions and you'll see where.
       </p>
       <a class="hero-cta" href="https://rbisschoff.github.io/operator-diagnostic/" data-i18n="heroCta">Start the Operator Diagnostic</a>
       <span class="hero-cta-note" data-i18n="heroNote">Free · no login · inputs stay on your device</span>
@@ -1102,11 +1113,29 @@
         <div class="author-avatar">RB</div>
         <div class="author-info">
           <div class="author-name">Roger Bisschoff</div>
-          <div class="author-role" data-i18n="authorRole">Commercial &amp; Distribution · Hospitality &amp; STR</div>
+          <div class="author-role" data-i18n="authorRole">Distribution and revenue consulting for short-term rental and serviced apartment operators, covering OTA cost strategy, owner retention, and tech stack performance.</div>
         </div>
         <a href="https://www.linkedin.com/in/roger-bisschoff/" target="_blank" rel="noopener noreferrer" class="author-link" data-i18n="viewProfile">View profile</a>
       </div>
-      <p class="about-services-intro" data-i18n="aboutServicesIntro">15 years running distribution and OTA strategy for serviced apartment operators. Independent consulting across:</p>
+      <p class="about-outcome" data-i18n="aboutOutcome">I look across an operator's whole commercial picture, revenue, distribution, guest experience, owner retention, tech stack, to find where the real growth opportunity is.</p>
+      <div class="about-method-grid">
+        <div class="about-method-card">
+          <div class="about-method-title" data-i18n="methodMapTitle">Map</div>
+          <div class="about-method-body" data-i18n="methodMapBody">Everything that affects your commercial result.</div>
+        </div>
+        <div class="about-method-card">
+          <div class="about-method-title" data-i18n="methodIdentifyTitle">Identify</div>
+          <div class="about-method-body" data-i18n="methodIdentifyBody">Where the biggest opportunity for growth actually is.</div>
+        </div>
+        <div class="about-method-card">
+          <div class="about-method-title" data-i18n="methodQuantifyTitle">Quantify</div>
+          <div class="about-method-body" data-i18n="methodQuantifyBody">What that opportunity is worth.</div>
+        </div>
+        <div class="about-method-card">
+          <div class="about-method-title" data-i18n="methodDirectTitle">Direct</div>
+          <div class="about-method-body" data-i18n="methodDirectBody">You to the one thing worth doing first.</div>
+        </div>
+      </div>
       <ul class="about-services-list">
         <li class="about-service-tag" data-i18n="aboutService1">Distribution &amp; OTA cost strategy</li>
         <li class="about-service-tag" data-i18n="aboutService2">Owner retention &amp; supply stability</li>
@@ -1138,8 +1167,8 @@
       en: {
         brandTitle: 'Operator Intelligence Suite',
         brandSubtitle: 'by Roger Bisschoff',
-        heroTitle: 'Start with a 2-minute growth brief.',
-        heroSubtitle: 'Six questions. A ranked read of where growth is constrained.',
+        heroTitle: 'Most operators have more room to grow than their reports show.',
+        heroSubtitle: 'Six questions and you\'ll see where.',
         heroCta: 'Start the Operator Diagnostic',
         heroNote: 'Free · no login · inputs stay on your device',
         flowRoot: 'Operator Diagnostic',
@@ -1190,9 +1219,17 @@
         badgeLive: 'Live',
         openTool: 'Open tool →',
         claimLine: "From the operator's desk. No login, no pitch. Data stays on your device.",
-        authorRole: 'Commercial & Distribution · Hospitality & STR',
+        authorRole: 'Distribution and revenue consulting for short-term rental and serviced apartment operators, covering OTA cost strategy, owner retention, and tech stack performance.',
         viewProfile: 'View profile',
-        aboutServicesIntro: '15 years running distribution and OTA strategy for serviced apartment operators. Independent consulting across:',
+        aboutOutcome: 'I look across an operator\'s whole commercial picture, revenue, distribution, guest experience, owner retention, tech stack, to find where the real growth opportunity is.',
+        methodMapTitle: 'Map',
+        methodMapBody: 'Everything that affects your commercial result.',
+        methodIdentifyTitle: 'Identify',
+        methodIdentifyBody: 'Where the biggest opportunity for growth actually is.',
+        methodQuantifyTitle: 'Quantify',
+        methodQuantifyBody: 'What that opportunity is worth.',
+        methodDirectTitle: 'Direct',
+        methodDirectBody: 'You to the one thing worth doing first.',
         aboutService1: 'Distribution & OTA cost strategy',
         aboutService2: 'Owner retention & supply stability',
         aboutService3: 'Guest experience & repeat guest value',
@@ -1207,8 +1244,8 @@
       it: {
         brandTitle: 'Operator Intelligence Suite',
         brandSubtitle: 'di Roger Bisschoff',
-        heroTitle: 'Inizia con un brief di crescita di 2 minuti.',
-        heroSubtitle: 'Sei domande. Una lettura ordinata di dove la crescita è vincolata.',
+        heroTitle: 'Molti operatori hanno più margine di crescita di quanto i loro report mostrino.',
+        heroSubtitle: 'Sei domande e saprai dove si trova.',
         heroCta: 'Avvia l’Operator Diagnostic',
         heroNote: 'Gratis · senza login · i dati restano sul tuo dispositivo',
         flowRoot: 'Operator Diagnostic',
@@ -1259,9 +1296,17 @@
         badgeLive: 'Attivo',
         openTool: 'Apri strumento →',
         claimLine: 'Dalla scrivania dell’operatore. Niente login, niente pitch. I dati restano sul tuo dispositivo.',
-        authorRole: 'Commercial & Distribution · Hospitality & STR',
+        authorRole: 'Consulenza in distribuzione e revenue per operatori di short-term rental e appartamenti in gestione, su strategia dei costi OTA, retention dei proprietari e performance dello stack tecnologico.',
         viewProfile: 'Vedi profilo',
-        aboutServicesIntro: '15 anni nella distribuzione e strategia OTA per operatori di appartamenti in gestione. Consulenza indipendente su:',
+        aboutOutcome: 'Guardo all\'intero quadro commerciale di un operatore, ricavi, distribuzione, guest experience, retention dei proprietari, stack tecnologico, per trovare dove si trova la vera opportunità di crescita.',
+        methodMapTitle: 'Map',
+        methodMapBody: 'Tutto ciò che influisce sul tuo risultato commerciale.',
+        methodIdentifyTitle: 'Identify',
+        methodIdentifyBody: 'Dove si trova davvero la maggiore opportunità di crescita.',
+        methodQuantifyTitle: 'Quantify',
+        methodQuantifyBody: 'Quanto vale quella opportunità.',
+        methodDirectTitle: 'Direct',
+        methodDirectBody: 'Verso l\'unica cosa che vale la pena fare per prima.',
         aboutService1: 'Distribuzione e costi OTA',
         aboutService2: 'Retention proprietari e stabilità dell’offerta',
         aboutService3: 'Guest experience e valore ospiti ricorrenti',
@@ -1276,8 +1321,8 @@
       de: {
         brandTitle: 'Operator Intelligence Suite',
         brandSubtitle: 'von Roger Bisschoff',
-        heroTitle: 'Starten Sie mit einem 2-Minuten Growth Brief.',
-        heroSubtitle: 'Sechs Fragen. Eine rangierte Einschätzung, wo Wachstum gehemmt ist.',
+        heroTitle: 'Die meisten Betreiber haben mehr Wachstumspotenzial, als ihre Berichte zeigen.',
+        heroSubtitle: 'Sechs Fragen, und Sie sehen, wo es liegt.',
         heroCta: 'Operator Diagnostic starten',
         heroNote: 'Kostenlos · ohne Login · Eingaben bleiben auf Ihrem Gerät',
         flowRoot: 'Operator Diagnostic',
@@ -1328,9 +1373,17 @@
         badgeLive: 'Live',
         openTool: 'Tool öffnen →',
         claimLine: 'Vom Schreibtisch des Operators. Kein Login, kein Pitch. Daten bleiben auf Ihrem Gerät.',
-        authorRole: 'Commercial & Distribution · Hospitality & STR',
+        authorRole: 'Vertriebs- und Revenue-Beratung für Short-Term-Rental- und Serviced-Apartment-Betreiber, zu OTA-Kostenstrategie, Owner Retention und Tech-Stack-Performance.',
         viewProfile: 'Profil ansehen',
-        aboutServicesIntro: '15 Jahre Erfahrung in Distribution und OTA-Strategie für Serviced-Apartment-Betreiber. Unabhängige Beratung zu:',
+        aboutOutcome: 'Ich betrachte das gesamte kommerzielle Bild eines Betreibers, Umsatz, Distribution, Gästeerlebnis, Owner Retention, Tech-Stack, um herauszufinden, wo die eigentliche Wachstumschance liegt.',
+        methodMapTitle: 'Map',
+        methodMapBody: 'Alles, was Ihr kommerzielles Ergebnis beeinflusst.',
+        methodIdentifyTitle: 'Identify',
+        methodIdentifyBody: 'Wo die größte Wachstumschance tatsächlich liegt.',
+        methodQuantifyTitle: 'Quantify',
+        methodQuantifyBody: 'Was diese Chance wert ist.',
+        methodDirectTitle: 'Direct',
+        methodDirectBody: 'Auf die eine Sache, die es zuerst zu tun lohnt.',
         aboutService1: 'Distribution & OTA-Kostenstrategie',
         aboutService2: 'Owner Retention & Angebotsstabilität',
         aboutService3: 'Guest Experience & wiederkehrende Gäste',
