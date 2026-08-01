@@ -354,137 +354,6 @@
     }
 
     /* ============================================================
-       FLOW DIAGRAM — HTML clustered revenue flow
-       ============================================================ */
-    .logic-diagram {
-      margin: 0 0 20px;
-      padding: 0;
-    }
-
-    .flow {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      max-width: 860px;
-      margin: 0 auto;
-    }
-
-    .flow-root {
-      background: var(--ink);
-      color: #fff;
-      font-size: 15px;
-      font-weight: 500;
-      padding: 12px 26px;
-      border-radius: 999px;
-    }
-
-    .flow-fan {
-      display: block;
-      width: 100%;
-      max-width: 560px;
-      height: 22px;
-      margin-top: 6px;
-    }
-
-    .flow-stem {
-      display: none;
-      width: 1px;
-      height: 18px;
-      background: #8A94A6;
-    }
-
-    .flow-clusters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-      width: 100%;
-      margin-top: 6px;
-    }
-
-    .flow-cluster {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-      padding: 12px;
-      border-radius: 14px;
-    }
-
-    .flow-create {
-      background: rgba(14, 140, 134, 0.05);
-      border: 1px solid rgba(14, 140, 134, 0.22);
-    }
-
-    .flow-optimise {
-      background: rgba(76, 75, 158, 0.05);
-      border: 1px solid rgba(76, 75, 158, 0.22);
-    }
-
-    .flow-foundation {
-      background: rgba(92, 111, 130, 0.05);
-      border: 1px solid rgba(92, 111, 130, 0.22);
-    }
-
-    .flow-cluster-label {
-      font-size: 12px;
-      font-weight: 500;
-      padding-left: 2px;
-    }
-
-    .flow-create .flow-cluster-label { color: #0E8C86; }
-    .flow-optimise .flow-cluster-label { color: #4C4B9E; }
-    .flow-foundation .flow-cluster-label { color: #5C6F82; }
-
-    .flow-chip {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      background: #fff;
-      border-radius: 10px;
-      padding: 9px 12px;
-      font-size: 13px;
-      font-weight: 500;
-    }
-
-    .flow-chip svg {
-      width: 15px;
-      height: 15px;
-      flex: none;
-      fill: none;
-      stroke-width: 1.5;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .flow-create .flow-chip {
-      border: 1px solid rgba(14, 140, 134, 0.35);
-      color: #0E8C86;
-    }
-
-    .flow-create .flow-chip svg { stroke: #0E8C86; }
-
-    .flow-optimise .flow-chip {
-      border: 1px solid rgba(76, 75, 158, 0.35);
-      color: #4C4B9E;
-    }
-
-    .flow-optimise .flow-chip svg { stroke: #4C4B9E; }
-
-    .flow-foundation .flow-chip {
-      border: 1px solid rgba(92, 111, 130, 0.35);
-      color: #5C6F82;
-    }
-
-    .flow-foundation .flow-chip svg { stroke: #5C6F82; }
-
-    @media (max-width: 640px) {
-      .flow-fan { display: none; }
-      .flow-stem { display: block; }
-      .flow-clusters { flex-direction: column; gap: 10px; }
-      .flow-root { font-size: 14px; padding: 10px 20px; }
-    }
-
-    /* ============================================================
        CLAIM LINE — replaces three principle cards
        ============================================================ */
     .claim-line {
@@ -507,19 +376,11 @@
     .tools-showcase-header {
       display: flex;
       align-items: baseline;
-      justify-content: space-between;
+      justify-content: flex-end;
       gap: 12px;
       margin-bottom: 16px;
       flex-wrap: wrap;
       padding: 0 2px;
-    }
-
-    .tools-showcase-title {
-      font-size: 13px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: var(--muted);
     }
 
     .tools-showcase-count {
@@ -531,20 +392,31 @@
       border-radius: 100px;
     }
 
-    .tool-grid {
+    .tool-group {
+      margin-bottom: 22px;
+    }
+
+    .tool-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .tool-group-header {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 10px;
+      padding: 0 2px;
+    }
+
+    .tool-group-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
     }
 
-    @media (max-width: 900px) {
-      .tool-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
     @media (max-width: 720px) {
-      .tool-grid {
+      .tool-group-grid {
         grid-template-columns: 1fr;
         gap: 14px;
       }
@@ -594,13 +466,6 @@
       color: var(--accent);
       margin-top: 2px;
     }
-
-    .tool-card.cluster-create::before { background: #0E8C86; }
-    .tool-card.cluster-optimise::before { background: #4C4B9E; }
-    .tool-card.cluster-foundation::before { background: #5C6F82; }
-    .tool-card.cluster-create .tool-category { color: #0E8C86; }
-    .tool-card.cluster-optimise .tool-category { color: #4C4B9E; }
-    .tool-card.cluster-foundation .tool-category { color: #5C6F82; }
 
     .tool-header {
       display: flex;
@@ -859,7 +724,6 @@
         padding: 0 max(12px, env(safe-area-inset-left)) calc(28px + env(safe-area-inset-bottom));
         padding-right: max(12px, env(safe-area-inset-right));
       }
-      .logic-diagram { margin: 0 0 16px; }
       .tool-card { padding: 18px 16px; min-height: 0; }
       .claim-line { margin-bottom: 16px; }
       .about { margin-bottom: 20px; }
@@ -937,148 +801,117 @@
 
   <main>
 
-    <section class="logic-diagram" aria-label="Diagnostic flow">
-      <div class="flow">
-        <div class="flow-root" data-i18n="flowRoot">Operator Diagnostic</div>
-        <svg class="flow-fan" viewBox="0 0 100 22" preserveAspectRatio="none" aria-hidden="true">
-          <path d="M50 0 C50 12 25 10 25 22" fill="none" stroke="#0E8C86" stroke-opacity="0.55" stroke-width="0.4" vector-effect="non-scaling-stroke"/>
-          <path d="M50 0 C50 12 75 10 75 22" fill="none" stroke="#4C4B9E" stroke-opacity="0.55" stroke-width="0.4" vector-effect="non-scaling-stroke"/>
-        </svg>
-        <div class="flow-stem" aria-hidden="true"></div>
-        <div class="flow-clusters">
-          <div class="flow-cluster flow-create">
-            <span class="flow-cluster-label" data-i18n="flowClusterCreate">Revenue creators</span>
-            <span class="flow-chip">
-              <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="6.5" cy="6.5" r="5"/><path d="M10.5 10.5 L15 15"/></svg>
-              <span data-i18n="flowAi">Website AI readiness</span>
-            </span>
-            <span class="flow-chip">
-              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 12 L5.5 7.5 L8.5 10.5 L15 4"/><path d="M11 4 L15 4 L15 8"/></svg>
-              <span data-i18n="flowDemand">Demand</span>
-            </span>
-            <span class="flow-chip">
-              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5 L10 5.9 L14.8 6.5 L11.3 9.8 L12.2 14.5 L8 12.2 L3.8 14.5 L4.7 9.8 L1.2 6.5 L6 5.9 Z"/></svg>
-              <span data-i18n="flowGuests">Guest satisfaction</span>
-            </span>
-          </div>
-          <div class="flow-cluster flow-optimise">
-            <span class="flow-cluster-label" data-i18n="flowClusterOptimise">Revenue optimisers</span>
-            <span class="flow-chip">
-              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 15 L8 9"/><path d="M8 9 L2.5 3.5"/><path d="M8 9 L13.5 3.5"/><circle cx="2.5" cy="2.5" r="1.6"/><circle cx="13.5" cy="2.5" r="1.6"/></svg>
-              <span data-i18n="flowDistribution">OTA distribution</span>
-            </span>
-            <span class="flow-chip">
-              <svg viewBox="0 0 16 16" aria-hidden="true"><ellipse cx="8" cy="4" rx="6" ry="2.5"/><path d="M2 4 L2 12 C2 13.4 4.7 14.5 8 14.5 C11.3 14.5 14 13.4 14 12 L14 4"/><path d="M2 8 C2 9.4 4.7 10.5 8 10.5 C11.3 10.5 14 9.4 14 8"/></svg>
-              <span data-i18n="flowUnitProfit">Unit profitability</span>
-            </span>
-            <span class="flow-chip">
-              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M14.2 8 A6.2 6.2 0 1 1 12 3.4"/><path d="M14.5 1 L14.5 4.2 L11.3 4.2"/></svg>
-              <span data-i18n="flowRepeats">Repeating guests</span>
-            </span>
-          </div>
-          <div class="flow-cluster flow-foundation">
-            <span class="flow-cluster-label" data-i18n="flowClusterFoundation">Business foundation</span>
-            <span class="flow-chip">
-              <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="5" r="2.2"/><path d="M8 7.2v6.3"/><path d="M4.8 13.5h6.4"/></svg>
-              <span data-i18n="flowOwnerRetention">Owner retention</span>
-            </span>
-            <span class="flow-chip">
-              <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="2.5" width="12" height="3" rx="0.8"/><rect x="2" y="6.5" width="12" height="3" rx="0.8"/><rect x="2" y="10.5" width="7" height="3" rx="0.8"/></svg>
-              <span data-i18n="flowTechStack">Tech stack</span>
-            </span>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="tools-showcase" aria-label="Diagnostic tools">
       <div class="tools-showcase-header">
-        <h2 class="tools-showcase-title" data-i18n="browseTitle">Already know what you need? Browse the tools</h2>
         <span class="tools-showcase-count" data-i18n="liveCount">8 live</span>
       </div>
 
-      <div class="tool-grid">
+      <div class="tool-group">
+        <h3 class="tool-group-header" data-i18n="aboutService1">Distribution & OTA cost strategy</h3>
+        <div class="tool-group-grid">
 
-        <a href="https://rbisschoff.github.io/ai-ready-audit/" target="_blank" rel="noopener noreferrer" class="tool-card cluster-create">
-          <span class="tool-category" data-i18n="catAi">AI Visibility</span>
-          <div class="tool-header">
-            <div class="tool-name" data-i18n="toolAiName">Website AI Ready Audit</div>
-            <span class="tool-badge live" data-i18n="badgeLive">Live</span>
-          </div>
-          <div class="tool-question" data-i18n="toolAiQ">Will AI find and recommend my direct site?</div>
-          <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Open tool →</span></div>
-        </a>
+          <a href="https://rbisschoff.github.io/distribution-cost-analyser/" target="_blank" rel="noopener noreferrer" class="tool-card">
+            <span class="tool-category" data-i18n="catDist">Distribution</span>
+            <div class="tool-header">
+              <div class="tool-name" data-i18n="toolDcaName">Distribution Cost Analyser</div>
+              <span class="tool-badge live" data-i18n="badgeLive">Live</span>
+            </div>
+            <div class="tool-question" data-i18n="toolDcaQ">What is the true cost of my channel mix?</div>
+            <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Open tool →</span></div>
+          </a>
 
-        <a href="https://rbisschoff.github.io/chinacheck/" target="_blank" rel="noopener noreferrer" class="tool-card cluster-create">
-          <span class="tool-category" data-i18n="catDemand">Demand & Markets</span>
-          <div class="tool-header">
-            <div class="tool-name">ChinaCheck</div>
-            <span class="tool-badge live" data-i18n="badgeLive">Live</span>
-          </div>
-          <div class="tool-question" data-i18n="toolChinaQ">Should I invest in China inbound demand?</div>
-          <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Open tool →</span></div>
-        </a>
+          <a href="https://rbisschoff.github.io/ai-ready-audit/" target="_blank" rel="noopener noreferrer" class="tool-card">
+            <span class="tool-category" data-i18n="catAi">AI Visibility</span>
+            <div class="tool-header">
+              <div class="tool-name" data-i18n="toolAiName">Website AI Ready Audit</div>
+              <span class="tool-badge live" data-i18n="badgeLive">Live</span>
+            </div>
+            <div class="tool-question" data-i18n="toolAiQ">Will AI find and recommend my direct site?</div>
+            <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Open tool →</span></div>
+          </a>
 
-        <a href="https://rbisschoff.github.io/guest-experience-score/" target="_blank" rel="noopener noreferrer" class="tool-card cluster-create">
-          <span class="tool-category" data-i18n="catGuestExp">Guest Experience</span>
-          <div class="tool-header">
-            <div class="tool-name" data-i18n="toolGuestExpName">Guest Experience Score</div>
-            <span class="tool-badge live" data-i18n="badgeLive">Live</span>
-          </div>
-          <div class="tool-question" data-i18n="toolGuestExpQ">Are guests actually satisfied, or just not complaining?</div>
-          <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Open tool →</span></div>
-        </a>
+        </div>
+      </div>
 
-        <a href="https://rbisschoff.github.io/distribution-cost-analyser/" target="_blank" rel="noopener noreferrer" class="tool-card cluster-optimise">
-          <span class="tool-category" data-i18n="catDist">Distribution</span>
-          <div class="tool-header">
-            <div class="tool-name" data-i18n="toolDcaName">Distribution Cost Analyser</div>
-            <span class="tool-badge live" data-i18n="badgeLive">Live</span>
-          </div>
-          <div class="tool-question" data-i18n="toolDcaQ">What is the true cost of my channel mix?</div>
-          <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Open tool →</span></div>
-        </a>
+      <div class="tool-group">
+        <h3 class="tool-group-header" data-i18n="aboutService2">Owner retention & supply stability</h3>
+        <div class="tool-group-grid">
 
-        <a href="https://rbisschoff.github.io/repeat-guest-value/" target="_blank" rel="noopener noreferrer" class="tool-card cluster-optimise">
-          <span class="tool-category" data-i18n="catRepeat">Repeat Guests</span>
-          <div class="tool-header">
-            <div class="tool-name" data-i18n="toolRgvName">Repeat Guest Value</div>
-            <span class="tool-badge live" data-i18n="badgeLive">Live</span>
-          </div>
-          <div class="tool-question" data-i18n="toolRgvQ">What is repeat revenue costing me on OTAs?</div>
-          <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Open tool →</span></div>
-        </a>
+          <a href="https://rbisschoff.github.io/owner-retention-diagnostic/" target="_blank" rel="noopener noreferrer" class="tool-card">
+            <span class="tool-category" data-i18n="catOwnerRetention">Owner Retention</span>
+            <div class="tool-header">
+              <div class="tool-name" data-i18n="toolOwnerRetentionName">Owner Retention Diagnostic</div>
+              <span class="tool-badge live" data-i18n="badgeLive">Live</span>
+            </div>
+            <div class="tool-question" data-i18n="toolOwnerRetentionQ">Are you losing owners faster than you realise?</div>
+            <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Open tool →</span></div>
+          </a>
 
-        <a href="https://rbisschoff.github.io/contribution-margin-analyser/" target="_blank" rel="noopener noreferrer" class="tool-card cluster-optimise">
-          <span class="tool-category" data-i18n="catProfit">Profitability</span>
-          <div class="tool-header">
-            <div class="tool-name" data-i18n="toolCmaName">Contribution Margin Analyser</div>
-            <span class="tool-badge live" data-i18n="badgeLive">Live</span>
-          </div>
-          <div class="tool-question" data-i18n="toolCmaQ">Is each unit actually profitable?</div>
-          <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Open tool →</span></div>
-        </a>
+          <a href="https://rbisschoff.github.io/chinacheck/" target="_blank" rel="noopener noreferrer" class="tool-card">
+            <span class="tool-category" data-i18n="catDemand">Demand & Markets</span>
+            <div class="tool-header">
+              <div class="tool-name">ChinaCheck</div>
+              <span class="tool-badge live" data-i18n="badgeLive">Live</span>
+            </div>
+            <div class="tool-question" data-i18n="toolChinaQ">Should I invest in China inbound demand?</div>
+            <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Open tool →</span></div>
+          </a>
 
-        <a href="https://rbisschoff.github.io/owner-retention-diagnostic/" target="_blank" rel="noopener noreferrer" class="tool-card cluster-foundation">
-          <span class="tool-category" data-i18n="catOwnerRetention">Owner Retention</span>
-          <div class="tool-header">
-            <div class="tool-name" data-i18n="toolOwnerRetentionName">Owner Retention Diagnostic</div>
-            <span class="tool-badge live" data-i18n="badgeLive">Live</span>
-          </div>
-          <div class="tool-question" data-i18n="toolOwnerRetentionQ">Are you losing owners faster than you realise?</div>
-          <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Open tool →</span></div>
-        </a>
+        </div>
+      </div>
 
-        <a href="https://rbisschoff.github.io/tech-stack-audit/" target="_blank" rel="noopener noreferrer" class="tool-card cluster-foundation">
-          <span class="tool-category" data-i18n="catTechStack">Tech Stack</span>
-          <div class="tool-header">
-            <div class="tool-name" data-i18n="toolTechStackName">Tech Stack Audit</div>
-            <span class="tool-badge live" data-i18n="badgeLive">Live</span>
-          </div>
-          <div class="tool-question" data-i18n="toolTechStackQ">Is your tech stack earning what you pay for it?</div>
-          <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Open tool →</span></div>
-        </a>
+      <div class="tool-group">
+        <h3 class="tool-group-header" data-i18n="aboutService3">Guest experience & repeat guest value</h3>
+        <div class="tool-group-grid">
 
+          <a href="https://rbisschoff.github.io/guest-experience-score/" target="_blank" rel="noopener noreferrer" class="tool-card">
+            <span class="tool-category" data-i18n="catGuestExp">Guest Experience</span>
+            <div class="tool-header">
+              <div class="tool-name" data-i18n="toolGuestExpName">Guest Experience Score</div>
+              <span class="tool-badge live" data-i18n="badgeLive">Live</span>
+            </div>
+            <div class="tool-question" data-i18n="toolGuestExpQ">Are guests actually satisfied, or just not complaining?</div>
+            <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Open tool →</span></div>
+          </a>
+
+          <a href="https://rbisschoff.github.io/repeat-guest-value/" target="_blank" rel="noopener noreferrer" class="tool-card">
+            <span class="tool-category" data-i18n="catRepeat">Repeat Guests</span>
+            <div class="tool-header">
+              <div class="tool-name" data-i18n="toolRgvName">Repeat Guest Value</div>
+              <span class="tool-badge live" data-i18n="badgeLive">Live</span>
+            </div>
+            <div class="tool-question" data-i18n="toolRgvQ">What is repeat revenue costing me on OTAs?</div>
+            <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Open tool →</span></div>
+          </a>
+
+        </div>
+      </div>
+
+      <div class="tool-group">
+        <h3 class="tool-group-header" data-i18n="aboutService4">Tech stack & portfolio profitability</h3>
+        <div class="tool-group-grid">
+
+          <a href="https://rbisschoff.github.io/tech-stack-audit/" target="_blank" rel="noopener noreferrer" class="tool-card">
+            <span class="tool-category" data-i18n="catTechStack">Tech Stack</span>
+            <div class="tool-header">
+              <div class="tool-name" data-i18n="toolTechStackName">Tech Stack Audit</div>
+              <span class="tool-badge live" data-i18n="badgeLive">Live</span>
+            </div>
+            <div class="tool-question" data-i18n="toolTechStackQ">Is your tech stack earning what you pay for it?</div>
+            <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Open tool →</span></div>
+          </a>
+
+          <a href="https://rbisschoff.github.io/contribution-margin-analyser/" target="_blank" rel="noopener noreferrer" class="tool-card">
+            <span class="tool-category" data-i18n="catProfit">Profitability</span>
+            <div class="tool-header">
+              <div class="tool-name" data-i18n="toolCmaName">Contribution Margin Analyser</div>
+              <span class="tool-badge live" data-i18n="badgeLive">Live</span>
+            </div>
+            <div class="tool-question" data-i18n="toolCmaQ">Is each unit actually profitable?</div>
+            <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Open tool →</span></div>
+          </a>
+
+        </div>
       </div>
     </section>
 
@@ -1100,26 +933,6 @@
         heroSubtitle: 'Six questions tells you.',
         heroCta: 'Start the Operator Diagnostic',
         heroNote: 'Free · no login · inputs stay on your device',
-        flowRoot: 'Operator Diagnostic',
-        flowClusterCreate: 'Revenue creators',
-        flowClusterOptimise: 'Revenue optimisers',
-        flowClusterFoundation: 'Business foundation',
-        flowAi: 'Website AI readiness',
-        flowDemand: 'Demand',
-        flowGuests: 'Guest satisfaction',
-        flowDistribution: 'OTA distribution',
-        flowUnitProfit: 'Unit profitability',
-        flowRepeats: 'Repeating guests',
-        flowOwnerRetention: 'Owner retention',
-        flowTechStack: 'Tech stack',
-        logicSource: 'Operator Diagnostic',
-        dimAi: 'AI',
-        dimDemand: 'demand',
-        dimDist: 'distribution',
-        dimProfit: 'unit profit',
-        dimGuests: 'guests',
-        dimRepeats: 'repeats',
-        browseTitle: 'Already know what you need? Browse the tools',
         liveCount: '8 live',
         catAi: 'AI Visibility',
         catDemand: 'Demand & Markets',
@@ -1181,26 +994,6 @@
         heroSubtitle: 'Sei domande te lo dicono.',
         heroCta: 'Avvia l’Operator Diagnostic',
         heroNote: 'Gratis · senza login · i dati restano sul tuo dispositivo',
-        flowRoot: 'Operator Diagnostic',
-        flowClusterCreate: 'Creatori di ricavo',
-        flowClusterOptimise: 'Ottimizzatori di ricavo',
-        flowClusterFoundation: 'Fondamenta del business',
-        flowAi: 'Readiness AI del sito',
-        flowDemand: 'Domanda',
-        flowGuests: 'Soddisfazione ospiti',
-        flowDistribution: 'Distribuzione OTA',
-        flowUnitProfit: 'Redditività per unità',
-        flowRepeats: 'Ospiti di ritorno',
-        flowOwnerRetention: 'Fidelizzazione proprietari',
-        flowTechStack: 'Stack tecnologico',
-        logicSource: 'Operator Diagnostic',
-        dimAi: 'AI',
-        dimDemand: 'domanda',
-        dimDist: 'distribuzione',
-        dimProfit: 'profitto unitario',
-        dimGuests: 'ospiti',
-        dimRepeats: 'ripetuti',
-        browseTitle: 'Sai già cosa ti serve? Sfoglia gli strumenti',
         liveCount: '8 attivi',
         catAi: 'Visibilità AI',
         catDemand: 'Domanda e mercati',
@@ -1262,26 +1055,6 @@
         heroSubtitle: 'Sechs Fragen sagen es Ihnen.',
         heroCta: 'Operator Diagnostic starten',
         heroNote: 'Kostenlos · ohne Login · Eingaben bleiben auf Ihrem Gerät',
-        flowRoot: 'Operator Diagnostic',
-        flowClusterCreate: 'Umsatztreiber',
-        flowClusterOptimise: 'Umsatzoptimierer',
-        flowClusterFoundation: 'Geschäftsfundament',
-        flowAi: 'KI-Readiness der Website',
-        flowDemand: 'Nachfrage',
-        flowGuests: 'Gastzufriedenheit',
-        flowDistribution: 'OTA-Vertrieb',
-        flowUnitProfit: 'Rentabilität pro Einheit',
-        flowRepeats: 'Wiederkehrende Gäste',
-        flowOwnerRetention: 'Eigentümerbindung',
-        flowTechStack: 'Tech-Stack',
-        logicSource: 'Operator Diagnostic',
-        dimAi: 'AI',
-        dimDemand: 'Nachfrage',
-        dimDist: 'Distribution',
-        dimProfit: 'Unit-Profit',
-        dimGuests: 'Gäste',
-        dimRepeats: 'Wiederkehrer',
-        browseTitle: 'Wissen Sie schon, was Sie brauchen? Tools durchsuchen',
         liveCount: '8 live',
         catAi: 'AI-Sichtbarkeit',
         catDemand: 'Nachfrage & Märkte',
