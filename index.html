@@ -271,16 +271,16 @@
     }
 
     .hero-inner {
-      max-width: 640px;
+      max-width: 960px;
       margin: 0 auto;
       position: relative;
     }
 
     .hero h1 {
-      font-size: clamp(24px, 4vw, 34px);
+      font-size: clamp(26px, 3.6vw, 34px);
       font-weight: 700;
       letter-spacing: -0.03em;
-      line-height: 1.3;
+      line-height: 1.25;
       margin-bottom: 12px;
       color: var(--ink);
     }
@@ -298,11 +298,11 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      font-size: 15px;
+      font-size: 17px;
       font-weight: 600;
       color: var(--ink);
       background: var(--accent);
-      padding: 14px 22px;
+      padding: 17px 28px;
       border-radius: 100px;
       box-shadow: 0 8px 24px rgba(201, 169, 97, 0.28);
       transition: background 0.2s, transform 0.15s;
@@ -327,7 +327,7 @@
       }
 
       .hero h1 {
-        font-size: clamp(22px, 6.5vw, 28px);
+        font-size: clamp(24px, 7.5vw, 32px);
       }
 
       .hero-subtitle {
@@ -338,8 +338,8 @@
       .hero-cta {
         width: 100%;
         max-width: 360px;
-        min-height: 48px;
-        padding: 14px 18px;
+        min-height: 52px;
+        padding: 16px 18px;
         box-sizing: border-box;
       }
     }
@@ -373,31 +373,22 @@
       margin-bottom: 24px;
     }
 
-    .tools-showcase-header {
-      display: flex;
-      align-items: baseline;
-      justify-content: flex-end;
-      gap: 12px;
-      margin-bottom: 16px;
-      flex-wrap: wrap;
-      padding: 0 2px;
-    }
-
-    .tools-showcase-count {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--positive);
-      background: rgba(52, 199, 89, 0.12);
-      padding: 5px 12px;
-      border-radius: 100px;
-    }
-
-    .tool-group {
+    .tool-group-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
       margin-bottom: 22px;
     }
 
-    .tool-group:last-child {
+    .tool-group-row:last-child {
       margin-bottom: 0;
+    }
+
+    @media (max-width: 900px) {
+      .tool-group-row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
     }
 
     .tool-group-header {
@@ -412,26 +403,26 @@
     .tool-group-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
+      gap: 10px;
     }
 
-    @media (max-width: 720px) {
+    @media (max-width: 480px) {
       .tool-group-grid {
         grid-template-columns: 1fr;
-        gap: 14px;
+        gap: 10px;
       }
     }
 
     .tool-card {
       background: var(--card);
-      border-radius: var(--radius-md);
-      padding: 18px 16px 16px;
+      border-radius: var(--radius-sm);
+      padding: 11px 10px;
       border: none;
       box-shadow: var(--shadow-card);
       transition: box-shadow 0.2s, transform 0.2s;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 6px;
       position: relative;
       overflow: hidden;
       min-height: 0;
@@ -459,12 +450,12 @@
     }
 
     .tool-category {
-      font-size: 10px;
+      font-size: 9px;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       color: var(--accent);
-      margin-top: 2px;
+      margin-top: 1px;
     }
 
     .tool-header {
@@ -475,7 +466,7 @@
     }
 
     .tool-name {
-      font-size: 14px;
+      font-size: 12px;
       font-weight: 600;
       letter-spacing: -0.02em;
       color: var(--ink);
@@ -492,26 +483,22 @@
       flex-shrink: 0;
     }
 
-    .tool-badge.live {
-      background: rgba(52, 199, 89, 0.12);
-      color: var(--positive);
-    }
     .tool-badge.soon {
       background: rgba(142, 142, 147, 0.12);
       color: var(--muted);
     }
     .tool-question {
-      font-size: 13px;
+      font-size: 10px;
       color: var(--ink2);
       font-style: normal;
       font-weight: 500;
-      line-height: 1.45;
+      line-height: 1.35;
       flex: 1;
     }
 
     .tool-cta {
-      padding-top: 4px;
-      font-size: 13px;
+      padding-top: 2px;
+      font-size: 10px;
       font-weight: 600;
       color: var(--accent);
       margin-top: auto;
@@ -520,11 +507,11 @@
     .tool-cta-text {
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      gap: 3px;
     }
 
     .tool-card:hover .tool-cta-text {
-      gap: 6px;
+      gap: 5px;
     }
 
     /* ============================================================
@@ -532,22 +519,22 @@
        ============================================================ */
     .about {
       background: var(--card);
-      border-radius: var(--radius-lg);
-      padding: 18px 20px;
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
       border: none;
       box-shadow: var(--shadow-card);
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     .about-author {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
 
     .author-avatar {
-      width: 36px;
-      height: 36px;
+      width: 28px;
+      height: 28px;
       border-radius: 50%;
       background: var(--accent);
       color: white;
@@ -555,7 +542,7 @@
       align-items: center;
       justify-content: center;
       font-weight: 700;
-      font-size: 14px;
+      font-size: 11px;
       flex-shrink: 0;
     }
 
@@ -565,38 +552,41 @@
     }
 
     .author-name {
-      font-size: 13px;
-      font-weight: 600;
+      font-size: 14px;
+      font-weight: 700;
       color: var(--ink);
     }
 
     .author-role {
       font-size: 12px;
+      font-weight: 600;
       color: var(--muted);
       margin-top: 2px;
       line-height: 1.4;
     }
 
     .about-outcome {
-      font-size: 14px;
+      font-size: 13px;
       color: var(--ink2);
-      line-height: 1.65;
-      margin: 16px 0;
+      line-height: 1.55;
+      margin: 12px 0;
+      text-align: center;
     }
 
     .about-top-wrap {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 20px 20px 0;
+      padding: 8px 20px 0;
     }
 
     .about-method-line {
-      font-size: 12px;
+      font-size: 11px;
       color: var(--muted);
       line-height: 1.5;
-      margin: 0 0 14px;
+      margin: 0 0 10px;
       white-space: nowrap;
       overflow-x: auto;
+      text-align: center;
     }
 
     .about-method-line span[data-i18n$="Title"] {
@@ -617,10 +607,10 @@
     }
 
     .author-link {
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
       color: var(--accent);
-      padding: 8px 14px;
+      padding: 6px 12px;
       border-radius: 100px;
       border: none;
       background: var(--accent-light);
@@ -641,7 +631,7 @@
     .about-services-list {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 8px;
+      gap: 6px;
       list-style: none;
       margin: 0;
       padding: 0;
@@ -654,11 +644,11 @@
     }
 
     .about-service-tag {
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 600;
       color: var(--ink2);
       background: var(--card-tint);
-      padding: 8px 10px;
+      padding: 6px 8px;
       border-radius: 8px;
       text-align: center;
       display: flex;
@@ -724,9 +714,7 @@
         padding: 0 max(12px, env(safe-area-inset-left)) calc(28px + env(safe-area-inset-bottom));
         padding-right: max(12px, env(safe-area-inset-right));
       }
-      .tool-card { padding: 18px 16px; min-height: 0; }
       .claim-line { margin-bottom: 16px; }
-      .about { margin-bottom: 20px; }
     }
 
     @media (max-width: 400px) {
@@ -759,6 +747,17 @@
     </div>
   </header>
 
+  <section class="hero">
+    <div class="hero-inner">
+      <h1 data-i18n="heroTitle">You can tell something isn't working as well as it should.<br>You just don't know what.</h1>
+      <p class="hero-subtitle" data-i18n="heroSubtitle">
+        Six questions tells you.
+      </p>
+      <a class="hero-cta" href="https://rbisschoff.github.io/operator-diagnostic/" data-i18n="heroCta">Start the Operator Diagnostic</a>
+      <span class="hero-cta-note" data-i18n="heroNote">Free · no login · inputs stay on your device</span>
+    </div>
+  </section>
+
   <div class="about-top-wrap">
     <section class="about">
       <div class="about-author">
@@ -788,23 +787,11 @@
     </section>
   </div>
 
-  <section class="hero">
-    <div class="hero-inner">
-      <h1 data-i18n="heroTitle">You can tell something isn't working as well as it should. You just don't know what.</h1>
-      <p class="hero-subtitle" data-i18n="heroSubtitle">
-        Six questions tells you.
-      </p>
-      <a class="hero-cta" href="https://rbisschoff.github.io/operator-diagnostic/" data-i18n="heroCta">Start the Operator Diagnostic</a>
-      <span class="hero-cta-note" data-i18n="heroNote">Free · no login · inputs stay on your device</span>
-    </div>
-  </section>
-
   <main>
 
     <section class="tools-showcase" aria-label="Diagnostic tools">
-      <div class="tools-showcase-header">
-        <span class="tools-showcase-count" data-i18n="liveCount">8 live</span>
-      </div>
+
+      <div class="tool-group-row">
 
       <div class="tool-group">
         <h3 class="tool-group-header" data-i18n="aboutService1">Distribution & OTA cost strategy</h3>
@@ -814,7 +801,6 @@
             <span class="tool-category" data-i18n="catDist">Distribution</span>
             <div class="tool-header">
               <div class="tool-name" data-i18n="toolDcaName">Distribution Cost Analyser</div>
-              <span class="tool-badge live" data-i18n="badgeLive">Live</span>
             </div>
             <div class="tool-question" data-i18n="toolDcaQ">What is the true cost of my channel mix?</div>
             <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Open tool →</span></div>
@@ -824,7 +810,6 @@
             <span class="tool-category" data-i18n="catAi">AI Visibility</span>
             <div class="tool-header">
               <div class="tool-name" data-i18n="toolAiName">Website AI Ready Audit</div>
-              <span class="tool-badge live" data-i18n="badgeLive">Live</span>
             </div>
             <div class="tool-question" data-i18n="toolAiQ">Will AI find and recommend my direct site?</div>
             <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Open tool →</span></div>
@@ -841,7 +826,6 @@
             <span class="tool-category" data-i18n="catOwnerRetention">Owner Retention</span>
             <div class="tool-header">
               <div class="tool-name" data-i18n="toolOwnerRetentionName">Owner Retention Diagnostic</div>
-              <span class="tool-badge live" data-i18n="badgeLive">Live</span>
             </div>
             <div class="tool-question" data-i18n="toolOwnerRetentionQ">Are you losing owners faster than you realise?</div>
             <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Open tool →</span></div>
@@ -851,7 +835,6 @@
             <span class="tool-category" data-i18n="catDemand">Demand & Markets</span>
             <div class="tool-header">
               <div class="tool-name">ChinaCheck</div>
-              <span class="tool-badge live" data-i18n="badgeLive">Live</span>
             </div>
             <div class="tool-question" data-i18n="toolChinaQ">Should I invest in China inbound demand?</div>
             <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Open tool →</span></div>
@@ -859,6 +842,10 @@
 
         </div>
       </div>
+
+      </div>
+
+      <div class="tool-group-row">
 
       <div class="tool-group">
         <h3 class="tool-group-header" data-i18n="aboutService3">Guest experience & repeat guest value</h3>
@@ -868,7 +855,6 @@
             <span class="tool-category" data-i18n="catGuestExp">Guest Experience</span>
             <div class="tool-header">
               <div class="tool-name" data-i18n="toolGuestExpName">Guest Experience Score</div>
-              <span class="tool-badge live" data-i18n="badgeLive">Live</span>
             </div>
             <div class="tool-question" data-i18n="toolGuestExpQ">Are guests actually satisfied, or just not complaining?</div>
             <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Open tool →</span></div>
@@ -878,7 +864,6 @@
             <span class="tool-category" data-i18n="catRepeat">Repeat Guests</span>
             <div class="tool-header">
               <div class="tool-name" data-i18n="toolRgvName">Repeat Guest Value</div>
-              <span class="tool-badge live" data-i18n="badgeLive">Live</span>
             </div>
             <div class="tool-question" data-i18n="toolRgvQ">What is repeat revenue costing me on OTAs?</div>
             <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Open tool →</span></div>
@@ -895,7 +880,6 @@
             <span class="tool-category" data-i18n="catTechStack">Tech Stack</span>
             <div class="tool-header">
               <div class="tool-name" data-i18n="toolTechStackName">Tech Stack Audit</div>
-              <span class="tool-badge live" data-i18n="badgeLive">Live</span>
             </div>
             <div class="tool-question" data-i18n="toolTechStackQ">Is your tech stack earning what you pay for it?</div>
             <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Open tool →</span></div>
@@ -905,13 +889,14 @@
             <span class="tool-category" data-i18n="catProfit">Profitability</span>
             <div class="tool-header">
               <div class="tool-name" data-i18n="toolCmaName">Contribution Margin Analyser</div>
-              <span class="tool-badge live" data-i18n="badgeLive">Live</span>
             </div>
             <div class="tool-question" data-i18n="toolCmaQ">Is each unit actually profitable?</div>
             <div class="tool-cta"><span class="tool-cta-text" data-i18n="openTool">Open tool →</span></div>
           </a>
 
         </div>
+      </div>
+
       </div>
     </section>
 
@@ -929,11 +914,10 @@
       en: {
         brandTitle: 'Operator Intelligence Suite',
         brandSubtitle: 'by Roger Bisschoff',
-        heroTitle: 'You can tell something isn\'t working as well as it should. You just don\'t know what.',
+        heroTitle: 'You can tell something isn\'t working as well as it should.<br>You just don\'t know what.',
         heroSubtitle: 'Six questions tells you.',
         heroCta: 'Start the Operator Diagnostic',
         heroNote: 'Free · no login · inputs stay on your device',
-        liveCount: '8 live',
         catAi: 'AI Visibility',
         catDemand: 'Demand & Markets',
         catDist: 'Distribution',
@@ -958,7 +942,6 @@
         toolTechStackName: 'Tech Stack Audit',
         toolTechStackQ: 'Is your tech stack earning what you pay for it?',
         badgeSoon: 'Soon',
-        badgeLive: 'Live',
         openTool: 'Open tool →',
         claimLine: "From the operator's desk. No login, no pitch. Data stays on your device.",
         authorRole: 'Distribution and revenue consulting for short-term rental and serviced apartment operators',
@@ -990,11 +973,10 @@
       it: {
         brandTitle: 'Operator Intelligence Suite',
         brandSubtitle: 'di Roger Bisschoff',
-        heroTitle: 'Senti che qualcosa non funziona come dovrebbe. Solo non sai cosa.',
+        heroTitle: 'Senti che qualcosa non funziona come dovrebbe.<br>Solo non sai cosa.',
         heroSubtitle: 'Sei domande te lo dicono.',
         heroCta: 'Avvia l’Operator Diagnostic',
         heroNote: 'Gratis · senza login · i dati restano sul tuo dispositivo',
-        liveCount: '8 attivi',
         catAi: 'Visibilità AI',
         catDemand: 'Domanda e mercati',
         catDist: 'Distribuzione',
@@ -1019,7 +1001,6 @@
         toolTechStackName: 'Tech Stack Audit',
         toolTechStackQ: 'Il tuo stack tecnologico si guadagna quello che paghi?',
         badgeSoon: 'Presto',
-        badgeLive: 'Attivo',
         openTool: 'Apri strumento →',
         claimLine: 'Dalla scrivania dell’operatore. Niente login, niente pitch. I dati restano sul tuo dispositivo.',
         authorRole: 'Consulenza in distribuzione e revenue per operatori di short-term rental e appartamenti in gestione',
@@ -1051,11 +1032,10 @@
       de: {
         brandTitle: 'Operator Intelligence Suite',
         brandSubtitle: 'von Roger Bisschoff',
-        heroTitle: 'Sie spüren, dass etwas nicht so läuft, wie es sollte. Nur wissen Sie nicht, was.',
+        heroTitle: 'Sie spüren, dass etwas nicht so läuft, wie es sollte.<br>Nur wissen Sie nicht, was.',
         heroSubtitle: 'Sechs Fragen sagen es Ihnen.',
         heroCta: 'Operator Diagnostic starten',
         heroNote: 'Kostenlos · ohne Login · Eingaben bleiben auf Ihrem Gerät',
-        liveCount: '8 live',
         catAi: 'AI-Sichtbarkeit',
         catDemand: 'Nachfrage & Märkte',
         catDist: 'Distribution',
@@ -1080,7 +1060,6 @@
         toolTechStackName: 'Tech Stack Audit',
         toolTechStackQ: 'Verdient Ihr Tech-Stack, was Sie dafür bezahlen?',
         badgeSoon: 'Bald',
-        badgeLive: 'Live',
         openTool: 'Tool öffnen →',
         claimLine: 'Vom Schreibtisch des Operators. Kein Login, kein Pitch. Daten bleiben auf Ihrem Gerät.',
         authorRole: 'Vertriebs- und Revenue-Beratung für Short-Term-Rental- und Serviced-Apartment-Betreiber',
@@ -1118,7 +1097,7 @@
       document.querySelectorAll('[data-i18n]').forEach(function(el) {
         const key = el.getAttribute('data-i18n');
         if (!pack[key]) return;
-        if (key === 'footer1') el.innerHTML = pack[key];
+        if (key === 'footer1' || key === 'heroTitle') el.innerHTML = pack[key];
         else el.textContent = pack[key];
       });
       document.querySelectorAll('.lang-btn').forEach(function(btn) {
