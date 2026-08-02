@@ -616,14 +616,10 @@
       width: 28px;
       height: 28px;
       border-radius: 50%;
-      background: var(--accent);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 11px;
       flex-shrink: 0;
+      object-fit: cover;
+      object-position: center;
+      border: 1px solid var(--border);
     }
 
     .author-info {
@@ -877,7 +873,7 @@
   <div class="about-top-wrap">
     <section class="about">
       <div class="about-author">
-        <div class="author-avatar">RB</div>
+        <img class="author-avatar" src="assets/roger-headshot.jpg" alt="Roger Bisschoff" width="28" height="28">
         <div class="author-info">
           <div class="author-name">Roger Bisschoff</div>
           <div class="author-role" data-i18n="authorRole">Distribution and revenue consulting for short-term rental and serviced apartment operators</div>
