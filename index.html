@@ -302,16 +302,17 @@
       font-weight: 600;
       color: var(--ink);
       background: var(--accent);
-      padding: 17px 28px;
+      padding: 19px 32px;
       border-radius: 100px;
-      box-shadow: 0 8px 24px rgba(201, 169, 97, 0.28);
-      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 4px 14px rgba(201, 169, 97, 0.35);
+      transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
     }
 
     .hero-cta:hover {
       background: var(--accent-dark);
       color: #fff;
-      transform: translateY(-1px);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(201, 169, 97, 0.45);
     }
 
     .hero-cta-note {
@@ -364,6 +365,69 @@
       font-size: 13px;
       color: var(--muted);
       line-height: 1.55;
+    }
+
+    /* Second CTA, right after the tool grid - deliberately lighter than
+       the About card treatment (just a line + the same pill button),
+       since the point is one more immediate way to act right when
+       someone's most convinced, not a second full pitch. */
+    .bottom-cta {
+      max-width: 480px;
+      margin: 4px auto 28px;
+      padding: 0 12px;
+      text-align: center;
+    }
+
+    .bottom-cta-line {
+      font-size: 14px;
+      color: var(--ink2);
+      margin-bottom: 14px;
+    }
+
+    /* Small, fixed, hidden until the About card has been scrolled past
+       (see the IntersectionObserver below) - this brand's positioning is
+       "no pitch", so it stays minimal rather than becoming a sticky
+       sales-page bar. */
+    .floating-cta {
+      position: fixed;
+      right: 20px;
+      bottom: max(20px, env(safe-area-inset-bottom));
+      z-index: 200;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ink);
+      background: var(--accent);
+      padding: 10px 16px;
+      border-radius: 100px;
+      box-shadow: 0 4px 14px rgba(201, 169, 97, 0.35);
+      opacity: 0;
+      transform: translateY(10px);
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease, background 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .floating-cta.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .floating-cta:hover {
+      background: var(--accent-dark);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 7px 18px rgba(201, 169, 97, 0.45);
+    }
+
+    @media (max-width: 640px) {
+      .floating-cta {
+        right: 14px;
+        padding: 9px 14px;
+        font-size: 11px;
+      }
     }
 
     /* ============================================================
@@ -639,16 +703,17 @@
       font-weight: 600;
       color: var(--ink);
       background: var(--accent);
-      padding: 10px 18px;
+      padding: 12px 22px;
       border-radius: 100px;
-      box-shadow: 0 4px 14px rgba(201, 169, 97, 0.28);
-      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 4px 14px rgba(201, 169, 97, 0.35);
+      transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
     }
 
     .about-cta-primary:hover {
       background: var(--accent-dark);
       color: #fff;
-      transform: translateY(-1px);
+      transform: translateY(-2px);
+      box-shadow: 0 7px 18px rgba(201, 169, 97, 0.45);
     }
 
     .about-cta-primary:focus-visible {
@@ -711,7 +776,10 @@
     footer {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 20px 20px 32px;
+      /* Extra bottom padding reserves room for the fixed floating-cta
+         button so it never sits on top of the footer text once someone
+         scrolls all the way down. */
+      padding: 20px 20px 90px;
       text-align: center;
       font-size: 12px;
       color: var(--muted);
@@ -953,12 +1021,19 @@
 
     <p class="claim-line" data-i18n="claimLine">From the operator's desk. No login, no pitch. Data stays on your device.</p>
 
+    <div class="bottom-cta">
+      <p class="bottom-cta-line" data-i18n="secondCtaLine">Curious what this looks like for your own portfolio?</p>
+      <a href="mailto:rbisschoff@gmail.com" class="about-cta-primary" data-i18n="getInTouch">Talk through your numbers →</a>
+    </div>
+
   </main>
 
   <footer>
     <p data-i18n="footer1">Operator Intelligence Suite by <a href="https://www.linkedin.com/in/roger-bisschoff/" target="_blank" rel="noopener noreferrer">Roger Bisschoff</a></p>
     <p style="margin-top: 4px;" data-i18n="footer2">A practical toolkit for hospitality and short-term rental operators.</p>
   </footer>
+
+  <a href="mailto:rbisschoff@gmail.com" class="floating-cta" id="floatingCta" data-i18n="getInTouch">Talk through your numbers →</a>
 
   <script>
     const I18N = {
@@ -978,7 +1053,7 @@
         toolAiQ: 'Will AI find and recommend my direct site?',
         toolChinaQ: 'Should I invest in China inbound demand?',
         toolDcaName: 'Distribution Cost Analyser',
-        toolDcaQ: 'What is the true cost of my channel mix?',
+        toolDcaQ: 'What is the true cost of my channel mix — OTAs, channel manager, direct?',
         toolRgvName: 'Repeat Guest Value',
         toolRgvQ: 'What is repeat revenue costing me on OTAs?',
         toolCmaName: 'Contribution Margin Analyser',
@@ -991,14 +1066,15 @@
         toolOwnerRetentionQ: 'Are you losing owners faster than you realise?',
         catTechStack: 'Tech Stack',
         toolTechStackName: 'Tech Stack Audit',
-        toolTechStackQ: 'Is your tech stack earning what you pay for it?',
+        toolTechStackQ: 'Is your tech stack, from PMS to revenue management, earning what you pay for it?',
         badgeSoon: 'Soon',
         openTool: 'Open tool →',
         claimLine: "From the operator's desk. No login, no pitch. Data stays on your device.",
-        authorRole: 'Distribution and revenue consulting for short-term rental and serviced apartment operators',
+        authorRole: 'Distribution and revenue consulting for short-term rental, vacation rental, and serviced apartment operators',
         viewProfile: 'View profile',
-        getInTouch: 'Get in touch →',
-        aboutOutcome: 'I look across an operator\'s whole commercial picture, revenue, distribution, guest experience, owner retention, tech stack, to find where the real growth opportunity is.',
+        getInTouch: 'Talk through your numbers →',
+        secondCtaLine: 'Curious what this looks like for your own portfolio?',
+        aboutOutcome: 'I look across an operator\'s whole commercial picture — whether that\'s short-term rental or full property management — revenue, distribution, guest experience, owner retention, tech stack, to find where the real growth opportunity is.',
         methodMapTitle: 'Map',
         methodMapBody: 'Everything that affects your commercial result.',
         methodIdentifyTitle: 'Identify',
@@ -1038,7 +1114,7 @@
         toolAiQ: 'L’AI trova e raccomanda il mio sito diretto?',
         toolChinaQ: 'Devo investire sulla domanda inbound dalla Cina?',
         toolDcaName: 'Distribution Cost Analyser',
-        toolDcaQ: 'Qual è il costo reale del mio mix di canali?',
+        toolDcaQ: 'Qual è il costo reale del mio mix di canali — OTA, channel manager, diretto?',
         toolRgvName: 'Repeat Guest Value',
         toolRgvQ: 'Quanto mi costa il ricavo ripetuto sugli OTA?',
         toolCmaName: 'Contribution Margin Analyser',
@@ -1051,14 +1127,15 @@
         toolOwnerRetentionQ: 'Stai perdendo proprietari più velocemente di quanto pensi?',
         catTechStack: 'Stack Tecnologico',
         toolTechStackName: 'Tech Stack Audit',
-        toolTechStackQ: 'Il tuo stack tecnologico si guadagna quello che paghi?',
+        toolTechStackQ: 'Il tuo stack tecnologico, dal PMS al revenue management, si guadagna quello che paghi?',
         badgeSoon: 'Presto',
         openTool: 'Apri strumento →',
         claimLine: 'Dalla scrivania dell’operatore. Niente login, niente pitch. I dati restano sul tuo dispositivo.',
-        authorRole: 'Consulenza in distribuzione e revenue per operatori di short-term rental e appartamenti in gestione',
+        authorRole: 'Consulenza in distribuzione e revenue per operatori di short-term rental, vacation rental, e appartamenti in gestione',
         viewProfile: 'Vedi profilo',
-        getInTouch: 'Contattami →',
-        aboutOutcome: 'Guardo all\'intero quadro commerciale di un operatore, ricavi, distribuzione, guest experience, retention dei proprietari, stack tecnologico, per trovare dove si trova la vera opportunità di crescita.',
+        getInTouch: 'Parliamo dei tuoi numeri →',
+        secondCtaLine: 'Curioso di scoprire cosa significherebbe per il tuo portfolio?',
+        aboutOutcome: 'Guardo all\'intero quadro commerciale di un operatore — che sia short-term rental o full property management — ricavi, distribuzione, guest experience, retention dei proprietari, stack tecnologico, per trovare dove si trova la vera opportunità di crescita.',
         methodMapTitle: 'Map',
         methodMapBody: 'Tutto ciò che influisce sul tuo risultato commerciale.',
         methodIdentifyTitle: 'Identify',
@@ -1098,7 +1175,7 @@
         toolAiQ: 'Findet und empfiehlt AI meine Direktwebsite?',
         toolChinaQ: 'Soll ich in China-Inbound-Nachfrage investieren?',
         toolDcaName: 'Distribution Cost Analyser',
-        toolDcaQ: 'Was kostet mein Channel-Mix wirklich?',
+        toolDcaQ: 'Was kostet mein Channel-Mix wirklich — OTAs, Channel Manager, Direktbuchung?',
         toolRgvName: 'Repeat Guest Value',
         toolRgvQ: 'Was kosten mich Wiederholungsumsätze über OTAs?',
         toolCmaName: 'Contribution Margin Analyser',
@@ -1111,14 +1188,15 @@
         toolOwnerRetentionQ: 'Verlieren Sie Eigentümer schneller, als Ihnen bewusst ist?',
         catTechStack: 'Tech-Stack',
         toolTechStackName: 'Tech Stack Audit',
-        toolTechStackQ: 'Verdient Ihr Tech-Stack, was Sie dafür bezahlen?',
+        toolTechStackQ: 'Verdient Ihr Tech-Stack, von PMS bis Revenue Management, was Sie dafür bezahlen?',
         badgeSoon: 'Bald',
         openTool: 'Tool öffnen →',
         claimLine: 'Vom Schreibtisch des Operators. Kein Login, kein Pitch. Daten bleiben auf Ihrem Gerät.',
-        authorRole: 'Vertriebs- und Revenue-Beratung für Short-Term-Rental- und Serviced-Apartment-Betreiber',
+        authorRole: 'Vertriebs- und Revenue-Beratung für Short-Term-Rental-, Vacation-Rental- und Serviced-Apartment-Betreiber',
         viewProfile: 'Profil ansehen',
-        getInTouch: 'Kontakt aufnehmen →',
-        aboutOutcome: 'Ich betrachte das gesamte kommerzielle Bild eines Betreibers, Umsatz, Distribution, Gästeerlebnis, Owner Retention, Tech-Stack, um herauszufinden, wo die eigentliche Wachstumschance liegt.',
+        getInTouch: 'Sprechen wir über Ihre Zahlen →',
+        secondCtaLine: 'Neugierig, was das für Ihr eigenes Portfolio bedeuten würde?',
+        aboutOutcome: 'Ich betrachte das gesamte kommerzielle Bild eines Betreibers — ob Short-Term-Rental oder volles Property Management — Umsatz, Distribution, Gästeerlebnis, Owner Retention, Tech-Stack, um herauszufinden, wo die eigentliche Wachstumschance liegt.',
         methodMapTitle: 'Map',
         methodMapBody: 'Alles, was Ihr kommerzielles Ergebnis beeinflusst.',
         methodIdentifyTitle: 'Identify',
@@ -1169,6 +1247,23 @@
     });
 
     applyLang(window.__oisInitialLang || 'en');
+
+    // Floating contact button: stays hidden until the About card has
+    // scrolled past, not just partially out of view - isIntersecting is
+    // false both before scrolling starts and after scrolling past it, so
+    // boundingClientRect's position is what actually distinguishes
+    // "hasn't reached it yet" from "already scrolled by it".
+    (function () {
+      const trigger = document.querySelector('.about-top-wrap');
+      const floatingCta = document.getElementById('floatingCta');
+      if (!trigger || !floatingCta || !('IntersectionObserver' in window)) return;
+      const observer = new IntersectionObserver(function (entries) {
+        const entry = entries[0];
+        const passed = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+        floatingCta.classList.toggle('visible', passed);
+      }, { threshold: 0 });
+      observer.observe(trigger);
+    })();
   </script>
 
 </body>
