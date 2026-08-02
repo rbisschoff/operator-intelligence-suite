@@ -703,26 +703,39 @@
     @media (min-width: 1000px) {
       .header-inner { max-width: 1600px; }
 
-      .hero { padding: 72px 20px 36px; }
-      .hero-inner { max-width: 1100px; }
-      .hero h1 { font-size: clamp(38px, 3.2vw, 52px); margin-bottom: 18px; }
-      .hero-subtitle { font-size: 18px; max-width: 560px; margin-bottom: 32px; }
+      /* Hero title: font-size caps and hero-inner's max-width are tuned
+         together so the two hard-broken <br> segments never soft-wrap a
+         second time (which would push it to 3 lines) anywhere in the
+         1000-1920px range - verified empirically across EN/IT/DE, EN
+         being the longest and the binding constraint. A vw-based clamp
+         alone can't guarantee this since font grows with viewport while
+         hero-inner's width caps out - the fix is a slower vw coefficient
+         and a lower max, not just a wider container. */
+      .hero { padding: 48px 20px 24px; }
+      .hero-inner { max-width: 1200px; }
+      .hero h1 { font-size: clamp(34px, 2.6vw, 46px); margin-bottom: 14px; }
+      .hero-subtitle { font-size: 18px; max-width: 560px; margin-bottom: 22px; }
       .hero-cta { font-size: 19px; padding: 22px 40px; }
-      .hero-cta-note { font-size: 13px; margin-top: 16px; }
+      .hero-cta-note { font-size: 13px; margin-top: 12px; }
 
-      main { max-width: 1600px; padding: 8px 32px 56px; }
+      /* main's own padding-bottom used to stack on top of
+         suite-cta-wrap's margin-bottom below (both applied between the
+         same two elements), which was pure wasted vertical space, not
+         intentional rhythm - removed here so About's gap comes from one
+         place (suite-cta-wrap's margin + about-top-wrap's own padding). */
+      main { max-width: 1600px; padding: 8px 32px 0; }
 
-      .wwwh-wrap { max-width: 1400px; margin-bottom: 36px; }
+      .wwwh-wrap { max-width: 1400px; margin-bottom: 22px; }
       .wwwh-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-      .wwwh-item { padding: 22px 24px; }
-      .wwwh-label { font-size: 11px; margin-bottom: 8px; }
-      .wwwh-text { font-size: 15px; line-height: 1.55; }
+      .wwwh-item { padding: 28px 26px; border: 1px solid var(--border); }
+      .wwwh-label { font-size: 12px; letter-spacing: 0.1em; margin-bottom: 10px; }
+      .wwwh-text { font-size: 16px; line-height: 1.55; }
 
-      .suite-cta-wrap { margin-bottom: 48px; }
+      .suite-cta-wrap { margin-bottom: 26px; }
       .suite-cta { font-size: 21px; padding: 26px 56px; }
-      .suite-cta-note { font-size: 14px; margin-top: 16px; }
+      .suite-cta-note { font-size: 14px; margin-top: 10px; }
 
-      .about-top-wrap { max-width: 1600px; padding: 16px 32px 0; }
+      .about-top-wrap { max-width: 1600px; padding: 8px 32px 0; }
       .about { padding: 28px 34px; }
       .author-avatar { width: 44px; height: 44px; }
       .author-name { font-size: 18px; }
@@ -741,21 +754,21 @@
        the 1000px scale-up above (which only widened the containers).
        ============================================================ */
     @media (min-width: 1500px) {
-      .hero { padding: 88px 20px 44px; }
-      .hero-inner { max-width: 1300px; }
-      .hero h1 { font-size: clamp(48px, 3vw, 64px); margin-bottom: 22px; }
-      .hero-subtitle { font-size: 20px; max-width: 640px; margin-bottom: 38px; }
+      .hero { padding: 56px 20px 28px; }
+      .hero-inner { max-width: 1400px; }
+      .hero h1 { font-size: clamp(40px, 2.6vw, 56px); margin-bottom: 16px; }
+      .hero-subtitle { font-size: 20px; max-width: 640px; margin-bottom: 26px; }
       .hero-cta { font-size: 21px; padding: 25px 46px; }
-      .hero-cta-note { font-size: 14px; margin-top: 18px; }
+      .hero-cta-note { font-size: 14px; margin-top: 14px; }
 
-      .wwwh-wrap { max-width: 1600px; margin-bottom: 44px; }
-      .wwwh-item { padding: 26px 28px; }
-      .wwwh-label { font-size: 12px; margin-bottom: 10px; }
-      .wwwh-text { font-size: 16px; line-height: 1.6; }
+      .wwwh-wrap { max-width: 1600px; margin-bottom: 26px; }
+      .wwwh-item { padding: 32px 30px; }
+      .wwwh-label { font-size: 13px; margin-bottom: 12px; }
+      .wwwh-text { font-size: 17px; line-height: 1.6; }
 
-      .suite-cta-wrap { margin-bottom: 56px; }
+      .suite-cta-wrap { margin-bottom: 30px; }
       .suite-cta { font-size: 23px; padding: 30px 64px; }
-      .suite-cta-note { font-size: 15px; margin-top: 18px; }
+      .suite-cta-note { font-size: 15px; margin-top: 12px; }
 
       .about { padding: 34px 40px; }
       .author-avatar { width: 50px; height: 50px; }
