@@ -701,6 +701,8 @@
        using the space, which reads as "mobile layout, stretched."
        ============================================================ */
     @media (min-width: 1000px) {
+      .header-inner { max-width: 1600px; }
+
       .hero { padding: 72px 20px 36px; }
       .hero-inner { max-width: 1100px; }
       .hero h1 { font-size: clamp(38px, 3.2vw, 52px); margin-bottom: 18px; }
@@ -708,9 +710,10 @@
       .hero-cta { font-size: 19px; padding: 22px 40px; }
       .hero-cta-note { font-size: 13px; margin-top: 16px; }
 
-      main { max-width: 1200px; padding: 8px 32px 56px; }
+      main { max-width: 1600px; padding: 8px 32px 56px; }
 
-      .wwwh-wrap { max-width: 980px; margin-bottom: 36px; }
+      .wwwh-wrap { max-width: 1400px; margin-bottom: 36px; }
+      .wwwh-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
       .wwwh-item { padding: 22px 24px; }
       .wwwh-label { font-size: 11px; margin-bottom: 8px; }
       .wwwh-text { font-size: 15px; line-height: 1.55; }
@@ -719,7 +722,7 @@
       .suite-cta { font-size: 21px; padding: 26px 56px; }
       .suite-cta-note { font-size: 14px; margin-top: 16px; }
 
-      .about-top-wrap { max-width: 1200px; padding: 16px 32px 0; }
+      .about-top-wrap { max-width: 1600px; padding: 16px 32px 0; }
       .about { padding: 28px 34px; }
       .author-avatar { width: 44px; height: 44px; }
       .author-name { font-size: 18px; }
@@ -730,7 +733,37 @@
       .about-method-line { font-size: 14px; margin-bottom: 16px; }
       .about-service-tag { font-size: 12px; padding: 10px 12px; }
 
-      footer { font-size: 13px; padding: 28px 32px 90px; }
+      footer { max-width: 1600px; font-size: 13px; padding: 28px 32px 90px; }
+    }
+
+    /* ============================================================
+       ULTRA-WIDE — a further pass for very large screens, on top of
+       the 1000px scale-up above (which only widened the containers).
+       ============================================================ */
+    @media (min-width: 1500px) {
+      .hero { padding: 88px 20px 44px; }
+      .hero-inner { max-width: 1300px; }
+      .hero h1 { font-size: clamp(48px, 3vw, 64px); margin-bottom: 22px; }
+      .hero-subtitle { font-size: 20px; max-width: 640px; margin-bottom: 38px; }
+      .hero-cta { font-size: 21px; padding: 25px 46px; }
+      .hero-cta-note { font-size: 14px; margin-top: 18px; }
+
+      .wwwh-wrap { max-width: 1600px; margin-bottom: 44px; }
+      .wwwh-item { padding: 26px 28px; }
+      .wwwh-label { font-size: 12px; margin-bottom: 10px; }
+      .wwwh-text { font-size: 16px; line-height: 1.6; }
+
+      .suite-cta-wrap { margin-bottom: 56px; }
+      .suite-cta { font-size: 23px; padding: 30px 64px; }
+      .suite-cta-note { font-size: 15px; margin-top: 18px; }
+
+      .about { padding: 34px 40px; }
+      .author-avatar { width: 50px; height: 50px; }
+      .author-name { font-size: 20px; }
+      .author-role { font-size: 15px; }
+      .about-outcome { font-size: 17px; max-width: 900px; margin: 22px auto; }
+      .about-method-line { font-size: 15px; }
+      .about-service-tag { font-size: 13px; padding: 11px 14px; }
     }
 
     /* ============================================================
@@ -959,10 +992,10 @@
         heroSubtitle: 'Sei domande te lo dicono.',
         heroCta: 'Avvia l’Operator Diagnostic',
         heroNote: 'Gratis · senza login · i dati restano sul tuo dispositivo',
-        wwwhWhoLabel: 'Who',
-        wwwhWhatLabel: 'What',
-        wwwhWhyLabel: 'Why',
-        wwwhHowLabel: 'How',
+        wwwhWhoLabel: 'Chi',
+        wwwhWhatLabel: 'Cosa',
+        wwwhWhyLabel: 'Perché',
+        wwwhHowLabel: 'Come',
         wwwhWho: 'Pensato per operatori short-term rental e appartamenti in gestione che gestiscono il proprio portfolio.',
         wwwhWhat: 'Sei strumenti diagnostici che misurano la tua performance commerciale su distribuzione, ricavi, guest experience e retention dei proprietari.',
         wwwhWhy: 'La maggior parte degli operatori sa che qualcosa non funziona come dovrebbe. Questo ti mostra esattamente dove.',
@@ -1032,10 +1065,10 @@
         heroSubtitle: 'Sechs Fragen sagen es Ihnen.',
         heroCta: 'Operator Diagnostic starten',
         heroNote: 'Kostenlos · ohne Login · Eingaben bleiben auf Ihrem Gerät',
-        wwwhWhoLabel: 'Who',
-        wwwhWhatLabel: 'What',
-        wwwhWhyLabel: 'Why',
-        wwwhHowLabel: 'How',
+        wwwhWhoLabel: 'Wer',
+        wwwhWhatLabel: 'Was',
+        wwwhWhyLabel: 'Warum',
+        wwwhHowLabel: 'Wie',
         wwwhWho: 'Für STR- und Serviced-Apartment-Betreiber, die ihr eigenes Portfolio verwalten.',
         wwwhWhat: 'Sechs Diagnose-Tools, die Ihre kommerzielle Leistung in den Bereichen Distribution, Umsatz, Gästeerlebnis und Owner Retention bewerten.',
         wwwhWhy: 'Die meisten Betreiber spüren, dass etwas nicht so läuft, wie es sollte. Dieses Tool zeigt Ihnen genau, wo.',

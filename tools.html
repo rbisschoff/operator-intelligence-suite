@@ -843,13 +843,15 @@
        using the space, which reads as "mobile layout, stretched."
        ============================================================ */
     @media (min-width: 1000px) {
+      .header-inner { max-width: 1600px; }
+
       .tools-hero { padding: 48px 20px 12px; }
       .tools-hero-inner { max-width: 820px; }
       .tools-hero h1 { font-size: clamp(30px, 2.6vw, 38px); margin-bottom: 14px; }
       .tools-hero-subtitle { font-size: 16px; max-width: 560px; }
       .back-link { font-size: 14px; }
 
-      main { max-width: 1200px; padding: 8px 32px 56px; }
+      main { max-width: 1600px; padding: 8px 32px 56px; }
 
       .tool-group-row { gap: 28px; margin-bottom: 28px; }
       .tool-group-grid { gap: 16px; }
@@ -867,7 +869,7 @@
       .bottom-cta-line { font-size: 15px; }
       .bottom-cta .about-cta-primary { font-size: 14px; padding: 14px 26px; }
 
-      .about-top-wrap { max-width: 1200px; padding: 16px 32px 0; }
+      .about-top-wrap { max-width: 1600px; padding: 16px 32px 0; }
       .about { padding: 28px 34px; }
       .author-avatar { width: 44px; height: 44px; }
       .author-name { font-size: 18px; }
@@ -878,7 +880,48 @@
       .about-method-line { font-size: 14px; margin-bottom: 16px; }
       .about-service-tag { font-size: 12px; padding: 10px 12px; }
 
-      footer { font-size: 13px; padding: 28px 32px 90px; }
+      footer { max-width: 1600px; font-size: 13px; padding: 28px 32px 90px; }
+    }
+
+    /* ============================================================
+       ULTRA-WIDE — a further pass for very large screens. The tool
+       grid's two rows of two groups merge into one row of four: each
+       .tool-group-row is set to display:contents so its .tool-group
+       children become direct items of .tools-showcase's own 4-column
+       grid instead of being trapped inside two separate 2-col rows.
+       ============================================================ */
+    @media (min-width: 1500px) {
+      .tools-hero { padding: 60px 20px 16px; }
+      .tools-hero-inner { max-width: 960px; }
+      .tools-hero h1 { font-size: clamp(36px, 2.4vw, 44px); margin-bottom: 16px; }
+      .tools-hero-subtitle { font-size: 17px; max-width: 640px; }
+
+      .tools-showcase {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 24px;
+      }
+      .tool-group-row {
+        display: contents;
+      }
+      /* Each .tool-group is now one of 4 columns in the outer grid, so
+         its own 2 cards stack vertically instead of squeezing 2 more
+         columns into an already-narrow quarter-width slot. */
+      .tool-group-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .claim-line { font-size: 15px; max-width: 680px; }
+      .bottom-cta-line { font-size: 16px; }
+
+      .about { padding: 34px 40px; }
+      .author-avatar { width: 50px; height: 50px; }
+      .author-name { font-size: 20px; }
+      .author-role { font-size: 15px; }
+      .about-outcome { font-size: 17px; max-width: 900px; margin: 22px auto; }
+      .about-method-line { font-size: 15px; }
+      .about-service-tag { font-size: 13px; padding: 11px 14px; }
     }
 
     /* ============================================================
@@ -1196,10 +1239,10 @@
         heroSubtitle: 'Sei domande te lo dicono.',
         heroCta: 'Avvia l’Operator Diagnostic',
         heroNote: 'Gratis · senza login · i dati restano sul tuo dispositivo',
-        wwwhWhoLabel: 'Who',
-        wwwhWhatLabel: 'What',
-        wwwhWhyLabel: 'Why',
-        wwwhHowLabel: 'How',
+        wwwhWhoLabel: 'Chi',
+        wwwhWhatLabel: 'Cosa',
+        wwwhWhyLabel: 'Perché',
+        wwwhHowLabel: 'Come',
         wwwhWho: 'Pensato per operatori short-term rental e appartamenti in gestione che gestiscono il proprio portfolio.',
         wwwhWhat: 'Sei strumenti diagnostici che misurano la tua performance commerciale su distribuzione, ricavi, guest experience e retention dei proprietari.',
         wwwhWhy: 'La maggior parte degli operatori sa che qualcosa non funziona come dovrebbe. Questo ti mostra esattamente dove.',
@@ -1269,10 +1312,10 @@
         heroSubtitle: 'Sechs Fragen sagen es Ihnen.',
         heroCta: 'Operator Diagnostic starten',
         heroNote: 'Kostenlos · ohne Login · Eingaben bleiben auf Ihrem Gerät',
-        wwwhWhoLabel: 'Who',
-        wwwhWhatLabel: 'What',
-        wwwhWhyLabel: 'Why',
-        wwwhHowLabel: 'How',
+        wwwhWhoLabel: 'Wer',
+        wwwhWhatLabel: 'Was',
+        wwwhWhyLabel: 'Warum',
+        wwwhHowLabel: 'Wie',
         wwwhWho: 'Für STR- und Serviced-Apartment-Betreiber, die ihr eigenes Portfolio verwalten.',
         wwwhWhat: 'Sechs Diagnose-Tools, die Ihre kommerzielle Leistung in den Bereichen Distribution, Umsatz, Gästeerlebnis und Owner Retention bewerten.',
         wwwhWhy: 'Die meisten Betreiber spüren, dass etwas nicht so läuft, wie es sollte. Dieses Tool zeigt Ihnen genau, wo.',
