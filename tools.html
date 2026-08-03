@@ -4,17 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>The Full Diagnostic Suite — Operator Intelligence Suite</title>
-  <meta name="description" data-i18n-meta="toolsDescription" content="Eight diagnostic tools covering distribution, revenue, guest experience, and owner retention for short-term rental operators.">
+  <meta name="description" content="Eight diagnostic tools covering distribution, revenue, guest experience, and owner retention for short-term rental operators.">
+  <link rel="canonical" href="https://rbisschoff.github.io/operator-intelligence-suite/tools.html">
   <link rel="alternate" hreflang="en" href="https://rbisschoff.github.io/operator-intelligence-suite/tools.html?lang=en">
   <link rel="alternate" hreflang="it" href="https://rbisschoff.github.io/operator-intelligence-suite/tools.html?lang=it">
   <link rel="alternate" hreflang="de" href="https://rbisschoff.github.io/operator-intelligence-suite/tools.html?lang=de">
   <link rel="alternate" hreflang="x-default" href="https://rbisschoff.github.io/operator-intelligence-suite/tools.html?lang=en">
 
-  <!-- Open Graph -->
-  <meta property="og:title" data-i18n-meta="toolsOgTitle" content="The Full Diagnostic Suite — Operator Intelligence Suite">
-  <meta property="og:description" data-i18n-meta="ogDescription" content="A diagnostic framework for hospitality and short-term rental operators.">
+  <!-- Open Graph / Twitter — title & description are regenerated at runtime from the hero copy
+       in the I18N object below (see buildMetaFromCopy). These are the pre-JS fallback values. -->
+  <meta property="og:title" content="The Full Diagnostic Suite — Operator Intelligence Suite">
+  <meta property="og:description" content="Eight diagnostic tools covering distribution, revenue, guest experience, and owner retention for short-term rental operators.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="og-image.svg">
+  <meta property="og:image" content="https://rbisschoff.github.io/operator-intelligence-suite/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Full Diagnostic Suite — Operator Intelligence Suite">
+  <meta name="twitter:description" content="Eight diagnostic tools covering distribution, revenue, guest experience, and owner retention for short-term rental operators.">
+  <meta name="twitter:image" content="https://rbisschoff.github.io/operator-intelligence-suite/og-image.png">
 
   <script>
     (function () {
@@ -33,32 +41,6 @@
       document.documentElement.lang = lang;
       window.__oisInitialLang = lang;
       try { localStorage.setItem('ois-lang', lang); } catch (e) {}
-
-      const metadata = {
-        en: {
-          toolsDescription: 'Eight diagnostic tools covering distribution, revenue, guest experience, and owner retention for short-term rental operators.',
-          toolsOgTitle: 'The Full Diagnostic Suite — Operator Intelligence Suite',
-          ogDescription: 'A diagnostic framework for hospitality and short-term rental operators.'
-        },
-        it: {
-          toolsDescription: 'Otto strumenti diagnostici su distribuzione, ricavi, guest experience e retention dei proprietari per operatori short-term rental.',
-          toolsOgTitle: 'L’intera suite diagnostica — Operator Intelligence Suite',
-          ogDescription: 'Un framework diagnostico per operatori hospitality e short-term rental.'
-        },
-        de: {
-          toolsDescription: 'Acht Diagnose-Tools zu Distribution, Umsatz, Gästeerlebnis und Owner Retention für Short-Term-Rental-Betreiber.',
-          toolsOgTitle: 'Die gesamte Diagnose-Suite — Operator Intelligence Suite',
-          ogDescription: 'Ein Diagnose-Framework für Hospitality- und Short-Term-Rental-Operatoren.'
-        }
-      };
-      window.updateOisMetadata = function (activeLang) {
-        const pack = metadata[activeLang] || metadata.en;
-        document.querySelectorAll('[data-i18n-meta]').forEach(function (el) {
-          const value = pack[el.getAttribute('data-i18n-meta')];
-          if (value) el.setAttribute('content', value);
-        });
-      };
-      window.updateOisMetadata(lang);
     })();
   </script>
 
@@ -1399,6 +1381,78 @@
         footer2: 'Ein praktisches Toolkit für Hospitality- und Short-Term-Rental-Operatoren.'
       }
     };
+
+    // Title/meta description/OG/Twitter tags and JSON-LD are generated from the SAME
+    // hero copy (I18N) used for the visible page, so editing hero strings above keeps
+    // SEO fields in sync automatically. Hardcoded <head> values are only a pre-JS fallback.
+    const META_FALLBACK = {
+      title: 'The Full Diagnostic Suite — Operator Intelligence Suite',
+      description: 'Eight diagnostic tools covering distribution, revenue, guest experience, and owner retention for short-term rental operators.'
+    };
+    function truncateAtWord(str, maxLen) {
+      if (!str || str.length <= maxLen) return str;
+      const cut = str.slice(0, maxLen);
+      const lastSpace = cut.lastIndexOf(' ');
+      return (lastSpace > 0 ? cut.slice(0, lastSpace) : cut).trim() + '…';
+    }
+    function setMetaContent(selector, content) {
+      const el = document.querySelector(selector);
+      if (el) el.setAttribute('content', content);
+    }
+    function buildJsonLd(pack) {
+      const tools = [
+        { name: pack && pack.toolDcaName || 'Distribution Cost Analyser', desc: pack && pack.toolDcaQ, url: 'https://rbisschoff.github.io/distribution-cost-analyser/' },
+        { name: pack && pack.toolAiName || 'Website AI Ready Audit', desc: pack && pack.toolAiQ, url: 'https://rbisschoff.github.io/ai-ready-audit/' },
+        { name: pack && pack.toolOwnerRetentionName || 'Owner Retention Diagnostic', desc: pack && pack.toolOwnerRetentionQ, url: 'https://rbisschoff.github.io/owner-retention-diagnostic/' },
+        { name: 'China Inbound Demand Check', desc: pack && pack.toolChinaQ, url: 'https://rbisschoff.github.io/chinacheck/' },
+        { name: pack && pack.toolGuestExpName || 'Guest Experience Score', desc: pack && pack.toolGuestExpQ, url: 'https://rbisschoff.github.io/guest-experience-score/' },
+        { name: pack && pack.toolRgvName || 'Repeat Guest Value', desc: pack && pack.toolRgvQ, url: 'https://rbisschoff.github.io/repeat-guest-value/' },
+        { name: pack && pack.toolTechStackName || 'Tech Stack Audit', desc: pack && pack.toolTechStackQ, url: 'https://rbisschoff.github.io/tech-stack-audit/' },
+        { name: pack && pack.toolCmaName || 'Contribution Margin Analyser', desc: pack && pack.toolCmaQ, url: 'https://rbisschoff.github.io/contribution-margin-analyser/' }
+      ];
+      const data = {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        name: pack && pack.toolsPageTitle ? pack.toolsPageTitle : META_FALLBACK.title,
+        itemListElement: tools.map(function (t, i) {
+          const item = {
+            '@type': 'SoftwareApplication',
+            name: t.name,
+            url: t.url,
+            applicationCategory: 'BusinessApplication',
+            offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+            isPartOf: { '@type': 'WebSite', name: 'Operator Intelligence Suite', url: 'https://rbisschoff.github.io/operator-intelligence-suite/' }
+          };
+          if (t.desc) item.description = t.desc;
+          return { '@type': 'ListItem', position: i + 1, item: item };
+        })
+      };
+      let script = document.getElementById('ois-json-ld');
+      if (!script) {
+        script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.id = 'ois-json-ld';
+        document.head.appendChild(script);
+      }
+      script.textContent = JSON.stringify(data);
+    }
+    function buildMetaFromCopy(lang) {
+      const pack = I18N[lang] || I18N.en;
+      let title = META_FALLBACK.title;
+      let description = META_FALLBACK.description;
+      if (pack && pack.toolsPageTitle && pack.toolsPageSubtitle) {
+        title = pack.toolsPageTitle + ' — Operator Intelligence Suite';
+        description = truncateAtWord(pack.toolsPageSubtitle, 160);
+      }
+      document.title = title;
+      setMetaContent('meta[name="description"]', description);
+      setMetaContent('meta[property="og:title"]', title);
+      setMetaContent('meta[property="og:description"]', description);
+      setMetaContent('meta[name="twitter:title"]', title);
+      setMetaContent('meta[name="twitter:description"]', description);
+      buildJsonLd(pack);
+    }
+    window.updateOisMetadata = buildMetaFromCopy;
 
     function applyLang(lang) {
       const pack = I18N[lang] || I18N.it;
