@@ -285,12 +285,31 @@
       color: var(--ink);
     }
 
-    .hero-subtitle {
-      font-size: 15px;
+    .hero-eyebrow {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
       color: var(--muted);
-      line-height: 1.65;
+      max-width: 480px;
+      margin: 0 auto 12px;
+    }
+
+    .hero-mechanism {
+      font-size: 15px;
+      color: var(--ink2);
+      line-height: 1.6;
+      max-width: 460px;
+      margin: 0 auto 12px;
+    }
+
+    .hero-credibility {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
       max-width: 420px;
-      margin: 0 auto 22px;
+      margin: 0 auto 20px;
     }
 
     .hero-cta {
@@ -331,9 +350,19 @@
         font-size: clamp(24px, 7.5vw, 32px);
       }
 
-      .hero-subtitle {
+      .hero-eyebrow {
+        font-size: 10px;
+        margin-bottom: 10px;
+      }
+
+      .hero-mechanism {
         font-size: 14px;
-        margin-bottom: 18px;
+        margin-bottom: 10px;
+      }
+
+      .hero-credibility {
+        font-size: 12px;
+        margin-bottom: 16px;
       }
 
       .hero-cta {
@@ -446,52 +475,27 @@
     }
 
     /* ============================================================
-       SUITE CTA — the page's single visual focal point
+       SEE ALL TOOLS — plain text link, not a button; the hero's own
+       CTA is the page's one visual focal point now.
        ============================================================ */
-    .suite-cta-wrap {
-      text-align: center;
-      margin: 4px auto 36px;
-      padding: 0 20px;
-    }
-
-    .suite-cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      font-size: 19px;
-      font-weight: 700;
-      color: var(--ink);
-      background: var(--accent);
-      padding: 24px 48px;
-      border-radius: 100px;
-      box-shadow: 0 6px 20px rgba(201, 169, 97, 0.4);
-      transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
-    }
-
-    .suite-cta:hover {
-      background: var(--accent-dark);
-      color: #fff;
-      transform: translateY(-2px);
-      box-shadow: 0 10px 28px rgba(201, 169, 97, 0.5);
-    }
-
-    .suite-cta-note {
+    .see-all-tools-link {
       display: block;
-      margin-top: 14px;
-      font-size: 13px;
-      color: var(--muted);
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 0 auto 20px;
+      transition: color 0.2s;
     }
 
-    @media (max-width: 640px) {
-      .suite-cta {
-        width: 100%;
-        max-width: 360px;
-        min-height: 56px;
-        padding: 18px 20px;
-        font-size: 17px;
-        box-sizing: border-box;
-      }
+    .see-all-tools-link:hover {
+      color: var(--accent-dark);
+      text-decoration: underline;
+    }
+
+    .see-all-tools-link:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
     }
 
     /* ============================================================
@@ -711,23 +715,24 @@
          alone can't guarantee this since font grows with viewport while
          hero-inner's width caps out - the fix is a slower vw coefficient
          and a lower max, not just a wider container. */
-      /* Spacing between hero/WWWH/suite-CTA uses vh-relative clamps, not
-         fixed px, so it compresses on shorter laptop viewports (768-900px
-         tall) instead of taking the same vertical footprint regardless of
-         how much height is actually available - the goal is the About box
-         reaching into view without a full scroll on a typical laptop. */
+      /* Spacing between hero/WWWH uses vh-relative clamps, not fixed px,
+         so it compresses on shorter laptop viewports (768-900px tall)
+         instead of taking the same vertical footprint regardless of how
+         much height is actually available. */
       .hero { padding: clamp(20px, 3.5vh, 48px) 20px clamp(10px, 1.8vh, 24px); }
       .hero-inner { max-width: 1200px; }
       .hero h1 { font-size: clamp(28px, 2.4vw, 40px); margin-bottom: clamp(8px, 1.5vh, 14px); }
-      .hero-subtitle { font-size: 18px; max-width: 560px; margin-bottom: clamp(10px, 2vh, 22px); }
+      .hero-eyebrow { font-size: 12px; max-width: 640px; margin-bottom: clamp(8px, 1.4vh, 14px); }
+      .hero-mechanism { font-size: 19px; max-width: 640px; margin-bottom: clamp(8px, 1.6vh, 14px); }
+      .hero-credibility { font-size: 14px; max-width: 560px; margin-bottom: clamp(10px, 2vh, 20px); }
       .hero-cta { font-size: 19px; padding: clamp(14px, 2vh, 22px) 40px; }
       .hero-cta-note { font-size: 13px; margin-top: clamp(6px, 1.2vh, 12px); }
 
       /* main's own padding-bottom used to stack on top of
-         suite-cta-wrap's margin-bottom below (both applied between the
-         same two elements), which was pure wasted vertical space, not
-         intentional rhythm - removed here so About's gap comes from one
-         place (suite-cta-wrap's margin + about-top-wrap's own padding). */
+         .see-all-tools-link's margin-bottom below (both applied between
+         the same two elements), which was pure wasted vertical space,
+         not intentional rhythm - removed here so About's gap comes from
+         one place (that link's margin + about-top-wrap's own padding). */
       main { max-width: 1600px; padding: 8px 32px 0; }
 
       .wwwh-wrap { max-width: 1400px; margin-bottom: clamp(10px, 2vh, 22px); }
@@ -740,9 +745,7 @@
       .wwwh-label { font-size: 12px; letter-spacing: 0.1em; margin-bottom: 10px; }
       .wwwh-text { font-size: 16px; line-height: 1.55; }
 
-      .suite-cta-wrap { margin-bottom: clamp(14px, 3vh, 26px); }
-      .suite-cta { font-size: 21px; padding: clamp(16px, 2.2vh, 26px) 56px; }
-      .suite-cta-note { font-size: 14px; margin-top: clamp(6px, 1.2vh, 10px); }
+      .see-all-tools-link { font-size: 15px; margin-bottom: clamp(14px, 3vh, 26px); }
 
       .about-top-wrap { max-width: 1600px; padding: 8px 32px 0; }
       .about { padding: 28px 34px; }
@@ -766,7 +769,9 @@
       .hero { padding: 56px 20px 28px; }
       .hero-inner { max-width: 1400px; }
       .hero h1 { font-size: clamp(40px, 2.6vw, 56px); margin-bottom: 16px; }
-      .hero-subtitle { font-size: 20px; max-width: 640px; margin-bottom: 26px; }
+      .hero-eyebrow { font-size: 13px; max-width: 700px; margin-bottom: 16px; }
+      .hero-mechanism { font-size: 21px; max-width: 700px; margin-bottom: 16px; }
+      .hero-credibility { font-size: 15px; max-width: 600px; margin-bottom: 26px; }
       .hero-cta { font-size: 21px; padding: 25px 46px; }
       .hero-cta-note { font-size: 14px; margin-top: 14px; }
 
@@ -775,9 +780,7 @@
       .wwwh-label { font-size: 13px; margin-bottom: 12px; }
       .wwwh-text { font-size: 17px; line-height: 1.6; }
 
-      .suite-cta-wrap { margin-bottom: 30px; }
-      .suite-cta { font-size: 23px; padding: 30px 64px; }
-      .suite-cta-note { font-size: 15px; margin-top: 12px; }
+      .see-all-tools-link { font-size: 16px; margin-bottom: 30px; }
 
       .about { padding: 34px 40px; }
       .author-avatar { width: 50px; height: 50px; }
@@ -855,10 +858,10 @@
 
   <section class="hero">
     <div class="hero-inner">
+      <span class="hero-eyebrow" data-i18n="heroEyebrow">Free diagnostic tools from a commercial growth consultant for STR and serviced apartment operators</span>
       <h1 data-i18n="heroTitle">You can tell something isn't working as well as it should.<br>You just don't know what.</h1>
-      <p class="hero-subtitle" data-i18n="heroSubtitle">
-        Six questions tells you.
-      </p>
+      <p class="hero-mechanism" data-i18n="heroMechanism">Answer six questions about your operation and see exactly which part of your commercial picture is costing you: distribution, returning guests, owner retention, or unit profitability.</p>
+      <p class="hero-credibility" data-i18n="heroCredibility">Built from 15 years running distribution and revenue for STR and serviced apartment operators myself.</p>
       <a class="hero-cta" href="https://rbisschoff.github.io/operator-diagnostic/" data-i18n="heroCta">Start the Operator Diagnostic</a>
       <span class="hero-cta-note" data-i18n="heroNote">Free · no login · inputs stay on your device</span>
     </div>
@@ -870,27 +873,24 @@
       <div class="wwwh-grid">
         <div class="wwwh-item">
           <span class="wwwh-label" data-i18n="wwwhWhoLabel">Who</span>
-          <p class="wwwh-text" data-i18n="wwwhWho">Built for STR and serviced apartment operators managing their own portfolios.</p>
+          <p class="wwwh-text" data-i18n="wwwhWho">STR and serviced apartment operators managing their own portfolios.</p>
         </div>
         <div class="wwwh-item">
           <span class="wwwh-label" data-i18n="wwwhWhatLabel">What</span>
-          <p class="wwwh-text" data-i18n="wwwhWhat">Six diagnostic tools that score your commercial performance across distribution, revenue, guest experience, and owner retention.</p>
+          <p class="wwwh-text" data-i18n="wwwhWhat">Six diagnostic tools across distribution, revenue, guest experience, and owner retention.</p>
         </div>
         <div class="wwwh-item">
           <span class="wwwh-label" data-i18n="wwwhWhyLabel">Why</span>
-          <p class="wwwh-text" data-i18n="wwwhWhy">Most operators know something isn't working as well as it should. This shows you exactly where.</p>
+          <p class="wwwh-text" data-i18n="wwwhWhy">Shows you exactly where your commercial performance is slipping.</p>
         </div>
         <div class="wwwh-item">
           <span class="wwwh-label" data-i18n="wwwhHowLabel">How</span>
-          <p class="wwwh-text" data-i18n="wwwhHow">Map, Identify, Quantify, Direct. Six questions to a Growth Snapshot, then a deep-dive tool for your weakest area.</p>
+          <p class="wwwh-text" data-i18n="wwwhHow">Six questions to a Growth Snapshot, then a deep-dive tool for your weakest area.</p>
         </div>
       </div>
     </div>
 
-    <div class="suite-cta-wrap">
-      <a href="tools.html" class="suite-cta" data-i18n="exploreSuiteCta">Explore the full suite →</a>
-      <span class="suite-cta-note" data-i18n="claimLine">From the operator's desk. No login, no pitch. Data stays on your device.</span>
-    </div>
+    <a href="tools.html" class="see-all-tools-link" data-i18n="seeAllToolsLink">See all 9 tools →</a>
 
   </main>
 
@@ -939,18 +939,20 @@
         brandTitle: 'Operator Intelligence Suite',
         brandSubtitle: 'by Roger Bisschoff',
         heroTitle: 'You can tell something isn\'t working as well as it should.<br>You just don\'t know what.',
-        heroSubtitle: 'Six questions tells you.',
+        heroEyebrow: 'Free diagnostic tools from a commercial growth consultant for STR and serviced apartment operators',
+        heroMechanism: 'Answer six questions about your operation and see exactly which part of your commercial picture is costing you: distribution, returning guests, owner retention, or unit profitability.',
+        heroCredibility: 'Built from 15 years running distribution and revenue for STR and serviced apartment operators myself.',
         heroCta: 'Start the Operator Diagnostic',
         heroNote: 'Free · no login · inputs stay on your device',
         wwwhWhoLabel: 'Who',
         wwwhWhatLabel: 'What',
         wwwhWhyLabel: 'Why',
         wwwhHowLabel: 'How',
-        wwwhWho: 'Built for STR and serviced apartment operators managing their own portfolios.',
-        wwwhWhat: 'Six diagnostic tools that score your commercial performance across distribution, revenue, guest experience, and owner retention.',
-        wwwhWhy: 'Most operators know something isn\'t working as well as it should. This shows you exactly where.',
-        wwwhHow: 'Map, Identify, Quantify, Direct. Six questions to a Growth Snapshot, then a deep-dive tool for your weakest area.',
-        exploreSuiteCta: 'Explore the full suite →',
+        wwwhWho: 'STR and serviced apartment operators managing their own portfolios.',
+        wwwhWhat: 'Six diagnostic tools across distribution, revenue, guest experience, and owner retention.',
+        wwwhWhy: 'Shows you exactly where your commercial performance is slipping.',
+        wwwhHow: 'Six questions to a Growth Snapshot, then a deep-dive tool for your weakest area.',
+        seeAllToolsLink: 'See all 9 tools →',
         toolsPageTitle: 'The full diagnostic suite',
         toolsPageSubtitle: 'Every tool, grouped by where it targets your commercial picture. Start wherever the gap hurts most.',
         backToHome: '← Back to overview',
@@ -979,7 +981,6 @@
         toolTechStackQ: 'Is your tech stack, from PMS to revenue management, earning what you pay for it?',
         badgeSoon: 'Soon',
         openTool: 'Open tool →',
-        claimLine: "From the operator's desk. No login, no pitch. Data stays on your device.",
         authorRole: 'Distribution and revenue consulting for short-term rental, vacation rental, and serviced apartment operators',
         viewProfile: 'View profile',
         getInTouch: 'Talk through your numbers →',
@@ -1012,18 +1013,20 @@
         brandTitle: 'Operator Intelligence Suite',
         brandSubtitle: 'di Roger Bisschoff',
         heroTitle: 'Senti che qualcosa non funziona come dovrebbe.<br>Solo non sai cosa.',
-        heroSubtitle: 'Sei domande te lo dicono.',
+        heroEyebrow: 'Strumenti diagnostici gratuiti di un consulente di crescita commerciale per operatori short-term rental e appartamenti in gestione',
+        heroMechanism: 'Rispondi a sei domande sulla tua attività e scopri esattamente quale parte del tuo quadro commerciale ti sta costando di più: distribuzione, ospiti ricorrenti, retention dei proprietari o redditività per unità.',
+        heroCredibility: 'Costruito su 15 anni di esperienza diretta nella distribuzione e nel revenue per operatori short-term rental e appartamenti in gestione.',
         heroCta: 'Avvia l’Operator Diagnostic',
         heroNote: 'Gratis · senza login · i dati restano sul tuo dispositivo',
         wwwhWhoLabel: 'Chi',
         wwwhWhatLabel: 'Cosa',
         wwwhWhyLabel: 'Perché',
         wwwhHowLabel: 'Come',
-        wwwhWho: 'Pensato per operatori short-term rental e appartamenti in gestione che gestiscono il proprio portfolio.',
-        wwwhWhat: 'Sei strumenti diagnostici che misurano la tua performance commerciale su distribuzione, ricavi, guest experience e retention dei proprietari.',
-        wwwhWhy: 'La maggior parte degli operatori sa che qualcosa non funziona come dovrebbe. Questo ti mostra esattamente dove.',
-        wwwhHow: 'Map, Identify, Quantify, Direct. Sei domande per un Growth Snapshot, poi uno strumento di approfondimento per la tua area più debole.',
-        exploreSuiteCta: 'Esplora l’intera suite →',
+        wwwhWho: 'Operatori short-term rental e appartamenti in gestione che gestiscono il proprio portfolio.',
+        wwwhWhat: 'Sei strumenti diagnostici su distribuzione, ricavi, guest experience e retention dei proprietari.',
+        wwwhWhy: 'Ti mostra esattamente dove la tua performance commerciale sta perdendo valore.',
+        wwwhHow: 'Sei domande per un Growth Snapshot, poi uno strumento di approfondimento per la tua area più debole.',
+        seeAllToolsLink: 'Vedi tutti i 9 strumenti →',
         toolsPageTitle: 'L’intera suite diagnostica',
         toolsPageSubtitle: 'Ogni strumento, raggruppato per l’area del tuo quadro commerciale che misura. Inizia da dove il divario si sente di più.',
         backToHome: '← Torna alla panoramica',
@@ -1052,7 +1055,6 @@
         toolTechStackQ: 'Il tuo stack tecnologico, dal PMS al revenue management, si guadagna quello che paghi?',
         badgeSoon: 'Presto',
         openTool: 'Apri strumento →',
-        claimLine: 'Dalla scrivania dell’operatore. Niente login, niente pitch. I dati restano sul tuo dispositivo.',
         authorRole: 'Consulenza in distribuzione e revenue per operatori di short-term rental, vacation rental, e appartamenti in gestione',
         viewProfile: 'Vedi profilo',
         getInTouch: 'Parliamo dei tuoi numeri →',
@@ -1085,18 +1087,20 @@
         brandTitle: 'Operator Intelligence Suite',
         brandSubtitle: 'von Roger Bisschoff',
         heroTitle: 'Sie spüren, dass etwas nicht so läuft, wie es sollte.<br>Nur wissen Sie nicht, was.',
-        heroSubtitle: 'Sechs Fragen sagen es Ihnen.',
+        heroEyebrow: 'Kostenlose Diagnosetools von einem Berater für kommerzielles Wachstum für STR- und Serviced-Apartment-Betreiber',
+        heroMechanism: 'Beantworten Sie sechs Fragen zu Ihrem Betrieb und sehen Sie genau, welcher Teil Ihres kommerziellen Gesamtbilds Sie Geld kostet: Distribution, wiederkehrende Gäste, Eigentümerbindung oder Rentabilität pro Einheit.',
+        heroCredibility: 'Aufgebaut auf 15 Jahren eigener Erfahrung in Distribution und Revenue für STR- und Serviced-Apartment-Betreiber.',
         heroCta: 'Operator Diagnostic starten',
         heroNote: 'Kostenlos · ohne Login · Eingaben bleiben auf Ihrem Gerät',
         wwwhWhoLabel: 'Wer',
         wwwhWhatLabel: 'Was',
         wwwhWhyLabel: 'Warum',
         wwwhHowLabel: 'Wie',
-        wwwhWho: 'Für STR- und Serviced-Apartment-Betreiber, die ihr eigenes Portfolio verwalten.',
-        wwwhWhat: 'Sechs Diagnose-Tools, die Ihre kommerzielle Leistung in den Bereichen Distribution, Umsatz, Gästeerlebnis und Owner Retention bewerten.',
-        wwwhWhy: 'Die meisten Betreiber spüren, dass etwas nicht so läuft, wie es sollte. Dieses Tool zeigt Ihnen genau, wo.',
-        wwwhHow: 'Map, Identify, Quantify, Direct. Sechs Fragen zu einem Growth Snapshot, dann ein Vertiefungstool für Ihren schwächsten Bereich.',
-        exploreSuiteCta: 'Die gesamte Suite entdecken →',
+        wwwhWho: 'STR- und Serviced-Apartment-Betreiber, die ihr eigenes Portfolio verwalten.',
+        wwwhWhat: 'Sechs Diagnose-Tools zu Distribution, Umsatz, Gästeerlebnis und Owner Retention.',
+        wwwhWhy: 'Zeigt Ihnen genau, wo Ihre kommerzielle Leistung nachlässt.',
+        wwwhHow: 'Sechs Fragen zu einem Growth Snapshot, dann ein Vertiefungstool für Ihren schwächsten Bereich.',
+        seeAllToolsLink: 'Alle 9 Tools ansehen →',
         toolsPageTitle: 'Die gesamte Diagnose-Suite',
         toolsPageSubtitle: 'Jedes Tool, gruppiert nach dem Bereich Ihres kommerziellen Bildes, den es misst. Beginnen Sie dort, wo die Lücke am meisten schmerzt.',
         backToHome: '← Zurück zur Übersicht',
@@ -1125,7 +1129,6 @@
         toolTechStackQ: 'Verdient Ihr Tech-Stack, von PMS bis Revenue Management, was Sie dafür bezahlen?',
         badgeSoon: 'Bald',
         openTool: 'Tool öffnen →',
-        claimLine: 'Vom Schreibtisch des Operators. Kein Login, kein Pitch. Daten bleiben auf Ihrem Gerät.',
         authorRole: 'Vertriebs- und Revenue-Beratung für Short-Term-Rental-, Vacation-Rental- und Serviced-Apartment-Betreiber',
         viewProfile: 'Profil ansehen',
         getInTouch: 'Sprechen wir über Ihre Zahlen →',
