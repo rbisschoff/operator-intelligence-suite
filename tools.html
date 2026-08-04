@@ -666,12 +666,13 @@
       line-height: 1.4;
     }
 
-    .about-outcome {
+    .about-outcome,
+    .about-engagement {
       font-size: 13px;
       color: var(--ink2);
       line-height: 1.55;
       margin: 12px 0;
-      text-align: center;
+      max-width: 680px;
     }
 
     .about-top-wrap {
@@ -685,9 +686,9 @@
       color: var(--ink2);
       line-height: 1.5;
       margin: 0 0 10px;
+      max-width: 680px;
       white-space: nowrap;
       overflow-x: auto;
-      text-align: center;
     }
 
     .about-method-line span[data-i18n$="Title"] {
@@ -878,8 +879,8 @@
       .author-role { font-size: 15px; }
       .about-cta-primary { font-size: 15px; padding: 14px 26px; }
       .author-link { font-size: 13px; }
-      .about-outcome { font-size: 16px; max-width: 760px; margin: 18px auto; }
-      .about-method-line { font-size: 15px; margin-bottom: 16px; }
+      .about-outcome, .about-engagement { font-size: 16px; max-width: 760px; margin: 18px 0; }
+      .about-method-line { font-size: 15px; max-width: 760px; margin-bottom: 16px; }
       .about-service-tag { font-size: 12px; padding: 10px 12px; }
 
       footer { max-width: 1600px; font-size: 13px; padding: 28px 32px 90px; }
@@ -922,8 +923,8 @@
       .author-name { font-size: 20px; }
       .author-role { font-size: 16px; }
       .about-cta-primary { font-size: 16px; }
-      .about-outcome { font-size: 17px; max-width: 900px; margin: 22px auto; }
-      .about-method-line { font-size: 16px; }
+      .about-outcome, .about-engagement { font-size: 17px; max-width: 900px; margin: 22px 0; }
+      .about-method-line { font-size: 16px; max-width: 900px; }
       .about-service-tag { font-size: 13px; padding: 11px 14px; }
     }
 
@@ -1127,7 +1128,7 @@
         <img class="author-avatar" src="assets/roger-headshot.jpg" alt="Roger Bisschoff" width="28" height="28">
         <div class="author-info">
           <div class="author-name">Roger Bisschoff</div>
-          <div class="author-role" data-i18n="authorRole">Distribution and revenue consulting for short-term rental and serviced apartment operators</div>
+          <div class="author-role" data-i18n="authorRole">Commercial growth consulting for short-term rental, vacation rental, and serviced apartment operators</div>
         </div>
       </div>
       <div class="about-cta-row">
@@ -1135,6 +1136,7 @@
         <a href="https://www.linkedin.com/in/roger-bisschoff/" target="_blank" rel="noopener noreferrer" class="author-link" data-i18n="viewProfile">View profile</a>
       </div>
       <p class="about-outcome" data-i18n="aboutOutcome">I look across an operator's whole commercial picture, revenue, distribution, guest experience, owner retention, tech stack, to find where the real growth opportunity is.</p>
+      <p class="about-engagement" data-i18n="aboutEngagement">Engagements are project-based: a focused review of one commercial area, or ongoing advisory support as needed. No fixed retainer required to start.</p>
       <p class="about-method-line">
         <span data-i18n="methodMapTitle">Map</span> <span data-i18n="methodLineMap">everything</span>
         <span class="about-method-arrow">→</span>
@@ -1207,11 +1209,12 @@
         badgeSoon: 'Soon',
         openTool: 'Open tool →',
         claimLine: "From the operator's desk. No login, no pitch. Data stays on your device.",
-        authorRole: 'Distribution and revenue consulting for short-term rental, vacation rental, and serviced apartment operators',
+        authorRole: 'Commercial growth consulting for short-term rental, vacation rental, and serviced apartment operators',
         viewProfile: 'View profile',
         getInTouch: 'Talk through your numbers →',
         secondCtaLine: 'Curious what this looks like for your own portfolio?',
         aboutOutcome: 'I look across an operator\'s whole commercial picture — whether that\'s short-term rental or full property management — revenue, distribution, guest experience, owner retention, tech stack, to find where the real growth opportunity is.',
+        aboutEngagement: 'Engagements are project-based: a focused review of one commercial area, or ongoing advisory support as needed. No fixed retainer required to start.',
         methodMapTitle: 'Map',
         methodMapBody: 'Everything that affects your commercial result.',
         methodIdentifyTitle: 'Identify',
@@ -1280,11 +1283,12 @@
         badgeSoon: 'Presto',
         openTool: 'Apri strumento →',
         claimLine: 'Dalla scrivania dell’operatore. Niente login, niente pitch. I dati restano sul tuo dispositivo.',
-        authorRole: 'Consulenza in distribuzione e revenue per operatori di short-term rental, vacation rental, e appartamenti in gestione',
+        authorRole: 'Consulenza di crescita commerciale per operatori short-term rental, vacation rental e appartamenti in gestione',
         viewProfile: 'Vedi profilo',
         getInTouch: 'Parliamo dei tuoi numeri →',
         secondCtaLine: 'Curioso di scoprire cosa significherebbe per il tuo portfolio?',
         aboutOutcome: 'Guardo all\'intero quadro commerciale di un operatore — che sia short-term rental o full property management — ricavi, distribuzione, guest experience, retention dei proprietari, stack tecnologico, per trovare dove si trova la vera opportunità di crescita.',
+        aboutEngagement: 'Gli incarichi sono a progetto: una revisione mirata su un\'area commerciale specifica, oppure supporto di consulenza continuativo secondo necessità. Nessun impegno fisso richiesto per iniziare.',
         methodMapTitle: 'Map',
         methodMapBody: 'Tutto ciò che influisce sul tuo risultato commerciale.',
         methodIdentifyTitle: 'Identify',
@@ -1353,11 +1357,12 @@
         badgeSoon: 'Bald',
         openTool: 'Tool öffnen →',
         claimLine: 'Vom Schreibtisch des Operators. Kein Login, kein Pitch. Daten bleiben auf Ihrem Gerät.',
-        authorRole: 'Vertriebs- und Revenue-Beratung für Short-Term-Rental-, Vacation-Rental- und Serviced-Apartment-Betreiber',
+        authorRole: 'Beratung für kommerzielles Wachstum für STR-, Ferienwohnungs- und Serviced-Apartment-Betreiber',
         viewProfile: 'Profil ansehen',
         getInTouch: 'Sprechen wir über Ihre Zahlen →',
         secondCtaLine: 'Neugierig, was das für Ihr eigenes Portfolio bedeuten würde?',
         aboutOutcome: 'Ich betrachte das gesamte kommerzielle Bild eines Betreibers — ob Short-Term-Rental oder volles Property Management — Umsatz, Distribution, Gästeerlebnis, Owner Retention, Tech-Stack, um herauszufinden, wo die eigentliche Wachstumschance liegt.',
+        aboutEngagement: 'Engagements sind projektbasiert: eine gezielte Prüfung eines einzelnen kommerziellen Bereichs oder laufende Beratungsunterstützung nach Bedarf. Kein fester Vertrag nötig, um zu starten.',
         methodMapTitle: 'Map',
         methodMapBody: 'Alles, was Ihr kommerzielles Ergebnis beeinflusst.',
         methodIdentifyTitle: 'Identify',
