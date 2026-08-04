@@ -654,6 +654,57 @@
     }
 
     /* ============================================================
+       ABOUT — two columns on desktop only. Below 1000px, .about-left/
+       .about-right are plain unstyled divs (no display/flex overrides),
+       so their contents just stack in the same DOM order as before -
+       mobile's layout is untouched by construction, not by an override
+       that has to be remembered to keep in sync.
+       ============================================================ */
+    @media (min-width: 1000px) {
+      .about-columns {
+        display: flex;
+        align-items: flex-start;
+        gap: 28px;
+      }
+
+      .about-left {
+        flex: 1 1 auto;
+        min-width: 0;
+      }
+
+      /* "At a glance" panel - method line + service tags - visually
+         split off from the bio with a thin border rather than a filled
+         tint, since .about-service-tag already uses --card-tint as its
+         own background and a matching panel tint would make the tags
+         blend into it instead of standing apart. */
+      .about-right {
+        flex: 0 0 37%;
+        max-width: 37%;
+        padding-left: 24px;
+        border-left: 1px solid var(--border);
+      }
+
+      /* The method line's nowrap+horizontal-scroll treatment exists for
+         the full-width single-column layout - inside this narrower side
+         panel it would just be a cramped scrollbar, so it wraps here
+         instead. Only scoped to the right column: the mobile/tablet
+         single-column layout (and tools.html, not touched by this pass)
+         keep the original nowrap behavior untouched. */
+      .about-right .about-method-line {
+        white-space: normal;
+        overflow-x: visible;
+        max-width: none;
+      }
+
+      /* 2x2 instead of the 4-across row used at full card width - the
+         panel is only ~37% of the card, too narrow for four tags side
+         by side without truncating. */
+      .about-right .about-services-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* ============================================================
        FOOTER
        ============================================================ */
     footer {
@@ -879,34 +930,40 @@
 
   <div class="about-top-wrap">
     <section class="about">
-      <div class="about-author">
-        <img class="author-avatar" src="assets/roger-headshot.jpg" alt="Roger Bisschoff" width="28" height="28">
-        <div class="author-info">
-          <div class="author-name">Roger Bisschoff</div>
-          <div class="author-role" data-i18n="authorRole">Commercial growth consulting for short-term rental, vacation rental, and serviced apartment operators</div>
+      <div class="about-columns">
+        <div class="about-left">
+          <div class="about-author">
+            <img class="author-avatar" src="assets/roger-headshot.jpg" alt="Roger Bisschoff" width="28" height="28">
+            <div class="author-info">
+              <div class="author-name">Roger Bisschoff</div>
+              <div class="author-role" data-i18n="authorRole">Commercial growth consulting for short-term rental, vacation rental, and serviced apartment operators</div>
+            </div>
+          </div>
+          <div class="about-cta-row">
+            <a href="mailto:rbisschoff@gmail.com" class="about-cta-primary" data-i18n="getInTouch">Get in touch →</a>
+            <a href="https://www.linkedin.com/in/roger-bisschoff/" target="_blank" rel="noopener noreferrer" class="author-link" data-i18n="viewProfile">View profile</a>
+          </div>
+          <p class="about-outcome" data-i18n="aboutOutcome">I look across an operator's whole commercial picture, revenue, distribution, guest experience, owner retention, tech stack, to find where the real growth opportunity is.</p>
+          <p class="about-engagement" data-i18n="aboutEngagement">Engagements are project-based: a focused review of one commercial area, or ongoing advisory support as needed. No fixed retainer required to start.</p>
+        </div>
+        <div class="about-right">
+          <p class="about-method-line">
+            <span data-i18n="methodMapTitle">Map</span> <span data-i18n="methodLineMap">everything</span>
+            <span class="about-method-arrow">→</span>
+            <span data-i18n="methodIdentifyTitle">identify</span> <span data-i18n="methodLineIdentify">the opportunity</span>
+            <span class="about-method-arrow">→</span>
+            <span data-i18n="methodQuantifyTitle">quantify</span> <span data-i18n="methodLineQuantify">its value</span>
+            <span class="about-method-arrow">→</span>
+            <span data-i18n="methodDirectTitle">direct</span> <span data-i18n="methodLineDirect">what to do first</span>
+          </p>
+          <ul class="about-services-list">
+            <li class="about-service-tag" data-i18n="aboutService1">Distribution &amp; OTA cost strategy</li>
+            <li class="about-service-tag" data-i18n="aboutService2">Owner retention &amp; supply stability</li>
+            <li class="about-service-tag" data-i18n="aboutService3">Guest experience &amp; repeat guest value</li>
+            <li class="about-service-tag" data-i18n="aboutService4">Tech stack &amp; portfolio profitability</li>
+          </ul>
         </div>
       </div>
-      <div class="about-cta-row">
-        <a href="mailto:rbisschoff@gmail.com" class="about-cta-primary" data-i18n="getInTouch">Get in touch →</a>
-        <a href="https://www.linkedin.com/in/roger-bisschoff/" target="_blank" rel="noopener noreferrer" class="author-link" data-i18n="viewProfile">View profile</a>
-      </div>
-      <p class="about-outcome" data-i18n="aboutOutcome">I look across an operator's whole commercial picture, revenue, distribution, guest experience, owner retention, tech stack, to find where the real growth opportunity is.</p>
-      <p class="about-engagement" data-i18n="aboutEngagement">Engagements are project-based: a focused review of one commercial area, or ongoing advisory support as needed. No fixed retainer required to start.</p>
-      <p class="about-method-line">
-        <span data-i18n="methodMapTitle">Map</span> <span data-i18n="methodLineMap">everything</span>
-        <span class="about-method-arrow">→</span>
-        <span data-i18n="methodIdentifyTitle">identify</span> <span data-i18n="methodLineIdentify">the opportunity</span>
-        <span class="about-method-arrow">→</span>
-        <span data-i18n="methodQuantifyTitle">quantify</span> <span data-i18n="methodLineQuantify">its value</span>
-        <span class="about-method-arrow">→</span>
-        <span data-i18n="methodDirectTitle">direct</span> <span data-i18n="methodLineDirect">what to do first</span>
-      </p>
-      <ul class="about-services-list">
-        <li class="about-service-tag" data-i18n="aboutService1">Distribution &amp; OTA cost strategy</li>
-        <li class="about-service-tag" data-i18n="aboutService2">Owner retention &amp; supply stability</li>
-        <li class="about-service-tag" data-i18n="aboutService3">Guest experience &amp; repeat guest value</li>
-        <li class="about-service-tag" data-i18n="aboutService4">Tech stack &amp; portfolio profitability</li>
-      </ul>
     </section>
   </div>
 
