@@ -1,0 +1,15 @@
+{
+  "name": "operator-intelligence-suite-insights",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "admin": "node admin/server.js",
+    "build": "node build-insights.js"
+  },
+  "dependencies": {
+    "@tiptap/core": "3.29.2",
+    "@tiptap/html": "3.29.2",
+    "@tiptap/starter-kit": "3.29.2",
+    "@tiptap/extension-image": "3.29.2"
+  }
+}

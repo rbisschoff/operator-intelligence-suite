@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Insights — Operator Intelligence Suite</title>
+  <meta name="description" content="Practical, commercially-framed insights for short-term rental and serviced apartment operators, from Roger Bisschoff Consulting.">
+  <link rel="canonical" href="https://rogerbisschoff.com/insights/">
+
+  <meta property="og:title" content="Insights — Operator Intelligence Suite">
+  <meta property="og:description" content="Practical, commercially-framed insights for short-term rental and serviced apartment operators, from Roger Bisschoff Consulting.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rogerbisschoff.com/insights/">
+  <meta property="og:image" content="https://rogerbisschoff.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JPJ7VKS451"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JPJ7VKS451');
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --accent: #C9A961;
+      --accent-dark: #A8863F;
+      --accent-secondary: #5C6B62;
+      --ink: #1E2F28;
+      --ink2: #3A4A42;
+      --muted: #5C6B62;
+      --muted2: #8A968E;
+      --bg: #FAF8F4;
+      --card: #FFFFFF;
+      --border: rgba(30, 47, 40, 0.12);
+      --radius-lg: 20px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
+      --shadow-card: 0 2px 16px rgba(0,0,0,0.06);
+      --shadow-md: 0 8px 24px rgba(0,0,0,0.06);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+    body {
+      font-family: -apple-system, 'Inter', BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: clip;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    header {
+      background: rgba(30,47,40,0.97);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .header-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      padding-top: calc(10px + env(safe-area-inset-top));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .brand-mark {
+      width: 30px; height: 30px;
+      background: var(--accent);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-weight: 700; font-size: 13px; letter-spacing: -0.02em;
+    }
+    .brand-text { color: white; }
+    .brand-title { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; }
+    .brand-subtitle { font-size: 12px; color: var(--muted2); margin-top: 1px; }
+
+    .header-actions { display: flex; gap: 10px; align-items: center; }
+    .header-link {
+      color: white; font-size: 13px; font-weight: 500;
+      padding: 8px 14px; border-radius: 8px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: all 0.2s;
+    }
+    .header-link:hover { background: rgba(255,255,255,0.15); }
+    .header-link:focus-visible { outline: 2px solid rgba(255,255,255,0.6); outline-offset: 2px; }
+
+    .page-hero {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 48px 20px 8px;
+    }
+
+    .back-link {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .back-link:hover { color: var(--ink); }
+
+    .page-title {
+      font-size: clamp(28px, 4vw, 36px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .page-subtitle {
+      font-size: 15px;
+      color: var(--ink2);
+      max-width: 560px;
+      line-height: 1.6;
+    }
+
+    main { max-width: 1080px; margin: 0 auto; padding: 24px 20px 60px; }
+
+    .article-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .article-card {
+      background: var(--card);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .article-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .article-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+    .article-card-cover {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: var(--border);
+      display: block;
+    }
+
+    .article-card-body {
+      padding: 18px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .article-card-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent-dark);
+    }
+
+    .article-card-title {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      line-height: 1.35;
+    }
+
+    .article-card-summary {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.55;
+      flex: 1;
+    }
+
+    .article-card-meta {
+      font-size: 12px;
+      color: var(--muted2);
+      margin-top: 4px;
+    }
+
+    .empty-state {
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      padding: 60px 20px;
+    }
+
+    footer {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 28px 20px 48px;
+      font-size: 13px;
+      color: var(--muted);
+      text-align: center;
+    }
+    footer a { color: var(--ink2); font-weight: 500; }
+    footer a:hover { color: var(--ink); }
+    footer p + p { margin-top: 4px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-mark">OI</div>
+        <div class="brand-text">
+          <div class="brand-title">Operator Intelligence Suite</div>
+          <div class="brand-subtitle">by Roger Bisschoff</div>
+        </div>
+      </div>
+      <div class="header-actions">
+        <a href="https://www.linkedin.com/in/roger-bisschoff/" target="_blank" rel="noopener noreferrer" class="header-link">LinkedIn</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <a class="back-link" href="../">&larr; Back to overview</a>
+    <h1 class="page-title">Insights</h1>
+    <p class="page-subtitle">Practical, commercially-framed notes for short-term rental and serviced apartment operators.</p>
+  </div>
+
+  <main>
+    <div class="article-grid">
+{{ARTICLE_CARDS}}
+    </div>
+  </main>
+
+  <footer>
+    <p>Operator Intelligence Suite by <a href="https://www.linkedin.com/in/roger-bisschoff/" target="_blank" rel="noopener noreferrer">Roger Bisschoff</a></p>
+    <p>A practical toolkit for hospitality and short-term rental operators.</p>
+  </footer>
+
+</body>
+</html>
