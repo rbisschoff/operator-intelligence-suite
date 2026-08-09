@@ -1,20 +1,28 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- Sprint 24B: recolored to Visual System v1 (docs/VisualContentSystem.md),
+       the site's own warm sage/gold identity, replacing the previous
+       unrelated navy/blue palette. Layout, copy, and structure are
+       otherwise unchanged from the prior version, a palette
+       correction, not a redesign. Every color below is an existing
+       website token (index.html/tools.html root variables), not a new
+       value: ink #1E2F28, ink2 #3A4A42, accent #C9A961,
+       accent dark #A8863F, accent secondary #5C6B62,
+       muted2 #8A968E, card #FFFFFF. -->
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#08080E"/>
-      <stop offset="55%" stop-color="#0A1628"/>
-      <stop offset="100%" stop-color="#0051D5"/>
+      <stop offset="0%" stop-color="#1E2F28"/>
+      <stop offset="100%" stop-color="#3A4A42"/>
     </linearGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
-  <circle cx="600" cy="120" r="280" fill="#007AFF" opacity="0.22"/>
-  <text x="80" y="120" fill="#64B5FF" font-family="Inter,Segoe UI,sans-serif" font-size="22" font-weight="600" letter-spacing="3">OPERATOR INTELLIGENCE SUITE</text>
-  <text x="80" y="220" fill="#ffffff" font-family="Inter,Segoe UI,sans-serif" font-size="58" font-weight="800">Operator tools for</text>
-  <text x="80" y="300" fill="#ffffff" font-family="Inter,Segoe UI,sans-serif" font-size="58" font-weight="800">demand &amp; distribution</text>
-  <text x="80" y="390" fill="rgba(255,255,255,0.55)" font-family="Inter,Segoe UI,sans-serif" font-size="28" font-weight="400">Free diagnostics. No login. Inputs stay on your device.</text>
+  <circle cx="600" cy="120" r="280" fill="#C9A961" opacity="0.14"/>
+  <text x="80" y="120" fill="#C9A961" font-family="Inter,Segoe UI,sans-serif" font-size="22" font-weight="600" letter-spacing="3">OPERATOR INTELLIGENCE SUITE</text>
+  <text x="80" y="220" fill="#FFFFFF" font-family="Inter,Segoe UI,sans-serif" font-size="58" font-weight="800">Operator tools for</text>
+  <text x="80" y="300" fill="#FFFFFF" font-family="Inter,Segoe UI,sans-serif" font-size="58" font-weight="800">demand &amp; distribution</text>
+  <text x="80" y="390" fill="#8A968E" font-family="Inter,Segoe UI,sans-serif" font-size="28" font-weight="400">Free diagnostics. No login. Inputs stay on your device.</text>
   <rect x="80" y="450" width="420" height="8" rx="4" fill="rgba(255,255,255,0.12)"/>
-  <rect x="80" y="450" width="140" height="8" rx="4" fill="#007AFF"/>
-  <rect x="240" y="450" width="95" height="8" rx="4" fill="#FF3B30"/>
-  <rect x="355" y="450" width="70" height="8" rx="4" fill="#AF52DE"/>
-  <text x="80" y="510" fill="rgba(255,255,255,0.4)" font-family="Inter,Segoe UI,sans-serif" font-size="22">AI · China · Distribution · Repeat · Margin</text>
+  <rect x="80" y="450" width="140" height="8" rx="4" fill="#C9A961"/>
+  <rect x="240" y="450" width="95" height="8" rx="4" fill="#A8863F"/>
+  <rect x="355" y="450" width="70" height="8" rx="4" fill="#5C6B62"/>
+  <text x="80" y="510" fill="#8A968E" font-family="Inter,Segoe UI,sans-serif" font-size="22">AI &#183; China &#183; Distribution &#183; Repeat &#183; Margin</text>
 </svg>
