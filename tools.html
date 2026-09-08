@@ -30,9 +30,14 @@
   </script>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap');
     /* ============================================================
-       OPERATOR SERIES BRANDING
+       OPERATOR SERIES BRANDING — Visual Restructuring sprint (Sep
+       2026): tokens/header/footer brought in line with index.html's
+       new shared system (see that file's own header comment). The
+       tool-grid/About content below this block is otherwise
+       unchanged - this sprint restructures site chrome, not the
+       working tool catalogue.
        ============================================================ */
     :root {
       --accent: #C9A961;
@@ -54,6 +59,12 @@
       --border: rgba(30, 47, 40, 0.12);
       --border-light: rgba(30, 47, 40, 0.08);
 
+      --header: #1B2A24;
+      --header-soft: rgba(255, 255, 255, 0.08);
+      --header-border: rgba(255, 255, 255, 0.12);
+      --header-text: #F4F1E9;
+      --header-muted: rgba(244, 241, 233, 0.62);
+
       --radius-lg: 20px;
       --radius-md: 16px;
       --radius-sm: 12px;
@@ -62,6 +73,9 @@
       --shadow-md: 0 8px 24px rgba(0,0,0,0.06);
       --shadow-lg: 0 12px 32px rgba(0,0,0,0.08);
       --shadow-card: 0 2px 16px rgba(0,0,0,0.06);
+
+      --font-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+      --font-sans: -apple-system, 'Inter', BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
 
     *, *::before, *::after {
@@ -76,7 +90,7 @@
     }
 
     body {
-      font-family: -apple-system, 'Inter', BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-family: var(--font-sans);
       background: var(--bg);
       color: var(--ink);
       line-height: 1.5;
@@ -89,83 +103,130 @@
       color: inherit;
     }
 
+    h1, h2, h3 { font-family: var(--font-serif); font-weight: 600; }
+
     /* ============================================================
        HEADER
        ============================================================ */
     header {
-      background: rgba(30,47,40,0.97);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      background: var(--header);
       position: sticky;
       top: 0;
       z-index: 100;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid var(--header-border);
     }
 
     .header-inner {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 10px 20px;
-      padding-top: calc(10px + env(safe-area-inset-top));
+      padding: 12px 20px;
+      padding-top: calc(12px + env(safe-area-inset-top));
       padding-left: max(12px, env(safe-area-inset-left));
       padding-right: max(12px, env(safe-area-inset-right));
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 10px;
+      gap: 16px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       min-width: 0;
+      flex-shrink: 0;
     }
 
     .brand-mark {
-      width: 30px;
-      height: 30px;
+      width: 32px;
+      height: 32px;
       background: var(--accent);
-      border-radius: 10px;
+      border-radius: 9px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
-      font-weight: 700;
+      color: var(--header);
+      font-weight: 800;
       font-size: 13px;
       letter-spacing: -0.02em;
+      flex-shrink: 0;
     }
 
-    .brand-text {
-      color: white;
-    }
+    .brand-text { color: var(--header-text); line-height: 1.25; }
+    .brand-title { font-size: 14px; font-weight: 700; letter-spacing: -0.01em; }
+    .brand-subtitle { font-size: 11px; color: var(--header-muted); margin-top: 1px; }
 
-    .brand-title {
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: -0.01em;
+    .primary-nav {
+      display: none;
+      align-items: center;
+      gap: 4px;
+      flex: 1 1 auto;
+      justify-content: center;
     }
-
-    .brand-subtitle {
-      font-size: 12px;
-      color: var(--muted2);
-      margin-top: 1px;
+    .primary-nav a {
+      color: var(--header-muted);
+      font-size: 13.5px;
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: color 0.15s, background 0.15s;
+      position: relative;
+    }
+    .primary-nav a:hover { color: var(--header-text); background: var(--header-soft); }
+    .primary-nav a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .primary-nav a[aria-current="page"] { color: var(--header-text); }
+    .primary-nav a[aria-current="page"]::after {
+      content: '';
+      position: absolute;
+      left: 12px; right: 12px; bottom: 2px;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 2px;
     }
 
     .header-actions {
       display: flex;
       gap: 10px;
       align-items: center;
+      flex-shrink: 0;
     }
 
+    .lang-indicator {
+      display: none;
+      align-items: center;
+      gap: 5px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--header-muted);
+      padding: 7px 10px;
+      border-radius: 100px;
+      border: 1px solid var(--header-border);
+    }
+
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--header);
+      background: var(--accent);
+      padding: 9px 16px;
+      border-radius: 100px;
+      transition: background 0.18s ease, transform 0.18s ease;
+      white-space: nowrap;
+    }
+    .header-cta:hover { background: #DCC17F; transform: translateY(-1px); }
+    .header-cta:focus-visible { outline: 2px solid var(--header-text); outline-offset: 2px; }
+
     .header-link {
-      color: white;
+      color: var(--header-text);
       font-size: 13px;
       font-weight: 500;
       padding: 8px 14px;
       border-radius: 8px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
+      background: var(--header-soft);
+      border: 1px solid var(--header-border);
       transition: all 0.2s;
     }
 
@@ -176,6 +237,43 @@
     .header-link:focus-visible {
       outline: 2px solid rgba(255,255,255,0.6);
       outline-offset: 2px;
+    }
+
+    .nav-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      background: var(--header-soft);
+      border: 1px solid var(--header-border);
+      color: var(--header-text);
+      flex-shrink: 0;
+    }
+    .nav-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: var(--header);
+      border-top: 1px solid var(--header-border);
+      padding: 8px 16px 16px;
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a {
+      color: var(--header-text);
+      font-size: 15px;
+      font-weight: 500;
+      padding: 12px 6px;
+      border-bottom: 1px solid var(--header-border);
+    }
+    .mobile-nav a:last-of-type { border-bottom: none; }
+    .mobile-nav .header-cta { margin-top: 12px; justify-content: center; }
+
+    @media (min-width: 1080px) {
+      .primary-nav { display: flex; }
+      .lang-indicator { display: inline-flex; }
     }
 
     /* ============================================================
@@ -273,51 +371,13 @@
       padding: 4px 20px 32px;
     }
 
-    /* Small, fixed, hidden until the About card has been scrolled past
-       (see the IntersectionObserver below) - this brand's positioning is
-       "no pitch", so it stays minimal rather than becoming a sticky
-       sales-page bar. */
-    .floating-cta {
-      position: fixed;
-      right: 20px;
-      bottom: max(20px, env(safe-area-inset-bottom));
-      z-index: 200;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--ink);
-      background: var(--accent);
-      padding: 10px 16px;
-      border-radius: 100px;
-      box-shadow: 0 4px 14px rgba(201, 169, 97, 0.35);
-      opacity: 0;
-      transform: translateY(10px);
-      pointer-events: none;
-      transition: opacity 0.25s ease, transform 0.25s ease, background 0.18s ease, box-shadow 0.18s ease;
-    }
-
-    .floating-cta.visible {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-
-    .floating-cta:hover {
-      background: var(--accent-dark);
-      color: #fff;
-      transform: translateY(-2px);
-      box-shadow: 0 7px 18px rgba(201, 169, 97, 0.45);
-    }
-
-    @media (max-width: 640px) {
-      .floating-cta {
-        right: 14px;
-        padding: 9px 14px;
-        font-size: 11px;
-      }
-    }
+    /* Visual Restructuring sprint: the old scroll-triggered
+       .floating-cta button (below the fold, appeared once the About
+       card had scrolled past) is retired - the header's own always-
+       visible gold "Start Diagnostic" CTA now serves the same
+       "the primary action is always reachable" purpose, matching the
+       approved mockup's persistent header CTA. Its IntersectionObserver
+       script at the bottom of this file is removed along with it. */
 
     /* ============================================================
        TOOLS PAGE INTRO — compact, replaces the homepage hero here
@@ -763,32 +823,104 @@
     }
 
     /* ============================================================
-       FOOTER
+       FOOTER — same dark-green, multi-column footer as index.html
+       (see that file's own header comment for the full rationale).
        ============================================================ */
     footer {
+      background: var(--header);
+      color: var(--header-muted);
+      margin-top: 56px;
+    }
+
+    .footer-inner {
       max-width: 1280px;
       margin: 0 auto;
-      /* Extra bottom padding reserves room for the fixed floating-cta
-         button so it never sits on top of the footer text once someone
-         scrolls all the way down. */
-      padding: 20px 20px 90px;
-      text-align: center;
+      padding: 40px 20px 24px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    @media (min-width: 1300px) { .footer-inner { max-width: 1600px; padding: 48px 32px 24px; } }
+    @media (min-width: 760px) {
+      .footer-inner { grid-template-columns: 1.3fr 0.7fr 0.7fr 0.7fr 1.1fr; gap: 24px; }
+    }
+
+    .footer-brand .brand { margin-bottom: 10px; }
+    .footer-tagline { font-size: 13px; line-height: 1.6; max-width: 34ch; }
+
+    .footer-col h3 {
+      font-family: var(--font-sans);
       font-size: 12px;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--header-text);
+      margin-bottom: 12px;
     }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .footer-col a { font-size: 13px; color: var(--header-muted); transition: color 0.15s; }
+    .footer-col a:hover { color: var(--header-text); }
+    .footer-col a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
-    footer a {
-      color: var(--accent);
+    .newsletter-form { display: flex; gap: 8px; margin-top: 4px; flex-wrap: wrap; }
+    .newsletter-input {
+      flex: 1 1 140px;
+      min-width: 0;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--header-border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 13px;
+      color: var(--header-text);
+      font-family: var(--font-sans);
     }
+    .newsletter-input::placeholder { color: var(--header-muted); }
+    .newsletter-input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .newsletter-btn {
+      background: var(--accent);
+      color: var(--header);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 10px 16px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-sans);
+    }
+    .newsletter-btn:hover { background: #DCC17F; }
+    .newsletter-btn:focus-visible { outline: 2px solid var(--header-text); outline-offset: 2px; }
+    .newsletter-note { font-size: 11px; color: var(--header-muted); margin-top: 8px; }
 
-    footer a:hover {
-      text-decoration: underline;
+    .footer-bottom {
+      border-top: 1px solid var(--header-border);
+      padding: 16px 20px;
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 12px;
+      flex-wrap: wrap;
     }
+    @media (min-width: 1300px) { .footer-bottom { max-width: 1600px; padding: 16px 32px; } }
+    .footer-bottom a { color: var(--header-muted); }
+    .footer-bottom a:hover { color: var(--header-text); }
 
-    footer p + p {
-      margin-top: 4px;
+    .linkedin-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      background: var(--header-soft);
+      border: 1px solid var(--header-border);
+      color: var(--header-text);
+      transition: background 0.15s;
     }
+    .linkedin-icon:hover { background: rgba(255,255,255,0.18); }
+    .linkedin-icon:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
     /* ============================================================
        DESKTOP SCALE-UP — the base rules above are tuned for narrow
@@ -901,32 +1033,36 @@
     /* ============================================================
        MOBILE
        ============================================================ */
+    @media (max-width: 1079px) {
+      .nav-toggle { display: inline-flex; }
+    }
+
+    /* See index.html's own comment on this same rule - verified via a
+       real narrow-viewport render that brand + CTA + hamburger don't
+       all fit below ~430px; the mobile nav drawer already repeats this
+       CTA as its own last item. */
+    @media (max-width: 430px) {
+      /* Scoped to the header row's own copy only - see index.html's
+         own comment on this same rule for the real bug this avoids. */
+      .header-actions > .header-cta { display: none; }
+    }
+
     @media (max-width: 640px) {
       .brand-subtitle { display: none; }
       .brand-title {
-        font-size: 14px;
+        font-size: 13.5px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        max-width: 42vw;
+        max-width: 34vw;
       }
       .brand-mark { width: 28px; height: 28px; font-size: 12px; border-radius: 8px; }
       .header-actions { gap: 6px; flex-shrink: 0; }
-      .header-link {
-        padding: 8px 10px;
-        font-size: 12px;
-        min-height: 36px;
-        display: inline-flex;
-        align-items: center;
-      }
+      .header-cta { font-size: 12px; padding: 8px 12px; }
       main {
         padding: 0 max(12px, env(safe-area-inset-left)) calc(28px + env(safe-area-inset-bottom));
         padding-right: max(12px, env(safe-area-inset-right));
       }
-    }
-
-    @media (max-width: 400px) {
-      .header-link { display: none; }
     }
   </style>
 </head>
@@ -937,18 +1073,43 @@
        ============================================================ -->
   <header>
     <div class="header-inner">
-      <a class="brand" href="index.html">
+      <a class="brand" href="index.html" aria-label="Operator Intelligence Suite — home">
         <div class="brand-mark">OI</div>
         <div class="brand-text">
           <div class="brand-title" data-i18n="brandTitle">Operator Intelligence Suite</div>
           <div class="brand-subtitle" data-i18n="brandSubtitle">by Roger Bisschoff</div>
         </div>
       </a>
+
+      <nav class="primary-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="insights/">Insights</a>
+        <a href="tools.html" aria-current="page">Tools</a>
+        <a href="reports.html">Reports</a>
+        <a href="index.html#roger">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+
       <div class="header-actions">
-        <a href="insights/" class="header-link">Insights</a>
-        <a href="https://www.linkedin.com/in/roger-bisschoff/" target="_blank" rel="noopener noreferrer" class="header-link">LinkedIn</a>
+        <span class="lang-indicator" aria-label="Site language: English">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+          EN
+        </span>
+        <a class="header-cta" href="https://rbisschoff.github.io/operator-diagnostic/">Start Diagnostic</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
       </div>
     </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+      <a href="index.html">Home</a>
+      <a href="insights/">Insights</a>
+      <a href="tools.html">Tools</a>
+      <a href="reports.html">Reports</a>
+      <a href="index.html#roger">About</a>
+      <a href="index.html#contact">Contact</a>
+      <a class="header-cta" href="https://rbisschoff.github.io/operator-diagnostic/">Start Diagnostic</a>
+    </nav>
   </header>
 
   <section class="tools-hero">
@@ -1137,11 +1298,58 @@
   </div>
 
   <footer>
-    <p data-i18n="footer1">Operator Intelligence Suite by <a href="https://www.linkedin.com/in/roger-bisschoff/" target="_blank" rel="noopener noreferrer">Roger Bisschoff</a></p>
-    <p style="margin-top: 4px;" data-i18n="footer2">A practical toolkit for hospitality and short-term rental operators.</p>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <div class="brand-mark">OI</div>
+          <div class="brand-text">
+            <div class="brand-title">Operator Intelligence Suite</div>
+            <div class="brand-subtitle">by Roger Bisschoff</div>
+          </div>
+        </a>
+        <p class="footer-tagline">Commercial intelligence for the global short-term rental industry.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Platform</h3>
+        <ul>
+          <li><a href="insights/">Insights</a></li>
+          <li><a href="tools.html">Tools</a></li>
+          <li><a href="reports.html">Reports</a></li>
+          <li><a href="index.html#roger">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="index.html#roger">About Roger</a></li>
+          <li><a href="index.html#roger">Approach</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Stay informed</h3>
+        <p style="font-size:13px; color: var(--header-muted); margin-bottom:10px;">Get the latest insights and reports.</p>
+        <form class="newsletter-form" action="mailto:rbisschoff@gmail.com" method="get" onsubmit="return handleNewsletterSubmit(event)">
+          <input class="newsletter-input" type="email" name="subject" placeholder="Your email address" aria-label="Email address" required>
+          <button class="newsletter-btn" type="submit">Subscribe</button>
+        </form>
+        <p class="newsletter-note">No mailing list yet — this opens an email to Roger directly.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Roger Bisschoff Consulting. All rights reserved.</span>
+      <a class="linkedin-icon" href="https://www.linkedin.com/in/roger-bisschoff/" target="_blank" rel="noopener noreferrer" aria-label="Roger Bisschoff on LinkedIn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M0 8h5v16H0zM7 8h4.8v2.2h.07C12.6 8.7 14.6 8 16.9 8 21.7 8 23 10.9 23 15.1V24h-5v-8c0-1.9 0-4.3-2.6-4.3-2.7 0-3.1 2.1-3.1 4.2V24H7z"/></svg>
+      </a>
+    </div>
   </footer>
-
-  <a href="mailto:rbisschoff@gmail.com" class="floating-cta" id="floatingCta" data-i18n="getInTouch">Talk through your numbers →</a>
 
   <script>
     // Single canonical (English-only) copy object - was I18N (en/it/de)
@@ -1322,22 +1530,31 @@
 
     applyCopy();
 
-    // Floating contact button: stays hidden until the About card has
-    // scrolled past, not just partially out of view - isIntersecting is
-    // false both before scrolling starts and after scrolling past it, so
-    // boundingClientRect's position is what actually distinguishes
-    // "hasn't reached it yet" from "already scrolled by it".
+    // Mobile hamburger nav — same pattern as index.html.
     (function () {
-      const trigger = document.querySelector('.about-top-wrap');
-      const floatingCta = document.getElementById('floatingCta');
-      if (!trigger || !floatingCta || !('IntersectionObserver' in window)) return;
-      const observer = new IntersectionObserver(function (entries) {
-        const entry = entries[0];
-        const passed = !entry.isIntersecting && entry.boundingClientRect.top < 0;
-        floatingCta.classList.toggle('visible', passed);
-      }, { threshold: 0 });
-      observer.observe(trigger);
+      var toggle = document.getElementById('navToggle');
+      var nav = document.getElementById('mobileNav');
+      if (!toggle || !nav) return;
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      nav.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
     })();
+
+    // Newsletter form: same real-mailto fallback as index.html — no
+    // mailing-list backend exists yet (see sprint report item G).
+    function handleNewsletterSubmit(e) {
+      e.preventDefault();
+      var email = e.target.querySelector('input[type="email"]').value;
+      window.location.href = 'mailto:rbisschoff@gmail.com?subject=' + encodeURIComponent('Newsletter signup') + '&body=' + encodeURIComponent('Please add me to the Operator Intelligence Suite mailing list: ' + email);
+      return false;
+    }
   </script>
 
 </body>
