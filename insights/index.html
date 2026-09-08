@@ -204,6 +204,21 @@
       padding: 60px 20px;
     }
 
+    /* Permanent, hand-authored line - lives outside the generator's
+       markers (see the GENERATED INSIGHT CARDS comments above) so it
+       is never overwritten by a future generator run, whether zero or
+       many Insights are currently published. */
+    .insights-next-step {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .insights-next-step a { color: var(--accent-dark); font-weight: 600; }
+    .insights-next-step a:hover { text-decoration: underline; }
+
     footer {
       max-width: 1080px;
       margin: 0 auto;
@@ -221,14 +236,15 @@
 
   <header>
     <div class="header-inner">
-      <div class="brand">
+      <a class="brand" href="../">
         <div class="brand-mark">OI</div>
         <div class="brand-text">
           <div class="brand-title">Operator Intelligence Suite</div>
           <div class="brand-subtitle">by Roger Bisschoff</div>
         </div>
-      </div>
+      </a>
       <div class="header-actions">
+        <a href="../tools.html" class="header-link">Tools</a>
         <a href="https://www.linkedin.com/in/roger-bisschoff/" target="_blank" rel="noopener noreferrer" class="header-link">LinkedIn</a>
       </div>
     </div>
@@ -242,8 +258,11 @@
 
   <main>
     <div class="article-grid">
+      <!-- GENERATED INSIGHT CARDS START -->
       <p class="empty-state">No articles published yet.</p>
+    <!-- GENERATED INSIGHT CARDS END -->
     </div>
+    <p class="insights-next-step">New commercial notes are added here as they're published. In the meantime, the <a href="../tools.html">free diagnostic tools</a> answer some of the same operator questions.</p>
   </main>
 
   <footer>

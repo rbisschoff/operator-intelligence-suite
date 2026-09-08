@@ -1,18 +1,14 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Free diagnostic tools from a commercial growth consultant for STR and serviced apartment operators</title>
   <meta name="description" content="Answer six questions about your operation and see exactly where you're leaving revenue on the table: distribution, direct bookings, owner retention, or…">
   <link rel="canonical" href="https://rogerbisschoff.com/">
-  <link rel="alternate" hreflang="en" href="https://rogerbisschoff.com/?lang=en">
-  <link rel="alternate" hreflang="it" href="https://rogerbisschoff.com/?lang=it">
-  <link rel="alternate" hreflang="de" href="https://rogerbisschoff.com/?lang=de">
-  <link rel="alternate" hreflang="x-default" href="https://rogerbisschoff.com/?lang=en">
 
   <!-- Open Graph / Twitter — title & description are regenerated at runtime from the hero copy
-       in the I18N object below (see buildMetaFromCopy). These are the pre-JS fallback values. -->
+       in the COPY object below (see buildMetaFromCopy). These are the pre-JS fallback values. -->
   <meta property="og:title" content="Free diagnostic tools from a commercial growth consultant for STR and serviced apartment operators">
   <meta property="og:description" content="Answer six questions about your operation and see exactly where you're leaving revenue on the table: distribution, direct bookings, owner retention, or…">
   <meta property="og:type" content="website">
@@ -23,26 +19,6 @@
   <meta name="twitter:title" content="Free diagnostic tools from a commercial growth consultant for STR and serviced apartment operators">
   <meta name="twitter:description" content="Answer six questions about your operation and see exactly where you're leaving revenue on the table: distribution, direct bookings, owner retention, or…">
   <meta name="twitter:image" content="https://rogerbisschoff.com/og-image.png">
-
-  <script>
-    (function () {
-      const supported = ['en', 'it', 'de'];
-      const queryValue = new URLSearchParams(window.location.search).get('lang');
-      let lang;
-      if (queryValue !== null) {
-        lang = supported.includes(queryValue.toLowerCase()) ? queryValue.toLowerCase() : 'en';
-      } else {
-        try { lang = localStorage.getItem('ois-lang'); } catch (e) {}
-        if (!supported.includes(lang)) {
-          const browserLang = (navigator.language || '').slice(0, 2).toLowerCase();
-          lang = supported.includes(browserLang) ? browserLang : 'en';
-        }
-      }
-      document.documentElement.lang = lang;
-      window.__oisInitialLang = lang;
-      try { localStorage.setItem('ois-lang', lang); } catch (e) {}
-    })();
-  </script>
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JPJ7VKS451"></script>
@@ -180,45 +156,6 @@
       display: flex;
       gap: 10px;
       align-items: center;
-    }
-
-    .lang-switch {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 100px;
-      padding: 3px;
-    }
-
-    .lang-btn {
-      font-family: inherit;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      color: rgba(255,255,255,0.55);
-      background: transparent;
-      border: none;
-      border-radius: 100px;
-      padding: 6px 10px;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      transition: all 0.15s;
-    }
-
-    .lang-btn:hover { color: #fff; }
-
-    .lang-btn.active {
-      background: rgba(255,255,255,0.16);
-      color: #fff;
-    }
-
-    .lang-flag {
-      font-size: 13px;
-      line-height: 1;
     }
 
     .header-link {
@@ -490,6 +427,15 @@
       border: 1px solid var(--border);
       box-shadow: var(--shadow-card);
       margin-bottom: 20px;
+    }
+
+    /* Insights teaser - same .about card treatment (no new visual
+       language), just a shorter, single-column body: eyebrow label,
+       one paragraph, one CTA. Reuses .wwwh-label/.about-outcome/
+       .about-cta-primary verbatim - the only new rule is this block's
+       own compact vertical rhythm. */
+    .insights-teaser-body {
+      margin: 8px 0 14px;
     }
 
     .about-author {
@@ -838,13 +784,6 @@
       }
       .brand-mark { width: 28px; height: 28px; font-size: 12px; border-radius: 8px; }
       .header-actions { gap: 6px; flex-shrink: 0; }
-      .lang-btn {
-        padding: 8px 9px;
-        min-height: 36px;
-        gap: 0;
-        font-size: 0;
-      }
-      .lang-flag { font-size: 15px; }
       .header-link {
         padding: 8px 10px;
         font-size: 12px;
@@ -878,11 +817,6 @@
         </div>
       </div>
       <div class="header-actions">
-        <div class="lang-switch" role="group" aria-label="Language">
-          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false"><span class="lang-flag" aria-hidden="true">🇬🇧</span> EN</button>
-          <button type="button" class="lang-btn active" data-lang="it" aria-pressed="true"><span class="lang-flag" aria-hidden="true">🇮🇹</span> IT</button>
-          <button type="button" class="lang-btn" data-lang="de" aria-pressed="false"><span class="lang-flag" aria-hidden="true">🇩🇪</span> DE</button>
-        </div>
         <a href="insights/" class="header-link">Insights</a>
         <a href="https://www.linkedin.com/in/roger-bisschoff/" target="_blank" rel="noopener noreferrer" class="header-link">LinkedIn</a>
       </div>
@@ -927,6 +861,14 @@
     <a href="tools.html" class="see-all-tools-link" data-i18n="seeAllToolsLink">See all 9 tools →</a>
 
   </main>
+
+  <div class="about-top-wrap">
+    <section class="about insights-teaser">
+      <span class="wwwh-label" data-i18n="insightsEyebrow">Insights</span>
+      <p class="about-outcome insights-teaser-body" data-i18n="insightsBody">Roger publishes commercial observations here as they come up - distribution costs, owner economics, guest experience, technology, regulation, demand. Practical notes from real operator situations, not general advice.</p>
+      <a href="insights/" class="about-cta-primary" data-i18n="insightsCta">Read the Insights →</a>
+    </section>
+  </div>
 
   <div class="about-top-wrap">
     <section class="about">
@@ -975,8 +917,16 @@
   <a href="mailto:rbisschoff@gmail.com" class="floating-cta" id="floatingCta" data-i18n="getInTouch">Email me and let's get started</a>
 
   <script>
-    const I18N = {
-      en: {
+    // Single canonical (English-only) copy object - was I18N (en/it/de)
+    // before the English-Only Conversion sprint removed the Italian and
+    // German dictionaries and the language switcher that selected
+    // between them. Kept as one object (rather than inlining every
+    // string into the markup) because buildMetaFromCopy() below still
+    // regenerates the title/meta description/OG/Twitter tags and
+    // JSON-LD from these SAME strings, so editing hero copy here keeps
+    // SEO fields in sync automatically - that behavior predates and is
+    // independent of the old multi-language support.
+    const COPY = {
         brandTitle: 'Operator Intelligence Suite',
         brandSubtitle: 'by Roger Bisschoff',
         heroTitle: 'You can tell something isn\'t working as well as it should.<br>You just don\'t know what.',
@@ -1046,171 +996,19 @@
         aboutService2: 'Owner retention & supply stability',
         aboutService3: 'Guest experience & repeat guest value',
         aboutService4: 'Tech stack & portfolio profitability',
+        insightsEyebrow: 'Insights',
+        insightsBody: 'Roger publishes commercial observations here as they come up - distribution costs, owner economics, guest experience, technology, regulation, demand. Practical notes from real operator situations, not general advice.',
+        insightsCta: 'Read the Insights →',
         vendorEyebrow: 'For vendors and platforms',
         vendorTitle: 'Frameworks that fit your roadmap? Let’s talk.',
         vendorP1: 'The suite is free to use and cite; the frameworks behind it remain operator-side work. If you build hospitality tech and want to integrate them, the right conversation is a partnership.',
         vendorCta: 'Start a conversation →',
         footer1: 'Operator Intelligence Suite by <a href="https://www.linkedin.com/in/roger-bisschoff/" target="_blank" rel="noopener noreferrer">Roger Bisschoff</a>',
         footer2: 'A practical toolkit for STR and serviced apartment operators.'
-      },
-      it: {
-        brandTitle: 'Operator Intelligence Suite',
-        brandSubtitle: 'di Roger Bisschoff',
-        heroTitle: 'Senti che qualcosa non funziona come dovrebbe.<br>Solo non sai cosa.',
-        heroEyebrow: 'Strumenti diagnostici gratuiti di un consulente di crescita commerciale per operatori short-term rental e appartamenti in gestione',
-        heroEyebrowLine1: 'Dedicato a chi gestisce affitti brevi, case vacanza e proprietà in gestione a breve termine',
-        heroEyebrowLine2: 'Strumenti diagnostici gratuiti di Roger Bisschoff Consulting',
-        heroMechanism: 'Verifica direttamente con 6 domande sulla tua attività e scopri esattamente dove stai lasciando fatturato sul tavolo: distribuzione, prenotazioni dirette, retention dei proprietari o redditività del portfolio.',
-        heroCredibility: 'Costruito su 15 anni di esperienza diretta nella distribuzione e nel revenue per operatori short-term rental e appartamenti in gestione.',
-        heroCta: 'Avvia l’Operator Diagnostic',
-        heroNote: 'Gratis · senza login · i dati restano sul tuo dispositivo',
-        wwwhWhoLabel: 'Chi',
-        wwwhWhatLabel: 'Cosa',
-        wwwhWhyLabel: 'Perché',
-        wwwhHowLabel: 'Come',
-        wwwhWho: 'Operatori short-term rental e appartamenti in gestione che gestiscono il proprio portfolio.',
-        wwwhWhat: 'Una diagnosi in sei domande, poi otto strumenti di approfondimento su distribuzione, prenotazioni dirette, retention dei proprietari e redditività del portfolio.',
-        wwwhWhy: 'La maggior parte degli operatori guarda solo la media del portfolio. Questo ti mostra cosa c\'è sotto.',
-        wwwhHow: 'Sei domande per un Quadro di Crescita, poi uno strumento di approfondimento per la tua area più debole.',
-        seeAllToolsLink: 'Vedi tutti i 9 strumenti →',
-        toolsPageTitle: 'L’intera suite diagnostica',
-        toolsPageSubtitle: 'Ogni strumento, raggruppato per l’area del tuo quadro commerciale che misura. Inizia da dove il divario si sente di più.',
-        backToHome: '← Torna alla panoramica',
-        catAi: 'Visibilità AI',
-        catDemand: 'Domanda e mercati',
-        catDist: 'Distribuzione',
-        catRepeat: 'Ospiti ricorrenti',
-        catProfit: 'Redditività',
-        toolAiName: 'Website AI Ready Audit',
-        toolAiQ: 'L’AI trova e raccomanda il mio sito diretto?',
-        toolChinaQ: 'Devo investire sulla domanda inbound dalla Cina?',
-        toolDcaName: 'Distribution Cost Analyser',
-        toolDcaQ: 'Qual è il costo reale del mio mix di canali — OTA, channel manager, diretto?',
-        toolRgvName: 'Repeat Guest Value',
-        toolRgvQ: 'Quanto mi costa il ricavo ripetuto sugli OTA?',
-        toolCmaName: 'Contribution Margin Analyser',
-        toolCmaQ: 'Ogni unità è davvero redditizia?',
-        catGuestExp: 'Esperienza Ospite',
-        toolGuestExpName: 'Guest Experience Score',
-        toolGuestExpQ: 'Gli ospiti sono davvero soddisfatti, o semplicemente non si lamentano?',
-        catOwnerRetention: 'Fidelizzazione Proprietari',
-        toolOwnerRetentionName: 'Owner Retention Diagnostic',
-        toolOwnerRetentionQ: 'Stai perdendo proprietari più velocemente di quanto pensi?',
-        catTechStack: 'Stack Tecnologico',
-        toolTechStackName: 'Tech Stack Audit',
-        toolTechStackQ: 'Il tuo stack tecnologico, dal PMS al revenue management, si guadagna quello che paghi?',
-        badgeSoon: 'Presto',
-        openTool: 'Apri strumento →',
-        authorRole: 'Consulenza di crescita commerciale per operatori short-term rental, vacation rental e appartamenti in gestione',
-        viewProfile: 'Vedi profilo',
-        getInTouch: 'Scrivimi e iniziamo',
-        secondCtaLine: 'Curioso di scoprire cosa significherebbe per il tuo portfolio?',
-        aboutOutcome: 'Guardo all\'intero quadro commerciale di un operatore — che sia short-term rental o full property management — ricavi, distribuzione, guest experience, retention dei proprietari, stack tecnologico, per trovare dove si trova la vera opportunità di crescita.',
-        aboutEngagement: 'Gli incarichi sono a progetto: una revisione mirata su un\'area commerciale specifica, oppure supporto di consulenza continuativo secondo necessità. Nessun impegno fisso richiesto per iniziare.',
-        methodMapTitle: 'Map',
-        methodMapBody: 'Tutto ciò che influisce sul tuo risultato commerciale.',
-        methodIdentifyTitle: 'Identify',
-        methodIdentifyBody: 'Dove si trova davvero la maggiore opportunità di crescita.',
-        methodQuantifyTitle: 'Quantify',
-        methodQuantifyBody: 'Quanto vale quella opportunità.',
-        methodDirectTitle: 'Direct',
-        methodDirectBody: 'Verso l\'unica cosa che vale la pena fare per prima.',
-        methodLineMap: 'tutto',
-        methodLineIdentify: 'l\'opportunità',
-        methodLineQuantify: 'il suo valore',
-        methodLineDirect: 'cosa fare per prima',
-        aboutService1: 'Distribuzione e costi OTA',
-        aboutService2: 'Retention proprietari e stabilità dell’offerta',
-        aboutService3: 'Guest experience e valore ospiti ricorrenti',
-        aboutService4: 'Stack tecnologico e redditività del portfolio',
-        vendorEyebrow: 'Per vendor e piattaforme',
-        vendorTitle: 'Framework utili alla tua roadmap? Parliamone.',
-        vendorP1: 'La suite è gratis da usare e citare; i framework dietro restano lavoro lato operatore. Se stai costruendo un prodotto hospitality e vuoi integrarli, la conversazione giusta è di partnership.',
-        vendorCta: 'Inizia una conversazione →',
-        footer1: 'Operator Intelligence Suite di <a href="https://www.linkedin.com/in/roger-bisschoff/" target="_blank" rel="noopener noreferrer">Roger Bisschoff</a>',
-        footer2: 'Una cassetta degli attrezzi pratica per operatori short-term rental e appartamenti in gestione.'
-      },
-      de: {
-        brandTitle: 'Operator Intelligence Suite',
-        brandSubtitle: 'von Roger Bisschoff',
-        heroTitle: 'Sie spüren, dass etwas nicht so läuft, wie es sollte.<br>Nur wissen Sie nicht, was.',
-        heroEyebrow: 'Kostenlose Diagnosetools von einem Berater für kommerzielles Wachstum für STR- und Serviced-Apartment-Betreiber',
-        heroEyebrowLine1: 'Für alle, die Ferienwohnungen, Kurzzeitvermietungen oder verwaltete Apartments betreiben',
-        heroEyebrowLine2: 'Kostenlose Diagnosetools von Roger Bisschoff Consulting',
-        heroMechanism: 'Beantworten Sie sechs Fragen zu Ihrem Betrieb und erfahren Sie genau, wo Ihnen Umsatz entgeht: Vertrieb, Direktbuchungen, Eigentümerbindung oder Portfolio-Rentabilität.',
-        heroCredibility: 'Aufgebaut auf 15 Jahren eigener Erfahrung in Distribution und Revenue für STR- und Serviced-Apartment-Betreiber.',
-        heroCta: 'Operator Diagnostic starten',
-        heroNote: 'Kostenlos · ohne Login · Eingaben bleiben auf Ihrem Gerät',
-        wwwhWhoLabel: 'Wer',
-        wwwhWhatLabel: 'Was',
-        wwwhWhyLabel: 'Warum',
-        wwwhHowLabel: 'Wie',
-        wwwhWho: 'STR- und Serviced-Apartment-Betreiber, die ihr eigenes Portfolio verwalten.',
-        wwwhWhat: 'Eine Diagnose in sechs Fragen, dann acht Vertiefungstools zu Distribution, Direktbuchungen, Eigentümerbindung und Portfolio-Rentabilität.',
-        wwwhWhy: 'Die meisten Betreiber prüfen nur den Portfolio-Durchschnitt. Das hier zeigt, was sich dahinter verbirgt.',
-        wwwhHow: 'Sechs Fragen zu einem Wachstumsbild, dann ein Vertiefungstool für Ihren schwächsten Bereich.',
-        seeAllToolsLink: 'Alle 9 Tools ansehen →',
-        toolsPageTitle: 'Die gesamte Diagnose-Suite',
-        toolsPageSubtitle: 'Jedes Tool, gruppiert nach dem Bereich Ihres kommerziellen Bildes, den es misst. Beginnen Sie dort, wo die Lücke am meisten schmerzt.',
-        backToHome: '← Zurück zur Übersicht',
-        catAi: 'AI-Sichtbarkeit',
-        catDemand: 'Nachfrage & Märkte',
-        catDist: 'Distribution',
-        catRepeat: 'Wiederkehrende Gäste',
-        catProfit: 'Profitabilität',
-        toolAiName: 'Website AI Ready Audit',
-        toolAiQ: 'Findet und empfiehlt AI meine Direktwebsite?',
-        toolChinaQ: 'Soll ich in China-Inbound-Nachfrage investieren?',
-        toolDcaName: 'Distribution Cost Analyser',
-        toolDcaQ: 'Was kostet mein Channel-Mix wirklich — OTAs, Channel Manager, Direktbuchung?',
-        toolRgvName: 'Repeat Guest Value',
-        toolRgvQ: 'Was kosten mich Wiederholungsumsätze über OTAs?',
-        toolCmaName: 'Contribution Margin Analyser',
-        toolCmaQ: 'Ist jede Unit wirklich profitabel?',
-        catGuestExp: 'Gästeerlebnis',
-        toolGuestExpName: 'Guest Experience Score',
-        toolGuestExpQ: 'Sind Gäste wirklich zufrieden, oder beschweren sie sich einfach nicht?',
-        catOwnerRetention: 'Eigentümerbindung',
-        toolOwnerRetentionName: 'Owner Retention Diagnostic',
-        toolOwnerRetentionQ: 'Verlieren Sie Eigentümer schneller, als Ihnen bewusst ist?',
-        catTechStack: 'Tech-Stack',
-        toolTechStackName: 'Tech Stack Audit',
-        toolTechStackQ: 'Verdient Ihr Tech-Stack, von PMS bis Revenue Management, was Sie dafür bezahlen?',
-        badgeSoon: 'Bald',
-        openTool: 'Tool öffnen →',
-        authorRole: 'Beratung für kommerzielles Wachstum für STR-, Ferienwohnungs- und Serviced-Apartment-Betreiber',
-        viewProfile: 'Profil ansehen',
-        getInTouch: 'Schreiben Sie mir und lassen Sie uns beginnen',
-        secondCtaLine: 'Neugierig, was das für Ihr eigenes Portfolio bedeuten würde?',
-        aboutOutcome: 'Ich betrachte das gesamte kommerzielle Bild eines Betreibers — ob Short-Term-Rental oder volles Property Management — Umsatz, Distribution, Gästeerlebnis, Owner Retention, Tech-Stack, um herauszufinden, wo die eigentliche Wachstumschance liegt.',
-        aboutEngagement: 'Engagements sind projektbasiert: eine gezielte Prüfung eines einzelnen kommerziellen Bereichs oder laufende Beratungsunterstützung nach Bedarf. Kein fester Vertrag nötig, um zu starten.',
-        methodMapTitle: 'Map',
-        methodMapBody: 'Alles, was Ihr kommerzielles Ergebnis beeinflusst.',
-        methodIdentifyTitle: 'Identify',
-        methodIdentifyBody: 'Wo die größte Wachstumschance tatsächlich liegt.',
-        methodQuantifyTitle: 'Quantify',
-        methodQuantifyBody: 'Was diese Chance wert ist.',
-        methodDirectTitle: 'Direct',
-        methodDirectBody: 'Auf die eine Sache, die es zuerst zu tun lohnt.',
-        methodLineMap: 'alles',
-        methodLineIdentify: 'die Chance',
-        methodLineQuantify: 'ihren Wert',
-        methodLineDirect: 'was zuerst zu tun ist',
-        aboutService1: 'Distribution & OTA-Kostenstrategie',
-        aboutService2: 'Owner Retention & Angebotsstabilität',
-        aboutService3: 'Guest Experience & wiederkehrende Gäste',
-        aboutService4: 'Tech-Stack & Portfolio-Rentabilität',
-        vendorEyebrow: 'Für Vendor und Plattformen',
-        vendorTitle: 'Frameworks für Ihre Roadmap? Sprechen wir.',
-        vendorP1: 'Die Suite ist frei nutzbar und zitierbar; die Frameworks dahinter bleiben Operator-Arbeit. Wenn Sie Hospitality-Tech bauen und sie integrieren wollen, ist die richtige Unterhaltung eine Partnerschaft.',
-        vendorCta: 'Gespräch starten →',
-        footer1: 'Operator Intelligence Suite von <a href="https://www.linkedin.com/in/roger-bisschoff/" target="_blank" rel="noopener noreferrer">Roger Bisschoff</a>',
-        footer2: 'Ein praktisches Toolkit für STR- und Serviced-Apartment-Betreiber.'
-      }
     };
 
     // Title/meta description/OG/Twitter tags and JSON-LD are generated from the SAME
-    // hero copy (I18N) used for the visible page, so editing hero strings above keeps
+    // hero copy (COPY) used for the visible page, so editing hero strings above keeps
     // SEO fields in sync automatically. Hardcoded <head> values are only a pre-JS fallback.
     const META_FALLBACK = {
       title: 'Operator Intelligence Suite — by Roger Bisschoff',
@@ -1226,7 +1024,7 @@
       const el = document.querySelector(selector);
       if (el) el.setAttribute('content', content);
     }
-    function buildJsonLd(pack) {
+    function buildJsonLd() {
       const tools = [
         { name: 'Distribution Cost Analyser', url: 'https://rbisschoff.github.io/distribution-cost-analyser/' },
         { name: 'Website AI Ready Audit', url: 'https://rbisschoff.github.io/ai-ready-audit/' },
@@ -1249,7 +1047,7 @@
           },
           {
             '@type': 'ItemList',
-            name: pack && pack.toolsPageTitle ? pack.toolsPageTitle : 'Operator Intelligence Suite tools',
+            name: COPY.toolsPageTitle || 'Operator Intelligence Suite tools',
             itemListElement: tools.map(function (t, i) {
               return {
                 '@type': 'ListItem',
@@ -1275,13 +1073,12 @@
       }
       script.textContent = JSON.stringify(data);
     }
-    function buildMetaFromCopy(lang) {
-      const pack = I18N[lang] || I18N.en;
+    function buildMetaFromCopy() {
       let title = META_FALLBACK.title;
       let description = META_FALLBACK.description;
-      if (pack && pack.heroEyebrow && pack.heroMechanism) {
-        title = pack.heroEyebrow;
-        description = truncateAtWord(pack.heroMechanism, 160);
+      if (COPY.heroEyebrow && COPY.heroMechanism) {
+        title = COPY.heroEyebrow;
+        description = truncateAtWord(COPY.heroMechanism, 160);
       }
       document.title = title;
       setMetaContent('meta[name="description"]', description);
@@ -1289,35 +1086,27 @@
       setMetaContent('meta[property="og:description"]', description);
       setMetaContent('meta[name="twitter:title"]', title);
       setMetaContent('meta[name="twitter:description"]', description);
-      buildJsonLd(pack);
+      buildJsonLd();
     }
     window.updateOisMetadata = buildMetaFromCopy;
 
-    function applyLang(lang) {
-      const pack = I18N[lang] || I18N.it;
-      document.documentElement.lang = lang;
-      if (window.updateOisMetadata) window.updateOisMetadata(lang);
+    // English-Only Conversion sprint: was applyLang(lang) - selected
+    // between I18N.en/it/de and toggled .lang-btn active state. Only one
+    // copy object remains now, so this just applies it once; still a
+    // real function (not inlined into the markup) because the SEO-sync
+    // call above (window.updateOisMetadata) and any future copy edit
+    // both still go through it.
+    function applyCopy() {
+      if (window.updateOisMetadata) window.updateOisMetadata();
       document.querySelectorAll('[data-i18n]').forEach(function(el) {
         const key = el.getAttribute('data-i18n');
-        if (!pack[key]) return;
-        if (key === 'footer1' || key === 'heroTitle') el.innerHTML = pack[key];
-        else el.textContent = pack[key];
+        if (!COPY[key]) return;
+        if (key === 'footer1' || key === 'heroTitle') el.innerHTML = COPY[key];
+        else el.textContent = COPY[key];
       });
-      document.querySelectorAll('.lang-btn').forEach(function(btn) {
-        const on = btn.getAttribute('data-lang') === lang;
-        btn.classList.toggle('active', on);
-        btn.setAttribute('aria-pressed', on ? 'true' : 'false');
-      });
-      try { localStorage.setItem('ois-lang', lang); } catch (e) {}
     }
 
-    document.querySelectorAll('.lang-btn').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        applyLang(btn.getAttribute('data-lang'));
-      });
-    });
-
-    applyLang(window.__oisInitialLang || 'en');
+    applyCopy();
 
     // Floating contact button: stays hidden until the About card has
     // scrolled past, not just partially out of view - isIntersecting is
