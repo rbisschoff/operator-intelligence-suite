@@ -489,7 +489,7 @@
 
     /* ============================================================
        SECTION SHELL — shared heading row (title + "view all" link)
-       reused by Insights / Tools / Reports
+       reused by Insights / Tools
        ============================================================ */
     .section-wrap {
       max-width: 1280px;
@@ -722,47 +722,6 @@
     .diagnostic-bullets li svg { color: var(--positive); flex-shrink: 0; }
 
     /* ============================================================
-       COMMERCIAL INTELLIGENCE REPORTS — no report has been produced
-       yet; every card below is explicitly labelled "In development."
-       See this sprint's report, item G, and reports.html itself.
-       ============================================================ */
-    .report-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
-    @media (min-width: 700px) { .report-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (min-width: 1100px) { .report-grid { grid-template-columns: repeat(4, 1fr); } }
-
-    .report-card {
-      background: var(--card);
-      border-radius: var(--radius-md);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-card);
-      padding: 18px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      opacity: 0.92;
-    }
-
-    .report-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
-    .report-eyebrow { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
-    .report-icon { width: 34px; height: 34px; border-radius: 9px; background: var(--card-tint); color: var(--ink2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .report-title { font-family: var(--font-serif); font-size: 15px; font-weight: 600; line-height: 1.35; color: var(--ink); }
-    .report-desc { font-size: 12.5px; color: var(--muted); line-height: 1.5; flex: 1; }
-    .report-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 11.5px;
-      font-weight: 700;
-      color: var(--muted);
-      margin-top: 4px;
-    }
-    .report-status::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--muted2); }
-
-    /* ============================================================
        ROGER / CONSULTING SECTION
        ============================================================ */
     .roger-wrap {
@@ -989,7 +948,6 @@
         <a href="index.html" aria-current="page">Home</a>
         <a href="insights/">Insights</a>
         <a href="tools.html">Tools</a>
-        <a href="reports.html">Reports</a>
         <a href="#roger">About</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -1009,7 +967,6 @@
       <a href="index.html">Home</a>
       <a href="insights/">Insights</a>
       <a href="tools.html">Tools</a>
-      <a href="reports.html">Reports</a>
       <a href="#roger">About</a>
       <a href="#contact">Contact</a>
       <a class="header-cta" href="https://rbisschoff.github.io/operator-diagnostic/">Start Diagnostic</a>
@@ -1207,62 +1164,6 @@
     </div>
 
     <!-- ============================================================
-         COMMERCIAL INTELLIGENCE REPORTS — no report has been produced
-         yet; every card is explicitly labelled "In development" and
-         links to reports.html, which states this plainly rather than
-         a broken or fabricated destination. See sprint report item G.
-         ============================================================ -->
-    <section class="section-wrap" aria-labelledby="reports-heading">
-      <div class="section-head">
-        <h2 id="reports-heading">Commercial Intelligence Reports</h2>
-        <a class="section-link" href="reports.html">View all reports →</a>
-      </div>
-      <div class="report-grid">
-
-        <a class="report-card" href="reports.html">
-          <div class="report-card-top">
-            <span class="report-eyebrow">Report</span>
-            <span class="report-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 18l5-6 4 4 7-9"/></svg></span>
-          </div>
-          <div class="report-title">Short-Term Rental Industry Outlook</div>
-          <p class="report-desc">Key trends shaping the global STR landscape.</p>
-          <span class="report-status">In development</span>
-        </a>
-
-        <a class="report-card" href="reports.html">
-          <div class="report-card-top">
-            <span class="report-eyebrow">Report</span>
-            <span class="report-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v9l6 3"/></svg></span>
-          </div>
-          <div class="report-title">Distribution Benchmark Report</div>
-          <p class="report-desc">Benchmarks for OTA costs, conversion, and channel mix.</p>
-          <span class="report-status">In development</span>
-        </a>
-
-        <a class="report-card" href="reports.html">
-          <div class="report-card-top">
-            <span class="report-eyebrow">Report</span>
-            <span class="report-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span>
-          </div>
-          <div class="report-title">Direct Booking Performance Report</div>
-          <p class="report-desc">Benchmarks and practices to grow your direct channel.</p>
-          <span class="report-status">In development</span>
-        </a>
-
-        <a class="report-card" href="reports.html">
-          <div class="report-card-top">
-            <span class="report-eyebrow">Report</span>
-            <span class="report-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="18" cy="9" r="2.4"/><path d="M15 20c.2-2.6 1.6-4.6 3.4-5.4"/></svg></span>
-          </div>
-          <div class="report-title">Owner Retention &amp; Supply Stability Report</div>
-          <p class="report-desc">How top operators keep owners happy and supply stable.</p>
-          <span class="report-status">In development</span>
-        </a>
-
-      </div>
-    </section>
-
-    <!-- ============================================================
          ROGER / CONSULTING SECTION
          ============================================================ -->
     <div class="roger-wrap" id="roger">
@@ -1331,7 +1232,6 @@
         <ul>
           <li><a href="insights/">Insights</a></li>
           <li><a href="tools.html">Tools</a></li>
-          <li><a href="reports.html">Reports</a></li>
           <li><a href="#roger">About</a></li>
         </ul>
       </div>
@@ -1352,7 +1252,7 @@
       </div>
       <div class="footer-col">
         <h3>Stay informed</h3>
-        <p style="font-size:13px; color: var(--header-muted); margin-bottom:10px;">Get the latest insights and reports.</p>
+        <p style="font-size:13px; color: var(--header-muted); margin-bottom:10px;">Get the latest insights.</p>
         <form class="newsletter-form" action="mailto:rbisschoff@gmail.com" method="get" onsubmit="return handleNewsletterSubmit(event)">
           <input class="newsletter-input" type="email" name="subject" placeholder="Your email address" aria-label="Email address" required>
           <button class="newsletter-btn" type="submit">Subscribe</button>
