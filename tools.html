@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>The full diagnostic suite — Operator Intelligence Suite</title>
+  <title>The full diagnostic suite — Roger Bisschoff</title>
   <meta name="description" content="Every tool, grouped by where it targets your commercial picture. Start wherever the gap hurts most.">
   <link rel="canonical" href="https://rogerbisschoff.com/tools.html">
 
   <!-- Open Graph / Twitter — title & description are regenerated at runtime from the hero copy
        in the COPY object below (see buildMetaFromCopy). These are the pre-JS fallback values. -->
-  <meta property="og:title" content="The full diagnostic suite — Operator Intelligence Suite">
+  <meta property="og:title" content="The full diagnostic suite — Roger Bisschoff">
   <meta property="og:description" content="Every tool, grouped by where it targets your commercial picture. Start wherever the gap hurts most.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://rogerbisschoff.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="The full diagnostic suite — Operator Intelligence Suite">
+  <meta name="twitter:title" content="The full diagnostic suite — Roger Bisschoff">
   <meta name="twitter:description" content="Every tool, grouped by where it targets your commercial picture. Start wherever the gap hurts most.">
   <meta name="twitter:image" content="https://rogerbisschoff.com/og-image.png">
 
@@ -191,17 +191,6 @@
       flex-shrink: 0;
     }
 
-    .lang-indicator {
-      display: none;
-      align-items: center;
-      gap: 5px;
-      font-size: 12.5px;
-      font-weight: 600;
-      color: var(--header-muted);
-      padding: 7px 10px;
-      border-radius: 100px;
-      border: 1px solid var(--header-border);
-    }
 
     .header-cta {
       display: inline-flex;
@@ -273,7 +262,6 @@
 
     @media (min-width: 1080px) {
       .primary-nav { display: flex; }
-      .lang-indicator { display: inline-flex; }
     }
 
     /* ============================================================
@@ -1073,27 +1061,23 @@
        ============================================================ -->
   <header>
     <div class="header-inner">
-      <a class="brand" href="index.html" aria-label="Operator Intelligence Suite — home">
-        <div class="brand-mark">OI</div>
+      <a class="brand" href="index.html" aria-label="Roger Bisschoff — home">
+        <div class="brand-mark">RB</div>
         <div class="brand-text">
-          <div class="brand-title" data-i18n="brandTitle">Operator Intelligence Suite</div>
-          <div class="brand-subtitle" data-i18n="brandSubtitle">by Roger Bisschoff</div>
+          <div class="brand-title" data-i18n="brandTitle">Roger Bisschoff</div>
+          <div class="brand-subtitle" data-i18n="brandSubtitle">STR Commercial Strategy</div>
         </div>
       </a>
 
       <nav class="primary-nav" aria-label="Primary">
         <a href="index.html">Home</a>
-        <a href="insights/">Insights</a>
-        <a href="tools.html" aria-current="page">Tools</a>
         <a href="index.html#roger">About</a>
+        <a href="tools.html" aria-current="page">Diagnostics</a>
+        <a href="insights/">Insights</a>
         <a href="index.html#contact">Contact</a>
       </nav>
 
       <div class="header-actions">
-        <span class="lang-indicator" aria-label="Site language: English">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
-          EN
-        </span>
         <a class="header-cta" href="https://rbisschoff.github.io/operator-diagnostic/">Start Diagnostic</a>
         <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -1102,9 +1086,9 @@
     </div>
     <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
       <a href="index.html">Home</a>
-      <a href="insights/">Insights</a>
-      <a href="tools.html">Tools</a>
       <a href="index.html#roger">About</a>
+      <a href="tools.html">Diagnostics</a>
+      <a href="insights/">Insights</a>
       <a href="index.html#contact">Contact</a>
       <a class="header-cta" href="https://rbisschoff.github.io/operator-diagnostic/">Start Diagnostic</a>
     </nav>
@@ -1299,20 +1283,20 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <a class="brand" href="index.html">
-          <div class="brand-mark">OI</div>
+          <div class="brand-mark">RB</div>
           <div class="brand-text">
-            <div class="brand-title">Operator Intelligence Suite</div>
-            <div class="brand-subtitle">by Roger Bisschoff</div>
+            <div class="brand-title">Roger Bisschoff</div>
+            <div class="brand-subtitle">STR Commercial Strategy</div>
           </div>
         </a>
-        <p class="footer-tagline">Commercial intelligence for the global short-term rental industry.</p>
+        <p class="footer-tagline">Independent commercial advisory for professional short-term rental operators.</p>
       </div>
       <div class="footer-col">
-        <h3>Platform</h3>
+        <h3>Explore</h3>
         <ul>
-          <li><a href="insights/">Insights</a></li>
-          <li><a href="tools.html">Tools</a></li>
           <li><a href="index.html#roger">About</a></li>
+          <li><a href="tools.html">Diagnostics</a></li>
+          <li><a href="insights/">Insights</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -1359,8 +1343,8 @@
     // SEO fields in sync automatically - that behavior predates and is
     // independent of the old multi-language support.
     const COPY = {
-        brandTitle: 'Operator Intelligence Suite',
-        brandSubtitle: 'by Roger Bisschoff',
+        brandTitle: 'Roger Bisschoff',
+        brandSubtitle: 'STR Commercial Strategy',
         heroTitle: 'You can tell something isn\'t working as well as it should.<br>You just don\'t know what.',
         heroSubtitle: 'Six questions tells you.',
         heroCta: 'Start the Operator Diagnostic',
@@ -1434,7 +1418,7 @@
         vendorTitle: 'Frameworks that fit your roadmap? Let’s talk.',
         vendorP1: 'The suite is free to use and cite; the frameworks behind it remain operator-side work. If you build hospitality tech and want to integrate them, the right conversation is a partnership.',
         vendorCta: 'Start a conversation →',
-        footer1: 'Operator Intelligence Suite by <a href="https://www.linkedin.com/in/roger-bisschoff/" target="_blank" rel="noopener noreferrer">Roger Bisschoff</a>',
+        footer1: 'Roger Bisschoff — <a href="https://www.linkedin.com/in/roger-bisschoff/" target="_blank" rel="noopener noreferrer">STR Commercial Strategy</a>',
         footer2: 'A practical toolkit for hospitality and short-term rental operators.'
     };
 
@@ -1442,7 +1426,7 @@
     // hero copy (COPY) used for the visible page, so editing hero strings above keeps
     // SEO fields in sync automatically. Hardcoded <head> values are only a pre-JS fallback.
     const META_FALLBACK = {
-      title: 'The Full Diagnostic Suite — Operator Intelligence Suite',
+      title: 'The Full Diagnostic Suite — Roger Bisschoff',
       description: 'Eight diagnostic tools covering distribution, revenue, guest experience, and owner retention for short-term rental operators.'
     };
     function truncateAtWord(str, maxLen) {
@@ -1477,7 +1461,7 @@
             url: t.url,
             applicationCategory: 'BusinessApplication',
             offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-            isPartOf: { '@type': 'WebSite', name: 'Operator Intelligence Suite', url: 'https://rogerbisschoff.com/' }
+            isPartOf: { '@type': 'WebSite', name: 'Roger Bisschoff — STR Commercial Strategy', url: 'https://rogerbisschoff.com/' }
           };
           if (t.desc) item.description = t.desc;
           return { '@type': 'ListItem', position: i + 1, item: item };
@@ -1496,7 +1480,7 @@
       let title = META_FALLBACK.title;
       let description = META_FALLBACK.description;
       if (COPY.toolsPageTitle && COPY.toolsPageSubtitle) {
-        title = COPY.toolsPageTitle + ' — Operator Intelligence Suite';
+        title = COPY.toolsPageTitle + ' — Roger Bisschoff';
         description = truncateAtWord(COPY.toolsPageSubtitle, 160);
       }
       document.title = title;
@@ -1549,7 +1533,7 @@
     function handleNewsletterSubmit(e) {
       e.preventDefault();
       var email = e.target.querySelector('input[type="email"]').value;
-      window.location.href = 'mailto:rbisschoff@gmail.com?subject=' + encodeURIComponent('Newsletter signup') + '&body=' + encodeURIComponent('Please add me to the Operator Intelligence Suite mailing list: ' + email);
+      window.location.href = 'mailto:rbisschoff@gmail.com?subject=' + encodeURIComponent('Newsletter signup') + '&body=' + encodeURIComponent('Please add me to Roger Bisschoff\'s mailing list: ' + email);
       return false;
     }
   </script>

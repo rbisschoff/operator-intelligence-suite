@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Commercial intelligence platform for short-term rental operators</title>
-  <meta name="description" content="Actionable intelligence for operators managing short-term rentals, vacation homes, and serviced apartments. Free diagnostic tools, commercial Insights, and consulting from Roger Bisschoff.">
+  <title>Roger Bisschoff — STR Commercial Strategy</title>
+  <meta name="description" content="I help professional short-term rental operators identify hidden commercial friction across distribution, owner economics, and direct bookings — and execute the changes needed to recover lost yield.">
   <link rel="canonical" href="https://rogerbisschoff.com/">
 
   <!-- Open Graph / Twitter — title & description are regenerated at runtime from the hero copy
        in the COPY object below (see buildMetaFromCopy). These are the pre-JS fallback values. -->
-  <meta property="og:title" content="Commercial intelligence platform for short-term rental operators">
-  <meta property="og:description" content="Actionable intelligence for operators managing short-term rentals, vacation homes, and serviced apartments. Free diagnostic tools, commercial Insights, and consulting from Roger Bisschoff.">
+  <meta property="og:title" content="Roger Bisschoff — STR Commercial Strategy">
+  <meta property="og:description" content="I help professional short-term rental operators identify hidden commercial friction across distribution, owner economics, and direct bookings — and execute the changes needed to recover lost yield.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://rogerbisschoff.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Commercial intelligence platform for short-term rental operators">
-  <meta name="twitter:description" content="Actionable intelligence for operators managing short-term rentals, vacation homes, and serviced apartments. Free diagnostic tools, commercial Insights, and consulting from Roger Bisschoff.">
+  <meta name="twitter:title" content="Roger Bisschoff — STR Commercial Strategy">
+  <meta name="twitter:description" content="I help professional short-term rental operators identify hidden commercial friction across distribution, owner economics, and direct bookings — and execute the changes needed to recover lost yield.">
   <meta name="twitter:image" content="https://rogerbisschoff.com/og-image.png">
 
   <!-- Google Analytics -->
@@ -49,7 +49,7 @@
       },
       {
         "@type": "ItemList",
-        "name": "Operator Intelligence Suite tools",
+        "name": "Roger Bisschoff diagnostic tools",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "item": { "@type": "SoftwareApplication", "name": "Distribution Cost Analyser", "url": "https://rbisschoff.github.io/distribution-cost-analyser/", "applicationCategory": "BusinessApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } } },
           { "@type": "ListItem", "position": 2, "item": { "@type": "SoftwareApplication", "name": "Website AI Ready Audit", "url": "https://rbisschoff.github.io/ai-ready-audit/", "applicationCategory": "BusinessApplication", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } } },
@@ -239,18 +239,6 @@
       flex-shrink: 0;
     }
 
-    .lang-indicator {
-      display: none;
-      align-items: center;
-      gap: 5px;
-      font-size: 12.5px;
-      font-weight: 600;
-      color: var(--header-muted);
-      padding: 7px 10px;
-      border-radius: 100px;
-      border: 1px solid var(--header-border);
-    }
-
     .header-cta {
       display: inline-flex;
       align-items: center;
@@ -316,7 +304,6 @@
 
     @media (min-width: 1080px) {
       .primary-nav { display: flex; }
-      .lang-indicator { display: inline-flex; }
     }
 
     /* ============================================================
@@ -511,6 +498,17 @@
     .section-head h2 {
       font-size: clamp(21px, 2.4vw, 27px);
       color: var(--ink);
+    }
+
+    /* One-line supporting sentence under a section-head, e.g. framing
+       the diagnostic tools as evidence of method rather than the
+       product itself. Deliberately quiet - same muted tone as
+       hero-cta-note - not a second heading. */
+    .section-sub {
+      margin: -8px 0 24px;
+      max-width: 60ch;
+      font-size: 14px;
+      color: var(--muted);
     }
 
     .section-link {
@@ -936,27 +934,23 @@
        ============================================================ -->
   <header>
     <div class="header-inner">
-      <a class="brand" href="index.html" aria-label="Operator Intelligence Suite — home">
-        <div class="brand-mark">OI</div>
+      <a class="brand" href="index.html" aria-label="Roger Bisschoff — home">
+        <div class="brand-mark">RB</div>
         <div class="brand-text">
-          <div class="brand-title">Operator Intelligence Suite</div>
-          <div class="brand-subtitle">by Roger Bisschoff</div>
+          <div class="brand-title">Roger Bisschoff</div>
+          <div class="brand-subtitle">STR Commercial Strategy</div>
         </div>
       </a>
 
       <nav class="primary-nav" aria-label="Primary">
         <a href="index.html" aria-current="page">Home</a>
-        <a href="insights/">Insights</a>
-        <a href="tools.html">Tools</a>
         <a href="#roger">About</a>
+        <a href="tools.html">Diagnostics</a>
+        <a href="insights/">Insights</a>
         <a href="#contact">Contact</a>
       </nav>
 
       <div class="header-actions">
-        <span class="lang-indicator" aria-label="Site language: English">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
-          EN
-        </span>
         <a class="header-cta" href="https://rbisschoff.github.io/operator-diagnostic/">Start Diagnostic</a>
         <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -965,9 +959,9 @@
     </div>
     <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
       <a href="index.html">Home</a>
-      <a href="insights/">Insights</a>
-      <a href="tools.html">Tools</a>
       <a href="#roger">About</a>
+      <a href="tools.html">Diagnostics</a>
+      <a href="insights/">Insights</a>
       <a href="#contact">Contact</a>
       <a class="header-cta" href="https://rbisschoff.github.io/operator-diagnostic/">Start Diagnostic</a>
     </nav>
@@ -979,9 +973,9 @@
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-copy">
-        <span class="hero-eyebrow">Commercial intelligence platform<br>for the global short-term rental industry</span>
-        <h1>Clarity on what drives<br>revenue and growth.</h1>
-        <p class="hero-sub">Actionable intelligence for operators managing short-term rentals, vacation homes, and serviced apartments.</p>
+        <span class="hero-eyebrow">Independent commercial advisory<br>for professional STR operators</span>
+        <h1>Know where your STR<br>business is leaking margin.</h1>
+        <p class="hero-sub">I help professional short-term rental operators identify hidden commercial friction across distribution, owner economics, and direct bookings — and execute the exact changes needed to recover lost yield.</p>
 
         <div class="hero-indicators">
           <div class="hero-indicator">
@@ -1003,7 +997,7 @@
         </div>
 
         <a class="hero-cta" href="https://rbisschoff.github.io/operator-diagnostic/">Start the Operator Diagnostic</a>
-        <span class="hero-cta-note">Free · No login · Inputs stay on your device</span>
+        <span class="hero-cta-note">Free · No login · Inputs stay on your device · Or <a href="#contact" class="section-link">talk to Roger directly →</a></span>
       </div>
 
       <div class="hero-visual" role="img" aria-label="Illustration of a light, airy short-term rental interior">
@@ -1024,12 +1018,12 @@
         <div class="hero-overlay">
           <h2>Know where to focus.<br>Fix what matters.</h2>
           <ul>
-            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Distribution &amp; direct bookings</li>
-            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Owner retention &amp; profitability</li>
-            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Guest experience &amp; repeat value</li>
-            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Tech stack &amp; operational efficiency</li>
-            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Market &amp; competitive intelligence</li>
-            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Portfolio performance benchmarks</li>
+            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Distribution &amp; OTA economics</li>
+            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Rate &amp; pricing leakage</li>
+            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Owner acquisition &amp; retention economics</li>
+            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Direct-booking friction</li>
+            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Technology stack cost vs. yield</li>
+            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Portfolio-level profitability</li>
           </ul>
         </div>
       </div>
@@ -1037,6 +1031,58 @@
   </section>
 
   <main>
+
+    <!-- ============================================================
+         ROGER / ADVISORY SECTION — moved ahead of Insights/Tools so
+         Roger and the advisory proposition are established before the
+         supporting diagnostics and editorial content below (Sprint
+         E2's own "hierarchy makes the tool platform too prominent
+         relative to Roger" finding). Content unchanged from the
+         previous position - this is a relocation, not a rewrite.
+         ============================================================ -->
+    <div class="roger-wrap" id="roger">
+      <div class="roger-panel">
+        <div class="roger-left">
+          <img class="roger-avatar" src="assets/roger-headshot.jpg" alt="Roger Bisschoff" width="68" height="68">
+          <div class="roger-name">Roger Bisschoff</div>
+          <p class="roger-role">Commercial growth consulting for short-term rental and serviced apartment operators.</p>
+          <p class="roger-fact">15+ years in distribution and revenue.</p>
+          <p class="roger-strong">Operator focused. Commercially neutral.</p>
+          <div id="contact" style="margin-top:14px; display:flex; flex-direction:column; gap:8px;">
+            <a href="mailto:rbisschoff@gmail.com" class="section-link">Email me and let's get started →</a>
+            <a href="https://www.linkedin.com/in/roger-bisschoff/" target="_blank" rel="noopener noreferrer" class="section-link" style="color:var(--muted);">View LinkedIn profile →</a>
+          </div>
+        </div>
+        <div class="roger-right">
+          <h2>From insight to impact.</h2>
+          <div class="process-row">
+            <div class="process-step">
+              <span class="process-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 5.5v16"/></svg></span>
+              <span class="process-label">Map</span>
+              <span class="process-sub">everything</span>
+            </div>
+            <div class="process-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+            <div class="process-step">
+              <span class="process-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span>
+              <span class="process-label">Identify</span>
+              <span class="process-sub">the opportunity</span>
+            </div>
+            <div class="process-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+            <div class="process-step">
+              <span class="process-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg></span>
+              <span class="process-label">Quantify</span>
+              <span class="process-sub">its value</span>
+            </div>
+            <div class="process-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+            <div class="process-step">
+              <span class="process-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+              <span class="process-label">Direct</span>
+              <span class="process-sub">what to do first</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- ============================================================
          LATEST INDUSTRY INSIGHTS — zero Insights are published as of
@@ -1065,9 +1111,10 @@
          ============================================================ -->
     <section class="section-wrap" aria-labelledby="tools-heading">
       <div class="section-head">
-        <h2 id="tools-heading">Commercial Intelligence Tools</h2>
+        <h2 id="tools-heading">Diagnostic tools</h2>
         <a class="section-link" href="tools.html">See all 9 tools →</a>
       </div>
+      <p class="section-sub">Free, self-serve versions of the same diagnostic method used in paid engagements — evidence of how the work is done, not the work itself.</p>
       <div class="tool-grid">
 
         <a class="tool-tile" href="https://rbisschoff.github.io/distribution-cost-analyser/" target="_blank" rel="noopener noreferrer">
@@ -1163,53 +1210,6 @@
       </div>
     </div>
 
-    <!-- ============================================================
-         ROGER / CONSULTING SECTION
-         ============================================================ -->
-    <div class="roger-wrap" id="roger">
-      <div class="roger-panel">
-        <div class="roger-left">
-          <img class="roger-avatar" src="assets/roger-headshot.jpg" alt="Roger Bisschoff" width="68" height="68">
-          <div class="roger-name">Roger Bisschoff</div>
-          <p class="roger-role">Commercial growth consulting for short-term rental and serviced apartment operators.</p>
-          <p class="roger-fact">15+ years in distribution and revenue.</p>
-          <p class="roger-strong">Operator focused. Commercially neutral.</p>
-          <div id="contact" style="margin-top:14px; display:flex; flex-direction:column; gap:8px;">
-            <a href="mailto:rbisschoff@gmail.com" class="section-link">Email me and let's get started →</a>
-            <a href="https://www.linkedin.com/in/roger-bisschoff/" target="_blank" rel="noopener noreferrer" class="section-link" style="color:var(--muted);">View LinkedIn profile →</a>
-          </div>
-        </div>
-        <div class="roger-right">
-          <h2>From insight to impact.</h2>
-          <div class="process-row">
-            <div class="process-step">
-              <span class="process-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 5.5v16"/></svg></span>
-              <span class="process-label">Map</span>
-              <span class="process-sub">everything</span>
-            </div>
-            <div class="process-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-            <div class="process-step">
-              <span class="process-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span>
-              <span class="process-label">Identify</span>
-              <span class="process-sub">the opportunity</span>
-            </div>
-            <div class="process-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-            <div class="process-step">
-              <span class="process-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg></span>
-              <span class="process-label">Quantify</span>
-              <span class="process-sub">its value</span>
-            </div>
-            <div class="process-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-            <div class="process-step">
-              <span class="process-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
-              <span class="process-label">Direct</span>
-              <span class="process-sub">what to do first</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </main>
 
   <!-- ============================================================
@@ -1219,20 +1219,20 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <a class="brand" href="index.html">
-          <div class="brand-mark">OI</div>
+          <div class="brand-mark">RB</div>
           <div class="brand-text">
-            <div class="brand-title">Operator Intelligence Suite</div>
-            <div class="brand-subtitle">by Roger Bisschoff</div>
+            <div class="brand-title">Roger Bisschoff</div>
+            <div class="brand-subtitle">STR Commercial Strategy</div>
           </div>
         </a>
-        <p class="footer-tagline">Commercial intelligence for the global short-term rental industry.</p>
+        <p class="footer-tagline">Independent commercial advisory for professional short-term rental operators.</p>
       </div>
       <div class="footer-col">
-        <h3>Platform</h3>
+        <h3>Explore</h3>
         <ul>
-          <li><a href="insights/">Insights</a></li>
-          <li><a href="tools.html">Tools</a></li>
           <li><a href="#roger">About</a></li>
+          <li><a href="tools.html">Diagnostics</a></li>
+          <li><a href="insights/">Insights</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -1294,7 +1294,7 @@
     function handleNewsletterSubmit(e) {
       e.preventDefault();
       var email = e.target.querySelector('input[type="email"]').value;
-      window.location.href = 'mailto:rbisschoff@gmail.com?subject=' + encodeURIComponent('Newsletter signup') + '&body=' + encodeURIComponent('Please add me to the Operator Intelligence Suite mailing list: ' + email);
+      window.location.href = 'mailto:rbisschoff@gmail.com?subject=' + encodeURIComponent('Newsletter signup') + '&body=' + encodeURIComponent('Please add me to Roger Bisschoff\'s mailing list: ' + email);
       return false;
     }
   </script>
