@@ -1,13 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <!-- Sprint 24B: recolored to Visual System v1 (docs/VisualContentSystem.md),
-       the site's own warm sage/gold identity, replacing the previous
-       unrelated navy/blue palette. Layout, copy, and structure are
-       otherwise unchanged from the prior version, a palette
-       correction, not a redesign. Every color below is an existing
-       website token (index.html/tools.html root variables), not a new
-       value: ink #1E2F28, ink2 #3A4A42, accent #C9A961,
-       accent dark #A8863F, accent secondary #5C6B62,
-       muted2 #8A968E, card #FFFFFF. -->
+  <!-- Sprint E2: brand/positioning correction. Previous version read
+       "OPERATOR INTELLIGENCE SUITE" / "Operator tools for demand &
+       distribution" - the deprecated public brand, and (per that
+       sprint's own report) a wordmark this sprint was explicitly told
+       not to leave behind. Text-only edit: same abstract gradient/
+       circle treatment, same site color tokens (ink #1E2F28, ink2
+       #3A4A42, accent #C9A961, accent dark #A8863F, accent secondary
+       #5C6B62, muted2 #8A968E) - no photographic asset exists for
+       this image (see the sprint report's MISSING VISUAL ASSETS),
+       so the abstract composition is kept, not replaced with a
+       fabricated photo. Copy now matches the approved homepage hero
+       (index.html) exactly: eyebrow, headline, and supporting line. -->
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#1E2F28"/>
@@ -16,13 +19,13 @@
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
   <circle cx="600" cy="120" r="280" fill="#C9A961" opacity="0.14"/>
-  <text x="80" y="120" fill="#C9A961" font-family="Inter,Segoe UI,sans-serif" font-size="22" font-weight="600" letter-spacing="3">OPERATOR INTELLIGENCE SUITE</text>
-  <text x="80" y="220" fill="#FFFFFF" font-family="Inter,Segoe UI,sans-serif" font-size="58" font-weight="800">Operator tools for</text>
-  <text x="80" y="300" fill="#FFFFFF" font-family="Inter,Segoe UI,sans-serif" font-size="58" font-weight="800">demand &amp; distribution</text>
-  <text x="80" y="390" fill="#8A968E" font-family="Inter,Segoe UI,sans-serif" font-size="28" font-weight="400">Free diagnostics. No login. Inputs stay on your device.</text>
+  <text x="80" y="120" fill="#C9A961" font-family="Inter,Segoe UI,sans-serif" font-size="22" font-weight="600" letter-spacing="3">ROGER BISSCHOFF · STR COMMERCIAL STRATEGY</text>
+  <text x="80" y="220" fill="#FFFFFF" font-family="Inter,Segoe UI,sans-serif" font-size="52" font-weight="800">Know where your STR business</text>
+  <text x="80" y="290" fill="#FFFFFF" font-family="Inter,Segoe UI,sans-serif" font-size="52" font-weight="800">is leaking margin.</text>
+  <text x="80" y="390" fill="#8A968E" font-family="Inter,Segoe UI,sans-serif" font-size="26" font-weight="400">Independent commercial advisory for professional STR operators.</text>
   <rect x="80" y="450" width="420" height="8" rx="4" fill="rgba(255,255,255,0.12)"/>
   <rect x="80" y="450" width="140" height="8" rx="4" fill="#C9A961"/>
   <rect x="240" y="450" width="95" height="8" rx="4" fill="#A8863F"/>
   <rect x="355" y="450" width="70" height="8" rx="4" fill="#5C6B62"/>
-  <text x="80" y="510" fill="#8A968E" font-family="Inter,Segoe UI,sans-serif" font-size="22">AI &#183; China &#183; Distribution &#183; Repeat &#183; Margin</text>
+  <text x="80" y="510" fill="#8A968E" font-family="Inter,Segoe UI,sans-serif" font-size="22">Distribution &#183; Pricing &#183; Owner Economics &#183; Direct Bookings</text>
 </svg>
