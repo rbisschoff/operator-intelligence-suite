@@ -414,10 +414,11 @@
       color: var(--muted);
     }
 
-    /* Visual panel — an original line-art illustration (not a stock
-       photograph; none exists in this repo's assets — see this
-       sprint's report, item G) evoking a light, airy STR interior,
-       plus the mockup's own dark-green checklist overlay card. */
+    /* Visual panel — the approved hero property/interior photograph
+       (Sprint E2.1; assets/hero_property_photo.png), replacing the
+       earlier placeholder line-art illustration. The gradient
+       background remains only as a loading-state fallback color
+       behind the photo, per the mockup's own composition. */
     .hero-visual {
       position: relative;
       border-radius: var(--radius-lg);
@@ -430,8 +431,9 @@
     /* Direct-child selector only — .hero-overlay (a child of
        .hero-visual too) nests its own small checkmark icons, which
        must NOT inherit this 100%-fill sizing meant for the single
-       large background illustration. */
-    .hero-visual > svg { width: 100%; height: 100%; }
+       large background photograph. object-fit: cover keeps the photo
+       filling the panel at any width without distortion. */
+    .hero-visual > img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
     .hero-overlay {
       position: absolute;
@@ -668,15 +670,15 @@
 
     @media (min-width: 900px) { .diagnostic-panel { grid-template-columns: 1fr 1.1fr; align-items: stretch; } }
 
+    /* Sprint E2.1: full-bleed photograph (assets/diagnostic_laptop_photo.png)
+       replacing the earlier placeholder illustration - no padding, so
+       the image fills the panel edge to edge and is clipped to
+       .diagnostic-panel's own rounded corners via its overflow: hidden. */
     .diagnostic-visual {
       background: var(--header);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 28px;
       min-height: 220px;
     }
-    .diagnostic-visual svg { width: 100%; max-width: 340px; height: auto; }
+    .diagnostic-visual img { display: block; width: 100%; height: 100%; min-height: 220px; object-fit: cover; }
 
     .diagnostic-copy { padding: 28px 24px 30px; }
     @media (min-width: 900px) { .diagnostic-copy { padding: 40px 44px; } }
@@ -1000,19 +1002,8 @@
         <span class="hero-cta-note">Free · No login · Inputs stay on your device · Or <a href="#contact" class="section-link">talk to Roger directly →</a></span>
       </div>
 
-      <div class="hero-visual" role="img" aria-label="Illustration of a light, airy short-term rental interior">
-        <svg viewBox="0 0 480 380" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <rect width="480" height="380" fill="#EDE7D8"/>
-          <rect x="0" y="230" width="480" height="150" fill="#E1D8C0"/>
-          <rect x="40" y="40" width="400" height="180" rx="4" fill="none" stroke="#C9BFA3" stroke-width="2"/>
-          <line x1="240" y1="40" x2="240" y2="220" stroke="#C9BFA3" stroke-width="2"/>
-          <path d="M40 130 Q100 60 240 60 Q380 60 440 130" fill="none" stroke="#A8863F" stroke-width="2" opacity="0.35"/>
-          <rect x="70" y="250" width="150" height="70" rx="10" fill="#FFFFFF" opacity="0.7"/>
-          <rect x="90" y="270" width="110" height="10" rx="5" fill="#C9A961" opacity="0.6"/>
-          <rect x="90" y="288" width="70" height="8" rx="4" fill="#5C6B62" opacity="0.4"/>
-          <circle cx="360" cy="270" r="34" fill="#3D8C6F" opacity="0.18"/>
-          <path d="M360 250v40M344 262l16-12 16 12" stroke="#1E2F28" stroke-width="2" fill="none" opacity="0.4"/>
-        </svg>
+      <div class="hero-visual">
+        <img src="assets/hero_property_photo.png" alt="Bright, high-end short-term rental interior with floor-to-ceiling windows opening onto a terrace and sea view" width="1024" height="851" loading="eager">
 
         <!-- Dark-green checklist card, overlaid on the visual panel -->
         <div class="hero-overlay">
@@ -1180,20 +1171,7 @@
     <div class="diagnostic-band">
       <div class="diagnostic-panel">
         <div class="diagnostic-visual">
-          <svg viewBox="0 0 340 220" aria-hidden="true">
-            <rect x="10" y="10" width="320" height="180" rx="10" fill="#F4F1E9"/>
-            <rect x="10" y="10" width="320" height="26" rx="10" fill="#2A3B33"/>
-            <circle cx="26" cy="23" r="4" fill="#B33A3A"/><circle cx="38" cy="23" r="4" fill="#C9A961"/><circle cx="50" cy="23" r="4" fill="#3D8C6F"/>
-            <rect x="28" y="52" width="120" height="70" rx="8" fill="#EDEFE9" stroke="#C9A961" stroke-width="3"/>
-            <text x="88" y="93" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#1E2F28">72</text>
-            <rect x="164" y="52" width="148" height="16" rx="4" fill="#5C6B62" opacity="0.55"/>
-            <rect x="164" y="76" width="26" height="46" fill="#C9A961"/>
-            <rect x="198" y="60" width="26" height="62" fill="#3D8C6F"/>
-            <rect x="232" y="90" width="26" height="32" fill="#A8863F"/>
-            <rect x="266" y="70" width="26" height="52" fill="#5C6B62"/>
-            <rect x="28" y="138" width="284" height="10" rx="5" fill="#5C6B62" opacity="0.35"/>
-            <rect x="28" y="156" width="200" height="10" rx="5" fill="#5C6B62" opacity="0.25"/>
-          </svg>
+          <img src="assets/diagnostic_laptop_photo.png" alt="Laptop on a table in a bright STR property showing the STR Commercial Diagnostic results — revenue gap, direct booking share, owner retention risk, and profitability score" width="823" height="851" loading="lazy">
         </div>
         <div class="diagnostic-copy">
           <span class="diagnostic-eyebrow">Your operation. Your data.</span>
