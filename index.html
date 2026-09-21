@@ -311,7 +311,7 @@
        ============================================================ */
     .hero {
       background: var(--bg);
-      padding: 40px 20px;
+      padding: 32px 20px;
     }
 
     .hero-inner {
@@ -472,7 +472,7 @@
     }
 
     @media (min-width: 1300px) {
-      .hero { padding: 56px 32px; }
+      .hero { padding: 44px 32px; }
       .hero-inner { max-width: 1440px; gap: 64px; }
     }
 
@@ -483,17 +483,17 @@
     .section-wrap {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 44px 20px 0;
+      padding: 32px 20px 0;
     }
 
-    @media (min-width: 1300px) { .section-wrap { max-width: 1440px; padding: 56px 32px 0; } }
+    @media (min-width: 1300px) { .section-wrap { max-width: 1440px; padding: 42px 32px 0; } }
 
     .section-head {
       display: flex;
       align-items: baseline;
       justify-content: space-between;
       gap: 16px;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
       flex-wrap: wrap;
     }
 
@@ -507,7 +507,7 @@
        product itself. Deliberately quiet - same muted tone as
        hero-cta-note - not a second heading. */
     .section-sub {
-      margin: -8px 0 24px;
+      margin: -6px 0 18px;
       max-width: 60ch;
       font-size: 14px;
       color: var(--muted);
@@ -585,7 +585,7 @@
       background: var(--card);
       border: 1px dashed var(--border);
       border-radius: var(--radius-md);
-      padding: 32px 24px;
+      padding: 24px 22px;
       text-align: center;
       color: var(--muted);
       font-size: 14px;
@@ -612,7 +612,7 @@
       border-radius: var(--radius-md);
       border: 1px solid var(--border);
       box-shadow: var(--shadow-card);
-      padding: 20px 16px;
+      padding: 16px 14px;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -654,7 +654,7 @@
        ============================================================ */
     .diagnostic-band {
       max-width: 1280px;
-      margin: 44px auto 0;
+      margin: 32px auto 0;
       padding: 0 20px;
     }
     @media (min-width: 1300px) { .diagnostic-band { max-width: 1440px; padding: 0 32px; } }
@@ -680,8 +680,8 @@
     }
     .diagnostic-visual img { display: block; width: 100%; height: 100%; min-height: 220px; object-fit: cover; }
 
-    .diagnostic-copy { padding: 28px 24px 30px; }
-    @media (min-width: 900px) { .diagnostic-copy { padding: 40px 44px; } }
+    .diagnostic-copy { padding: 22px 20px 24px; }
+    @media (min-width: 900px) { .diagnostic-copy { padding: 30px 34px; } }
 
     .diagnostic-eyebrow {
       font-size: 11px;
@@ -700,7 +700,7 @@
       color: var(--ink2);
       line-height: 1.6;
       max-width: 46ch;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
 
     .diagnostic-bullets {
@@ -708,7 +708,7 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 8px 16px;
-      margin-bottom: 22px;
+      margin-bottom: 16px;
       max-width: 420px;
     }
     .diagnostic-bullets li {
@@ -726,7 +726,7 @@
        ============================================================ */
     .roger-wrap {
       max-width: 1280px;
-      margin: 48px auto 0;
+      margin: 36px auto 0;
       padding: 0 20px;
     }
     @media (min-width: 1300px) { .roger-wrap { max-width: 1440px; padding: 0 32px; } }
@@ -736,12 +736,12 @@
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-card);
-      padding: 28px 22px;
+      padding: 22px 20px;
       display: grid;
       grid-template-columns: 1fr;
-      gap: 32px;
+      gap: 24px;
     }
-    @media (min-width: 900px) { .roger-panel { grid-template-columns: 1fr 1.35fr; padding: 40px; gap: 48px; } }
+    @media (min-width: 900px) { .roger-panel { grid-template-columns: 1fr 1.35fr; padding: 32px; gap: 36px; } }
 
     .roger-left { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
     .roger-avatar { width: 68px; height: 68px; border-radius: 50%; object-fit: cover; margin-bottom: 12px; border: 1px solid var(--border); }
@@ -750,7 +750,7 @@
     .roger-fact { font-size: 13px; color: var(--muted); margin-bottom: 4px; }
     .roger-strong { font-size: 13px; font-weight: 700; color: var(--ink); margin-top: 4px; }
 
-    .roger-right h2 { font-size: 19px; margin-bottom: 20px; color: var(--ink); }
+    .roger-right h2 { font-size: 19px; margin-bottom: 14px; color: var(--ink); }
 
     .process-row {
       display: grid;
@@ -787,7 +787,7 @@
     footer {
       background: var(--header);
       color: var(--header-muted);
-      margin-top: 56px;
+      margin-top: 42px;
     }
 
     .footer-inner {
@@ -917,14 +917,14 @@
       .header-cta { font-size: 12px; padding: 8px 12px; }
       .header-actions { gap: 6px; }
 
-      .hero { padding: 28px 16px; }
+      .hero { padding: 22px 16px; }
       .hero-indicators { grid-template-columns: 1fr 1fr; gap: 12px; max-width: none; }
       .hero-cta { width: 100%; }
 
       .diagnostic-bullets { grid-template-columns: 1fr; }
 
-      .roger-panel { padding: 22px 18px; }
-      .process-row { grid-template-columns: repeat(2, 1fr); row-gap: 20px; }
+      .roger-panel { padding: 18px 16px; }
+      .process-row { grid-template-columns: repeat(2, 1fr); row-gap: 14px; }
       .process-arrow { display: none; }
     }
   </style>
@@ -977,7 +977,7 @@
       <div class="hero-copy">
         <span class="hero-eyebrow">Independent commercial advisory<br>for professional STR operators</span>
         <h1>Know where your STR<br>business is leaking margin.</h1>
-        <p class="hero-sub">I help professional short-term rental operators identify hidden commercial friction across distribution, owner economics, and direct bookings — and execute the exact changes needed to recover lost yield.</p>
+        <p class="hero-sub">I help professional short-term rental operators identify where margin is being lost across distribution, pricing, owner economics and direct bookings — then determine what to fix first.</p>
 
         <div class="hero-indicators">
           <div class="hero-indicator">
@@ -986,7 +986,7 @@
           </div>
           <div class="hero-indicator">
             <span class="hero-indicator-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg></span>
-            <span class="hero-indicator-label">Commercial<br>neutral</span>
+            <span class="hero-indicator-label">Independent<br>advice</span>
           </div>
           <div class="hero-indicator">
             <span class="hero-indicator-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 8a3 3 0 1 1 0 0zM15 14.2c2.4.4 4.5 2.5 5 5.8"/></svg></span>
@@ -1067,8 +1067,8 @@
             <div class="process-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
             <div class="process-step">
               <span class="process-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
-              <span class="process-label">Direct</span>
-              <span class="process-sub">what to do first</span>
+              <span class="process-label">Prioritize</span>
+              <span class="process-sub">what to fix</span>
             </div>
           </div>
         </div>
@@ -1105,7 +1105,7 @@
         <h2 id="tools-heading">Diagnostic tools</h2>
         <a class="section-link" href="tools.html">See all 9 tools →</a>
       </div>
-      <p class="section-sub">Free, self-serve versions of the same diagnostic method used in paid engagements — evidence of how the work is done, not the work itself.</p>
+      <p class="section-sub">Practical diagnostic tools built from the same commercial methodology used in advisory work.</p>
       <div class="tool-grid">
 
         <a class="tool-tile" href="https://rbisschoff.github.io/distribution-cost-analyser/" target="_blank" rel="noopener noreferrer">
@@ -1174,9 +1174,8 @@
           <img src="assets/diagnostic_laptop_photo.png" alt="Laptop on a table in a bright STR property showing the STR Commercial Diagnostic results — revenue gap, direct booking share, owner retention risk, and profitability score" width="823" height="851" loading="lazy">
         </div>
         <div class="diagnostic-copy">
-          <span class="diagnostic-eyebrow">Your operation. Your data.</span>
-          <h2>Get your Growth Picture in minutes.</h2>
-          <p>Answer six questions and receive a personalised overview of your biggest opportunities across distribution, direct bookings, owner retention, and portfolio profitability.</p>
+          <h2>See where your operation is leaking margin.</h2>
+          <p>Answer a few questions and receive a personalized overview of your distribution, commercial performance and growth opportunities.</p>
           <ul class="diagnostic-bullets">
             <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Takes 3–5 minutes</li>
             <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> 100% private</li>
