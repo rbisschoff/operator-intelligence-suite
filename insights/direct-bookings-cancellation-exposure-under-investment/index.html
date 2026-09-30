@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Direct Bookings: Lower Cancellations, Under-Invested Channel — Operator Intelligence Suite</title>
+<title>Direct Bookings: Lower Cancellations, Under-Invested Channel — Roger Bisschoff</title>
 <meta name="description" content="Direct booking channels show a clear cancellation-rate advantage, yet most operators - even large ones - underinvest in the tactics that build the channel.">
+<meta name="author" content="Roger Bisschoff">
 <meta name="keywords" content="direct bookings, distribution channel mix, OTA cancellation rate, paid search direct bookings, channel dependency, distribution cost STR">
 <link rel="canonical" href="https://rogerbisschoff.com/insights/direct-bookings-cancellation-exposure-under-investment/">
 
@@ -13,9 +14,11 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://rogerbisschoff.com/insights/direct-bookings-cancellation-exposure-under-investment/">
 <meta property="og:image" content="https://rogerbisschoff.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Direct Bookings Cut Cancellation Risk - So Why Do Most Operators Still Underfund the Channel?","description":"Direct booking channels show a clear cancellation-rate advantage, yet most operators - even large ones - underinvest in the tactics that build the channel.","url":"https://rogerbisschoff.com/insights/direct-bookings-cancellation-exposure-under-investment/","datePublished":"2026-09-30"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Direct Bookings Cut Cancellation Risk - So Why Do Most Operators Still Underfund the Channel?","description":"Direct booking channels show a clear cancellation-rate advantage, yet most operators - even large ones - underinvest in the tactics that build the channel.","url":"https://rogerbisschoff.com/insights/direct-bookings-cancellation-exposure-under-investment/","mainEntityOfPage":"https://rogerbisschoff.com/insights/direct-bookings-cancellation-exposure-under-investment/","datePublished":"2026-09-30","author":{"@type":"Person","name":"Roger Bisschoff","jobTitle":"Distribution & Revenue Consultant","url":"https://www.linkedin.com/in/roger-bisschoff/"},"image":"https://rogerbisschoff.com/og-image.png","articleSection":"Distribution","keywords":"direct bookings, distribution channel mix, OTA cancellation rate, paid search direct bookings, channel dependency, distribution cost STR"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://rogerbisschoff.com/"},{"@type":"ListItem","position":2,"name":"Insights","item":"https://rogerbisschoff.com/insights/"},{"@type":"ListItem","position":3,"name":"Direct Bookings Cut Cancellation Risk - So Why Do Most Operators Still Underfund the Channel?","item":"https://rogerbisschoff.com/insights/direct-bookings-cancellation-exposure-under-investment/"}]}]}</script>
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JPJ7VKS451"></script>
@@ -27,72 +30,226 @@
 </script>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+  /* Site-shell consistency sprint - this entire <style> block, the
+  <header>, and the <footer> markup below are ported verbatim (values,
+  not just class names) from the live site's own shared shell
+  (insights/index.html's header/footer), which is the real, current
+  source of truth for the site's identity - not re-derived or
+  approximated. Only what genuinely cannot apply to a single-column
+  article reading page was left out (the sitewide 1280px page-section
+  grid, hero, and article-card layouts) - see this sprint's own audit
+  report for the one deliberate exception (article body column width). */
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap');
   :root {
     --accent: #C9A961; --accent-dark: #A8863F; --ink: #1E2F28; --ink2: #3A4A42;
     --muted: #5C6B62; --muted2: #8A968E; --bg: #FAF8F4; --card: #FFFFFF;
     --border: rgba(30, 47, 40, 0.12); --radius-md: 16px; --shadow-card: 0 2px 16px rgba(0,0,0,0.06);
+    --header: #1B2A24; --header-soft: rgba(255, 255, 255, 0.08); --header-border: rgba(255, 255, 255, 0.12);
+    --header-text: #F4F1E9; --header-muted: rgba(244, 241, 233, 0.62);
+    --font-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+    --font-sans: -apple-system, 'Inter', BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
-  body { font-family: -apple-system, 'Inter', BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  body { font-family: var(--font-sans); background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
   a { text-decoration: none; color: inherit; }
-  header { background: rgba(30,47,40,0.97); backdrop-filter: blur(20px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(255,255,255,0.1); }
-  .header-inner { max-width: 1080px; margin: 0 auto; padding: 10px 20px; padding-top: calc(10px + env(safe-area-inset-top)); display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-  .brand { display: flex; align-items: center; gap: 12px; }
-  .brand-mark { width: 30px; height: 30px; background: var(--accent); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 13px; }
-  .brand-text { color: white; }
-  .brand-title { font-size: 15px; font-weight: 600; }
-  .brand-subtitle { font-size: 12px; color: var(--muted2); margin-top: 1px; }
-  .header-link { color: white; font-size: 13px; font-weight: 500; padding: 8px 14px; border-radius: 8px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); }
+  header { background: var(--header); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--header-border); }
+  .header-inner { max-width: 1280px; margin: 0 auto; padding: 12px 20px; padding-top: calc(12px + env(safe-area-inset-top)); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .brand { display: flex; align-items: center; gap: 10px; min-width: 0; flex-shrink: 0; }
+  .brand-mark { width: 32px; height: 32px; background: var(--accent); border-radius: 9px; display: flex; align-items: center; justify-content: center; color: var(--header); font-weight: 800; font-size: 13px; letter-spacing: -0.02em; flex-shrink: 0; }
+  .brand-text { color: var(--header-text); line-height: 1.25; }
+  .brand-title { font-size: 14px; font-weight: 700; letter-spacing: -0.01em; }
+  .brand-subtitle { font-size: 11px; color: var(--header-muted); margin-top: 1px; }
+  .primary-nav { display: none; align-items: center; gap: 4px; flex: 1 1 auto; justify-content: center; }
+  .primary-nav a { color: var(--header-muted); font-size: 13.5px; font-weight: 500; padding: 8px 12px; border-radius: 8px; position: relative; transition: color 0.15s, background 0.15s; }
+  .primary-nav a:hover { color: var(--header-text); background: var(--header-soft); }
+  .primary-nav a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  @media (min-width: 1080px) { .primary-nav { display: flex; } }
+  .header-actions { display: flex; gap: 10px; align-items: center; flex-shrink: 0; }
+  .header-cta { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: var(--header); background: var(--accent); padding: 9px 16px; border-radius: 100px; transition: background 0.18s ease, transform 0.18s ease; white-space: nowrap; }
+  .header-cta:hover { background: #DCC17F; transform: translateY(-1px); }
+  .header-cta:focus-visible { outline: 2px solid var(--header-text); outline-offset: 2px; }
+  .nav-toggle { display: none; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 8px; background: var(--header-soft); border: 1px solid var(--header-border); color: var(--header-text); flex-shrink: 0; }
+  .nav-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  @media (max-width: 1079px) { .nav-toggle { display: inline-flex; } }
+  .mobile-nav { display: none; flex-direction: column; background: var(--header); border-top: 1px solid var(--header-border); padding: 8px 16px 16px; }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a { color: var(--header-text); font-size: 15px; font-weight: 500; padding: 12px 6px; border-bottom: 1px solid var(--header-border); }
+  .mobile-nav a:last-of-type { border-bottom: none; }
+  .mobile-nav .header-cta { margin-top: 12px; justify-content: center; }
   main { max-width: 720px; margin: 0 auto; padding: 48px 20px 64px; }
   .back-link { display: inline-block; font-size: 13px; font-weight: 500; color: var(--muted); margin-bottom: 24px; }
   .back-link:hover { color: var(--ink); }
   .article-eyebrow { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent-dark); margin-bottom: 10px; }
-  .article-title { font-size: clamp(26px, 4vw, 34px); font-weight: 700; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 10px; }
-  .article-meta { font-size: 13px; color: var(--muted2); margin-bottom: 28px; }
+  .article-title { font-family: var(--font-serif); font-size: clamp(26px, 4vw, 34px); font-weight: 700; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 10px; }
+  .article-byline { font-size: 13px; font-weight: 600; color: var(--ink2); margin-bottom: 4px; }
+  .article-byline a { text-decoration: underline; text-decoration-color: var(--border); }
+  .article-meta { font-size: 13px; color: var(--muted2); margin-bottom: 12px; }
+  .article-subjects { font-size: 12px; color: var(--muted2); margin-bottom: 24px; }
   .article-conclusion { font-size: 16px; color: var(--ink); line-height: 1.65; margin-bottom: 20px; font-weight: 500; }
   .article-body { font-size: 15px; color: var(--ink2); line-height: 1.7; margin-bottom: 20px; }
-  .article-section-heading { font-size: 19px; font-weight: 700; color: var(--ink); margin: 28px 0 10px; }
-  footer { max-width: 1080px; margin: 0 auto; padding: 28px 20px 48px; font-size: 13px; color: var(--muted); text-align: center; }
-  footer a { color: var(--ink2); font-weight: 500; }
+  .article-section-heading { font-family: var(--font-serif); font-size: 19px; font-weight: 700; color: var(--ink); margin: 28px 0 10px; }
+  .related-insights { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); }
+  .related-insights-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .related-insights-list a { color: var(--ink); font-weight: 500; font-size: 14px; text-decoration: underline; text-decoration-color: var(--border); }
+  .related-insights-list a:hover { color: var(--accent-dark); }
+  footer { background: var(--header); color: var(--header-muted); margin-top: 56px; }
+  .footer-inner { max-width: 1280px; margin: 0 auto; padding: 40px 20px 24px; display: grid; grid-template-columns: 1fr; gap: 32px; }
+  @media (min-width: 760px) { .footer-inner { grid-template-columns: 1.3fr 0.7fr 0.7fr 0.7fr 1.1fr; gap: 24px; } }
+  .footer-brand .brand { margin-bottom: 10px; }
+  .footer-tagline { font-size: 13px; line-height: 1.6; max-width: 34ch; }
+  .footer-col h3 { font-family: var(--font-sans); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--header-text); margin-bottom: 12px; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+  .footer-col a { font-size: 13px; color: var(--header-muted); transition: color 0.15s; }
+  .footer-col a:hover { color: var(--header-text); }
+  .footer-col a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .newsletter-form { display: flex; gap: 8px; margin-top: 4px; flex-wrap: wrap; }
+  .newsletter-input { flex: 1 1 140px; min-width: 0; background: rgba(255,255,255,0.08); border: 1px solid var(--header-border); border-radius: 8px; padding: 10px 12px; font-size: 13px; color: var(--header-text); font-family: var(--font-sans); }
+  .newsletter-input::placeholder { color: var(--header-muted); }
+  .newsletter-input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .newsletter-btn { background: var(--accent); color: var(--header); font-size: 13px; font-weight: 700; padding: 10px 16px; border-radius: 8px; border: none; cursor: pointer; font-family: var(--font-sans); }
+  .newsletter-btn:hover { background: #DCC17F; }
+  .newsletter-btn:focus-visible { outline: 2px solid var(--header-text); outline-offset: 2px; }
+  .newsletter-note { font-size: 11px; color: var(--header-muted); margin-top: 8px; }
+  .footer-bottom { border-top: 1px solid var(--header-border); padding: 16px 20px; max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 12px; flex-wrap: wrap; }
+  .footer-bottom a { color: var(--header-muted); }
+  .footer-bottom a:hover { color: var(--header-text); }
+  .linkedin-icon { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 8px; background: var(--header-soft); border: 1px solid var(--header-border); color: var(--header-text); transition: background 0.15s; }
+  .linkedin-icon:hover { background: rgba(255,255,255,0.18); }
+  .linkedin-icon:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 </style>
 </head>
 <body>
 <header>
   <div class="header-inner">
-    <a class="brand" href="/">
-      <div class="brand-mark">OI</div>
+    <a class="brand" href="/" aria-label="Roger Bisschoff — home">
+      <div class="brand-mark">RB</div>
       <div class="brand-text">
-        <div class="brand-title">Operator Intelligence Suite</div>
-        <div class="brand-subtitle">by Roger Bisschoff</div>
+        <div class="brand-title">Roger Bisschoff</div>
+        <div class="brand-subtitle">STR Commercial Strategy</div>
       </div>
     </a>
-    <a href="https://www.linkedin.com/in/roger-bisschoff/" target="_blank" rel="noopener noreferrer" class="header-link">LinkedIn</a>
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/#roger">About</a>
+      <a href="/tools.html">Diagnostics</a>
+      <a href="/insights/">Insights</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a class="header-cta" href="https://rbisschoff.github.io/operator-diagnostic/">Start Diagnostic</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
   </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+    <a href="/">Home</a>
+    <a href="/#roger">About</a>
+    <a href="/tools.html">Diagnostics</a>
+    <a href="/insights/">Insights</a>
+    <a href="/#contact">Contact</a>
+    <a class="header-cta" href="https://rbisschoff.github.io/operator-diagnostic/">Start Diagnostic</a>
+  </nav>
 </header>
 <main>
   <a class="back-link" href="/insights/">&larr; Back to Insights</a>
-  <div class="article-eyebrow">Distribution</div>
-  <h1 class="article-title">Direct Bookings Cut Cancellation Risk - So Why Do Most Operators Still Underfund the Channel?</h1>
-  <p class="article-meta">2026-09-30</p>
-  <p class="article-conclusion">Every operator has heard that direct bookings are cheaper and more reliable than OTA demand. The interesting question isn&#39;t whether that&#39;s theoretically true, it&#39;s whether operators actually build the channel well enough to capture the benefit. Three separate pieces of data speak to different parts of this question, and put together they tell a fairly clear story about intention versus execution.</p>
-  <h2 class="article-section-heading">The cancellation gap is real</h2>
-  <p class="article-body">Direct bookings carry a cancellation rate of 9.2%, against nearly one in four reservations cancelled through Booking.com. That&#39;s a meaningful spread at portfolio level - fewer cancelled nights means fewer last-minute pricing gaps and less scrambling to refill calendar days. What isn&#39;t established here is why the gap exists. It could be booking behaviour, guest type, channel policy differences, or something else entirely - the numbers show the pattern clearly but don&#39;t explain the mechanism, so I&#39;d be careful about assuming a cause rather than just working with the result.</p>
-  <h2 class="article-section-heading">Most operators aren&#39;t actually building a direct channel</h2>
-  <p class="article-body">62.3% of operators generate less than a quarter of their bookings directly, and 18.4% get none at all. That&#39;s not a small group missing out on a marginal benefit - it&#39;s the clear majority of the industry sitting largely outside the channel that shows the lower cancellation exposure. On its own this doesn&#39;t prove operators are choosing wrong, but it does show that whatever benefit direct offers, most portfolios aren&#39;t positioned to capture much of it.</p>
-  <h2 class="article-section-heading">Even the operators who could afford to invest aren&#39;t doing it</h2>
-  <p class="article-body">Paid search advertising - one of the more direct ways to build guest acquisition outside the OTAs - remains the least-used direct booking tactic across the industry, including among operators running 100+ properties. That&#39;s notable because the pattern persists even among operators running 100+ properties. If under-investment were purely a scale or resource problem, you&#39;d expect the largest operators to look different here. They don&#39;t, at least not on this tactic.</p>
-  <h2 class="article-section-heading">What&#39;s missing from this picture</h2>
-  <p class="article-body">None of this material actually quantifies the distribution cost side of the original question. We know direct cancels less often. We know most operators barely use the channel, and that even large operators skip a key acquisition tactic. But there&#39;s no figure here comparing direct acquisition cost against OTA commission, contribution margin by channel, or what it actually costs to build the direct traffic that&#39;s being left on the table. That&#39;s a real gap - the cancellation benefit is demonstrated, the cost benefit is assumed by most in the industry but not shown in what&#39;s in front of me.</p>
-  <h2 class="article-section-heading">Roger's take</h2>
-  <p class="article-body">The two under-investment data points line up well with each other - low direct booking share and low use of paid search acquisition are two sides of the same behaviour, and the fact that it holds even at 100+ properties suggests this isn&#39;t simply a resource constraint. The cancellation figure stands on its own and is the strongest single number here, but it doesn&#39;t come with an explanation, and nothing in this material puts an actual cost figure next to the OTA alternative. So the exposure side of this question is well supported; the cost side is still an assumption, not something demonstrated here.</p>
-  <h2 class="article-section-heading">Conclusion</h2>
-  <p class="article-conclusion">What&#39;s confirmed here is that direct bookings cancel far less often and that most operators, including large ones, aren&#39;t building the channel that would capture that benefit. Whether direct also reduces distribution cost isn&#39;t actually shown in this material - that part remains a reasonable assumption rather than a demonstrated fact.</p>
+  <article>
+    <div class="article-eyebrow">Distribution</div>
+    <h1 class="article-title">Direct Bookings Cut Cancellation Risk - So Why Do Most Operators Still Underfund the Channel?</h1>
+    <p class="article-byline">By <a href="https://www.linkedin.com/in/roger-bisschoff/" target="_blank" rel="noopener noreferrer">Roger Bisschoff</a></p>
+    <p class="article-meta">2026-09-30 · Drawn from 3 independent sources</p>
+    
+    <p class="article-conclusion">Every operator has heard that direct bookings are cheaper and more reliable than OTA demand. The interesting question isn&#39;t whether that&#39;s theoretically true, it&#39;s whether operators actually build the channel well enough to capture the benefit. Three separate pieces of data speak to different parts of this question, and put together they tell a fairly clear story about intention versus execution.</p>
+    <h2 class="article-section-heading">The cancellation gap is real</h2>
+    <p class="article-body">Direct bookings carry a cancellation rate of 9.2%, against nearly one in four reservations cancelled through Booking.com. That&#39;s a meaningful spread at portfolio level - fewer cancelled nights means fewer last-minute pricing gaps and less scrambling to refill calendar days. What isn&#39;t established here is why the gap exists. It could be booking behaviour, guest type, channel policy differences, or something else entirely - the numbers show the pattern clearly but don&#39;t explain the mechanism, so I&#39;d be careful about assuming a cause rather than just working with the result.</p>
+    <h2 class="article-section-heading">Most operators aren&#39;t actually building a direct channel</h2>
+    <p class="article-body">62.3% of operators generate less than a quarter of their bookings directly, and 18.4% get none at all. That&#39;s not a small group missing out on a marginal benefit - it&#39;s the clear majority of the industry sitting largely outside the channel that shows the lower cancellation exposure. On its own this doesn&#39;t prove operators are choosing wrong, but it does show that whatever benefit direct offers, most portfolios aren&#39;t positioned to capture much of it.</p>
+    <h2 class="article-section-heading">Even the operators who could afford to invest aren&#39;t doing it</h2>
+    <p class="article-body">Paid search advertising - one of the more direct ways to build guest acquisition outside the OTAs - remains the least-used direct booking tactic across the industry, including among operators running 100+ properties. That&#39;s notable because the pattern persists even among operators running 100+ properties. If under-investment were purely a scale or resource problem, you&#39;d expect the largest operators to look different here. They don&#39;t, at least not on this tactic.</p>
+    <h2 class="article-section-heading">What&#39;s missing from this picture</h2>
+    <p class="article-body">None of this material actually quantifies the distribution cost side of the original question. We know direct cancels less often. We know most operators barely use the channel, and that even large operators skip a key acquisition tactic. But there&#39;s no figure here comparing direct acquisition cost against OTA commission, contribution margin by channel, or what it actually costs to build the direct traffic that&#39;s being left on the table. That&#39;s a real gap - the cancellation benefit is demonstrated, the cost benefit is assumed by most in the industry but not shown in what&#39;s in front of me.</p>
+    <h2 class="article-section-heading">Roger's take</h2>
+    <p class="article-body">The two under-investment data points line up well with each other - low direct booking share and low use of paid search acquisition are two sides of the same behaviour, and the fact that it holds even at 100+ properties suggests this isn&#39;t simply a resource constraint. The cancellation figure stands on its own and is the strongest single number here, but it doesn&#39;t come with an explanation, and nothing in this material puts an actual cost figure next to the OTA alternative. So the exposure side of this question is well supported; the cost side is still an assumption, not something demonstrated here.</p>
+    <h2 class="article-section-heading">Conclusion</h2>
+    <p class="article-conclusion">What&#39;s confirmed here is that direct bookings cancel far less often and that most operators, including large ones, aren&#39;t building the channel that would capture that benefit. Whether direct also reduces distribution cost isn&#39;t actually shown in this material - that part remains a reasonable assumption rather than a demonstrated fact.</p>
+  </article>
+  
 </main>
 <footer>
-  <p>Operator Intelligence Suite by <a href="https://www.linkedin.com/in/roger-bisschoff/" target="_blank" rel="noopener noreferrer">Roger Bisschoff</a></p>
-  <p>A practical toolkit for hospitality and short-term rental operators.</p>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a class="brand" href="/">
+        <div class="brand-mark">RB</div>
+        <div class="brand-text">
+          <div class="brand-title">Roger Bisschoff</div>
+          <div class="brand-subtitle">STR Commercial Strategy</div>
+        </div>
+      </a>
+      <p class="footer-tagline">Independent commercial advisory for professional short-term rental operators.</p>
+    </div>
+    <div class="footer-col">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="/#roger">About</a></li>
+        <li><a href="/tools.html">Diagnostics</a></li>
+        <li><a href="/insights/">Insights</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Company</h3>
+      <ul>
+        <li><a href="/#roger">About Roger</a></li>
+        <li><a href="/#roger">Approach</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+        <li><a href="/terms.html">Terms of Use</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Stay informed</h3>
+      <p style="font-size:13px; color: var(--header-muted); margin-bottom:10px;">Get the latest insights.</p>
+      <form class="newsletter-form" action="mailto:rbisschoff@gmail.com" method="get" onsubmit="return handleNewsletterSubmit(event)">
+        <input class="newsletter-input" type="email" name="subject" placeholder="Your email address" aria-label="Email address" required>
+        <button class="newsletter-btn" type="submit">Subscribe</button>
+      </form>
+      <p class="newsletter-note">No mailing list yet — this opens an email to Roger directly.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Roger Bisschoff Consulting. All rights reserved.</span>
+    <a class="linkedin-icon" href="https://www.linkedin.com/in/roger-bisschoff/" target="_blank" rel="noopener noreferrer" aria-label="Roger Bisschoff on LinkedIn">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M0 8h5v16H0zM7 8h4.8v2.2h.07C12.6 8.7 14.6 8 16.9 8 21.7 8 23 10.9 23 15.1V24h-5v-8c0-1.9 0-4.3-2.6-4.3-2.7 0-3.1 2.1-3.1 4.2V24H7z"/></svg>
+    </a>
+  </div>
 </footer>
+<script>
+  (function () {
+    var toggle = document.getElementById('navToggle');
+    var nav = document.getElementById('mobileNav');
+    if (!toggle || !nav) return;
+    toggle.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+  function handleNewsletterSubmit(e) {
+    e.preventDefault();
+    var email = e.target.querySelector('input[type="email"]').value;
+    window.location.href = 'mailto:rbisschoff@gmail.com?subject=' + encodeURIComponent('Newsletter signup') + '&body=' + encodeURIComponent('Please add me to Roger Bisschoff\'s mailing list: ' + email);
+    return false;
+  }
+</script>
 </body>
 </html>

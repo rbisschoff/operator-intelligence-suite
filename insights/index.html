@@ -285,14 +285,22 @@
     /* Permanent, hand-authored line - lives outside the generator's
        markers (see the GENERATED INSIGHT CARDS comments above) so it
        is never overwritten by a future generator run, whether zero or
-       many Insights are currently published. */
+       many Insights are currently published. Layout bug fix: this used
+       to be margin: 0 auto, which put ZERO space between this paragraph
+       and .article-grid above it - the two boxes were flush, with only
+       incidental line-height ever separating them from a card's visible
+       edge. A card with a longer title/summary (taller box, same 0
+       gap) collided with this text. Fixed generically via margin-top on
+       this element (not a per-article/per-height hack) - it's a fixed
+       gap between two siblings in normal flow, so it holds regardless
+       of how many cards exist or how tall any one of them is. */
     .insights-next-step {
       text-align: center;
       color: var(--muted);
       font-size: 13px;
       line-height: 1.6;
       max-width: 480px;
-      margin: 0 auto;
+      margin: 40px auto 0;
     }
     .insights-next-step a { color: var(--accent-dark); font-weight: 600; }
     .insights-next-step a:hover { text-decoration: underline; }
