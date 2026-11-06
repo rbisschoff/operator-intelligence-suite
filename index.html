@@ -930,6 +930,228 @@
       .process-row { grid-template-columns: repeat(2, 1fr); row-gap: 14px; }
       .process-arrow { display: none; }
     }
+
+    /* ============================================================
+       COMMERCIAL SIMULATION - "Explore Commercial Opportunities".
+       Two illustrative calculators (distribution economics and
+       property contribution). Everything is calculated in the
+       browser; nothing a visitor enters is stored or sent anywhere.
+       Uses only the existing tokens, radii and type scale above.
+       ============================================================ */
+    .sim-panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      padding: 22px 20px;
+    }
+    @media (min-width: 900px) { .sim-panel { padding: 30px 32px; } }
+
+    .sim-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-dark);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .sim-panel h2 { font-size: clamp(21px, 2.4vw, 27px); line-height: 1.25; color: var(--ink); margin-bottom: 10px; }
+    .sim-intro { font-size: 14.5px; color: var(--ink2); line-height: 1.6; max-width: 64ch; margin-bottom: 12px; }
+
+    .sim-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ink2);
+      background: var(--accent-light);
+      border-radius: 100px;
+      padding: 6px 12px;
+      margin-bottom: 18px;
+    }
+
+    .sim-tabs {
+      display: flex;
+      gap: 6px;
+      padding: 4px;
+      background: var(--card-tint);
+      border-radius: 100px;
+      width: fit-content;
+      max-width: 100%;
+      margin-bottom: 18px;
+    }
+    .sim-tab {
+      font: inherit;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--muted);
+      background: transparent;
+      border: 0;
+      border-radius: 100px;
+      padding: 9px 16px;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+    }
+    .sim-tab:hover { color: var(--ink); }
+    .sim-tab[aria-selected="true"] { background: var(--card); color: var(--ink); box-shadow: var(--shadow-sm); }
+    .sim-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+    .sim-pane[hidden] { display: none; }
+    .sim-pane h3 { font-size: 18px; color: var(--ink); margin-bottom: 6px; }
+    .sim-pane-intro { font-size: 13.5px; color: var(--muted); line-height: 1.55; max-width: 70ch; margin-bottom: 16px; }
+
+    .sim-layout { display: grid; grid-template-columns: 1fr; gap: 18px; }
+    @media (min-width: 1000px) { .sim-layout { grid-template-columns: 1.35fr 1fr; gap: 24px; align-items: start; } }
+
+    /* Channel rows: name, share, acquisition cost, results. Stacks on
+       small screens instead of scrolling sideways. */
+    .sim-channel {
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    .sim-channel + .sim-channel { margin-top: 10px; }
+    .sim-channel-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+    .sim-channel-name { font-weight: 700; color: var(--ink); font-size: 14.5px; }
+    .sim-channel-result { font-size: 12.5px; color: var(--muted); }
+    .sim-channel-result strong { color: var(--ink); font-weight: 700; }
+    .sim-controls { display: grid; grid-template-columns: 1fr; gap: 10px; }
+    @media (min-width: 560px) { .sim-controls { grid-template-columns: 1fr 1fr; gap: 16px; } }
+
+    .sim-field { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 4px 10px; min-width: 0; }
+    .sim-field label { grid-column: 1 / -1; font-size: 12px; font-weight: 700; color: var(--ink2); }
+    .sim-field input[type="range"] { width: 100%; min-width: 0; accent-color: var(--accent-dark); }
+    .sim-number {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .sim-number input {
+      font: inherit;
+      font-size: 14px;
+      color: var(--ink);
+      width: 4.6em;
+      padding: 6px 8px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg);
+      text-align: right;
+    }
+    .sim-number input:focus-visible,
+    .sim-money input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+    .sim-total-note { font-size: 12.5px; color: var(--muted); margin-top: 10px; }
+    .sim-total-note strong { color: var(--positive); }
+
+    .sim-results {
+      background: var(--card-tint);
+      border-radius: var(--radius-md);
+      padding: 16px;
+    }
+    .sim-results h4 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 10px; }
+    .sim-compare { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+    .sim-compare th, .sim-compare td { padding: 8px 0; text-align: right; border-bottom: 1px solid var(--border-light); }
+    .sim-compare th:first-child, .sim-compare td:first-child { text-align: left; padding-right: 8px; }
+    .sim-compare th { font-size: 11.5px; font-weight: 700; color: var(--muted); }
+    .sim-compare td { color: var(--ink); font-variant-numeric: tabular-nums; }
+    .sim-compare th + th, .sim-compare td + td { padding-left: 10px; }
+    .sim-compare tr:last-child td { border-bottom: 0; }
+    .sim-compare .sim-row-key td { font-weight: 700; }
+
+    .sim-pos { color: var(--positive) !important; }
+    .sim-neg { color: var(--alert) !important; }
+
+    .sim-caveat { font-size: 12.5px; color: var(--muted); line-height: 1.55; margin-top: 12px; }
+
+    .sim-reset {
+      font: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent-dark);
+      background: transparent;
+      border: 0;
+      padding: 0;
+      margin-top: 12px;
+      cursor: pointer;
+    }
+    .sim-reset:hover { color: var(--ink); text-decoration: underline; }
+    .sim-reset:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+    /* Property selector and cards */
+    .sim-props { display: grid; grid-template-columns: 1fr; gap: 10px; margin-bottom: 18px; }
+    @media (min-width: 640px) { .sim-props { grid-template-columns: repeat(3, 1fr); } }
+    .sim-prop {
+      font: inherit;
+      text-align: left;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .sim-prop:hover { box-shadow: var(--shadow-md); }
+    .sim-prop[aria-pressed="true"] { border-color: var(--accent-dark); box-shadow: 0 0 0 1px var(--accent-dark); }
+    .sim-prop:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .sim-prop-name { font-weight: 700; color: var(--ink); font-size: 14px; }
+    .sim-prop-label { font-size: 11.5px; color: var(--muted); }
+    .sim-prop-value { font-family: var(--font-serif); font-size: 20px; font-weight: 600; font-variant-numeric: tabular-nums; }
+
+    .sim-money-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    @media (min-width: 560px) { .sim-money-grid { grid-template-columns: 1fr 1fr; } }
+    .sim-money { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+    .sim-money label { font-size: 12px; font-weight: 700; color: var(--ink2); }
+    .sim-money-input { display: flex; align-items: center; border: 1px solid var(--border); border-radius: 8px; background: var(--bg); padding-left: 10px; }
+    .sim-money-input span { color: var(--muted); font-size: 14px; }
+    .sim-money input {
+      font: inherit;
+      font-size: 14px;
+      color: var(--ink);
+      border: 0;
+      background: transparent;
+      padding: 8px 10px 8px 4px;
+      width: 100%;
+      min-width: 0;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .sim-contribution {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .sim-contribution-label { font-size: 13px; font-weight: 700; color: var(--ink); max-width: 30ch; }
+    .sim-contribution-value { font-family: var(--font-serif); font-size: 26px; font-weight: 600; font-variant-numeric: tabular-nums; }
+
+    .sim-close {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+    .sim-close p { font-size: 14.5px; color: var(--ink2); line-height: 1.6; max-width: 70ch; margin-bottom: 10px; }
+    .sim-close .hero-cta { margin-top: 6px; }
+
+    @media (max-width: 640px) {
+      .sim-panel { padding: 18px 16px; }
+      .sim-tabs { width: 100%; }
+      .sim-tab { flex: 1; padding: 9px 10px; }
+      .sim-results { padding: 14px; }
+    }
   </style>
 </head>
 <body>
@@ -1077,6 +1299,183 @@
         </div>
       </div>
     </div>
+
+    <!-- ============================================================
+         COMMERCIAL SIMULATION - two illustrative calculators. All
+         figures are illustrative assumptions; calculations run in the
+         browser and nothing entered is stored or sent anywhere.
+         ============================================================ -->
+    <section class="section-wrap" id="simulation" aria-labelledby="sim-heading">
+      <div class="sim-panel">
+        <span class="sim-eyebrow">Explore Commercial Opportunities</span>
+        <h2 id="sim-heading">Revenue is not the same as profitability.</h2>
+        <p class="sim-intro">Adjust the assumptions below to explore how distribution costs and property-level economics influence the performance of an STR portfolio.</p>
+        <span class="sim-badge">Illustrative assumptions only. Not industry benchmarks or actual operator results.</span>
+
+        <div class="sim-tabs" role="tablist" aria-label="Commercial simulations">
+          <button class="sim-tab" type="button" role="tab" id="sim-tab-dist" aria-controls="sim-pane-dist" aria-selected="true">Distribution economics</button>
+          <button class="sim-tab" type="button" role="tab" id="sim-tab-prop" aria-controls="sim-pane-prop" aria-selected="false" tabindex="-1">Property profitability</button>
+        </div>
+
+        <!-- A. Distribution economics -->
+        <div class="sim-pane" id="sim-pane-dist" role="tabpanel" aria-labelledby="sim-tab-dist">
+          <h3>Distribution economics</h3>
+          <p class="sim-pane-intro">An illustrative portfolio with <strong>€500,000</strong> annual booking revenue. Change each channel's booking share and acquisition cost. When one share changes, the other channels adjust proportionally so the shares always total 100%.</p>
+          <div class="sim-layout">
+            <div id="sim-channels">
+              <div class="sim-channel" data-channel="0">
+                <div class="sim-channel-head">
+                  <span class="sim-channel-name">Booking.com</span>
+                  <span class="sim-channel-result">Revenue <strong data-out="revenue">€225,000</strong> · Cost <strong data-out="cost">€40,500</strong></span>
+                </div>
+                <div class="sim-controls">
+                  <div class="sim-field">
+                    <label for="sim-share-0">Booking share</label>
+                    <input type="range" id="sim-share-0" data-kind="share" min="0" max="100" step="1" value="45">
+                    <span class="sim-number"><input type="number" data-kind="share" min="0" max="100" step="1" value="45" aria-label="Booking.com booking share, percent">%</span>
+                  </div>
+                  <div class="sim-field">
+                    <label for="sim-cost-0">Acquisition cost</label>
+                    <input type="range" id="sim-cost-0" data-kind="cost" min="0" max="40" step="0.5" value="18">
+                    <span class="sim-number"><input type="number" data-kind="cost" min="0" max="40" step="0.5" value="18" aria-label="Booking.com acquisition cost, percent of revenue">%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="sim-channel" data-channel="1">
+                <div class="sim-channel-head">
+                  <span class="sim-channel-name">Airbnb</span>
+                  <span class="sim-channel-result">Revenue <strong data-out="revenue">€175,000</strong> · Cost <strong data-out="cost">€26,250</strong></span>
+                </div>
+                <div class="sim-controls">
+                  <div class="sim-field">
+                    <label for="sim-share-1">Booking share</label>
+                    <input type="range" id="sim-share-1" data-kind="share" min="0" max="100" step="1" value="35">
+                    <span class="sim-number"><input type="number" data-kind="share" min="0" max="100" step="1" value="35" aria-label="Airbnb booking share, percent">%</span>
+                  </div>
+                  <div class="sim-field">
+                    <label for="sim-cost-1">Acquisition cost</label>
+                    <input type="range" id="sim-cost-1" data-kind="cost" min="0" max="40" step="0.5" value="15">
+                    <span class="sim-number"><input type="number" data-kind="cost" min="0" max="40" step="0.5" value="15" aria-label="Airbnb acquisition cost, percent of revenue">%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="sim-channel" data-channel="2">
+                <div class="sim-channel-head">
+                  <span class="sim-channel-name">Direct</span>
+                  <span class="sim-channel-result">Revenue <strong data-out="revenue">€100,000</strong> · Cost <strong data-out="cost">€5,000</strong></span>
+                </div>
+                <div class="sim-controls">
+                  <div class="sim-field">
+                    <label for="sim-share-2">Booking share</label>
+                    <input type="range" id="sim-share-2" data-kind="share" min="0" max="100" step="1" value="20">
+                    <span class="sim-number"><input type="number" data-kind="share" min="0" max="100" step="1" value="20" aria-label="Direct booking share, percent">%</span>
+                  </div>
+                  <div class="sim-field">
+                    <label for="sim-cost-2">Acquisition cost</label>
+                    <input type="range" id="sim-cost-2" data-kind="cost" min="0" max="40" step="0.5" value="5">
+                    <span class="sim-number"><input type="number" data-kind="cost" min="0" max="40" step="0.5" value="5" aria-label="Direct acquisition cost, percent of revenue">%</span>
+                  </div>
+                </div>
+              </div>
+              <p class="sim-total-note">Total booking share: <strong id="sim-share-total">100%</strong></p>
+            </div>
+
+            <div class="sim-results" aria-live="polite">
+              <h4>Initial vs adjusted scenario</h4>
+              <table class="sim-compare">
+                <thead>
+                  <tr><th scope="col"></th><th scope="col">Initial</th><th scope="col">Adjusted</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Booking revenue</td><td>€500,000</td><td>€500,000</td></tr>
+                  <tr><td>Distribution costs</td><td id="sim-base-cost">€71,750</td><td id="sim-adj-cost">€71,750</td></tr>
+                  <tr><td>Distribution costs as % of revenue</td><td id="sim-base-rate">14.35%</td><td id="sim-adj-rate">14.35%</td></tr>
+                  <tr class="sim-row-key"><td>Revenue after distribution costs</td><td id="sim-base-net">€428,250</td><td id="sim-adj-net">€428,250</td></tr>
+                  <tr class="sim-row-key"><td>Difference vs initial</td><td>–</td><td id="sim-diff">€0</td></tr>
+                </tbody>
+              </table>
+              <p class="sim-caveat">This is arithmetic on illustrative assumptions. It does not mean a different channel mix, or additional direct bookings, can be achieved, or what it would cost to achieve it.</p>
+              <button class="sim-reset" type="button" id="sim-dist-reset">Reset to initial assumptions</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- B. Property profitability -->
+        <div class="sim-pane" id="sim-pane-prop" role="tabpanel" aria-labelledby="sim-tab-prop" hidden>
+          <h3>Property profitability</h3>
+          <p class="sim-pane-intro">Three illustrative properties. Select one and adjust its revenue and costs to see how its contribution changes. Contribution here means revenue after the operating costs included in this example. It is not net profit.</p>
+          <div class="sim-props" role="group" aria-label="Select a property">
+            <button class="sim-prop" type="button" data-prop="0" aria-pressed="true">
+              <span class="sim-prop-name">Property A</span>
+              <span class="sim-prop-label">Contribution</span>
+              <span class="sim-prop-value sim-pos" data-out="contribution">€20,800</span>
+            </button>
+            <button class="sim-prop" type="button" data-prop="1" aria-pressed="false">
+              <span class="sim-prop-name">Property B</span>
+              <span class="sim-prop-label">Contribution</span>
+              <span class="sim-prop-value sim-pos" data-out="contribution">€7,600</span>
+            </button>
+            <button class="sim-prop" type="button" data-prop="2" aria-pressed="false">
+              <span class="sim-prop-name">Property C</span>
+              <span class="sim-prop-label">Contribution</span>
+              <span class="sim-prop-value sim-neg" data-out="contribution">−€3,350</span>
+            </button>
+          </div>
+
+          <div class="sim-layout">
+            <div>
+              <div class="sim-money-grid" id="sim-prop-fields">
+                <div class="sim-money">
+                  <label for="sim-prop-revenue">Annual revenue</label>
+                  <div class="sim-money-input"><span>€</span><input type="number" id="sim-prop-revenue" data-field="revenue" min="0" step="500" value="48000" inputmode="numeric"></div>
+                </div>
+                <div class="sim-money">
+                  <label for="sim-prop-distribution">Distribution costs</label>
+                  <div class="sim-money-input"><span>€</span><input type="number" id="sim-prop-distribution" data-field="distribution" min="0" step="100" value="7200" inputmode="numeric"></div>
+                </div>
+                <div class="sim-money">
+                  <label for="sim-prop-operations">Cleaning &amp; operations</label>
+                  <div class="sim-money-input"><span>€</span><input type="number" id="sim-prop-operations" data-field="operations" min="0" step="100" value="12000" inputmode="numeric"></div>
+                </div>
+                <div class="sim-money">
+                  <label for="sim-prop-property">Property-related costs</label>
+                  <div class="sim-money-input"><span>€</span><input type="number" id="sim-prop-property" data-field="property" min="0" step="100" value="8000" inputmode="numeric"></div>
+                </div>
+              </div>
+              <div class="sim-contribution" aria-live="polite">
+                <span class="sim-contribution-label" id="sim-prop-label">Property A: contribution after the operating costs included</span>
+                <span class="sim-contribution-value sim-pos" id="sim-prop-contribution">€20,800</span>
+              </div>
+            </div>
+
+            <div class="sim-results">
+              <h4 id="sim-prop-compare-title">Property A: initial vs adjusted</h4>
+              <table class="sim-compare">
+                <thead>
+                  <tr><th scope="col"></th><th scope="col">Initial</th><th scope="col">Adjusted</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Annual revenue</td><td data-base="revenue">€48,000</td><td data-adj="revenue">€48,000</td></tr>
+                  <tr><td>Distribution costs</td><td data-base="distribution">€7,200</td><td data-adj="distribution">€7,200</td></tr>
+                  <tr><td>Cleaning &amp; operations</td><td data-base="operations">€12,000</td><td data-adj="operations">€12,000</td></tr>
+                  <tr><td>Property-related costs</td><td data-base="property">€8,000</td><td data-adj="property">€8,000</td></tr>
+                  <tr class="sim-row-key"><td>Contribution</td><td data-base="contribution">€20,800</td><td data-adj="contribution">€20,800</td></tr>
+                  <tr><td>Contribution as % of revenue</td><td data-base="margin">43.3%</td><td data-adj="margin">43.3%</td></tr>
+                </tbody>
+              </table>
+              <p class="sim-caveat">Only the costs listed are included. Other costs an operator carries, such as overheads, are not, so this is not net profit.</p>
+              <button class="sim-reset" type="button" id="sim-prop-reset">Reset this property</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-close">
+          <p>These examples illustrate how distribution economics and property-level contribution can influence the performance of an STR portfolio.</p>
+          <p>Every operator has a different portfolio, channel mix and cost structure. Using your actual business data, we can identify where revenue is being generated, where margins are being lost and where commercial improvements may be possible.</p>
+          <a class="hero-cta" href="#contact">Explore the opportunities in your portfolio →</a>
+        </div>
+      </div>
+    </section>
 
     <!-- ============================================================
          LATEST INDUSTRY INSIGHTS — zero Insights are published as of
@@ -1299,6 +1698,215 @@
       window.location.href = 'mailto:rbisschoff@gmail.com?subject=' + encodeURIComponent('Newsletter signup') + '&body=' + encodeURIComponent('Please add me to Roger Bisschoff\'s mailing list: ' + email);
       return false;
     }
+
+    // Commercial simulation ("Explore Commercial Opportunities").
+    // Illustrative assumptions only. Every calculation runs here in the
+    // browser: no network request, no storage, nothing a visitor enters
+    // leaves the page. The pure calculation helpers are exposed on
+    // window.STRCommercialSimulation so they can be checked directly.
+    (function () {
+      var PORTFOLIO_REVENUE = 500000;
+      var CHANNELS = [
+        { name: 'Booking.com', share: 45, cost: 18 },
+        { name: 'Airbnb', share: 35, cost: 15 },
+        { name: 'Direct', share: 20, cost: 5 }
+      ];
+      var PROPERTIES = [
+        { name: 'Property A', revenue: 48000, distribution: 7200, operations: 12000, property: 8000 },
+        { name: 'Property B', revenue: 36000, distribution: 5400, operations: 13000, property: 10000 },
+        { name: 'Property C', revenue: 29000, distribution: 4350, operations: 17000, property: 11000 }
+      ];
+      var COST_MAX = 40;
+      var MONEY_MAX = 10000000;
+
+      function clamp(n, lo, hi) { return Math.min(hi, Math.max(lo, n)); }
+      function num(v) { var n = parseFloat(v); return isFinite(n) ? n : 0; }
+
+      // Whole euros, thousands separated, true minus sign for negatives.
+      function eur(n, signed) {
+        var r = Math.round(n);
+        var s = String(Math.abs(r)).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        var sign = r < 0 ? '−' : (signed && r > 0 ? '+' : '');
+        return sign + '€' + s;
+      }
+
+      // Set one channel's share and rebalance the others proportionally
+      // (largest-remainder rounding) so whole-number shares total 100.
+      function rebalanceShares(shares, index, value) {
+        var v = clamp(Math.round(num(value)), 0, 100);
+        var others = [];
+        for (var i = 0; i < shares.length; i++) if (i !== index) others.push(i);
+        var remaining = 100 - v;
+        var otherSum = others.reduce(function (s, j) { return s + shares[j]; }, 0);
+        var out = shares.slice();
+        out[index] = v;
+        var raw = others.map(function (j) { return otherSum > 0 ? shares[j] * remaining / otherSum : remaining / others.length; });
+        var floors = raw.map(Math.floor);
+        var left = remaining - floors.reduce(function (s, f) { return s + f; }, 0);
+        var order = others.map(function (j, k) { return k; })
+          .sort(function (a, b) { return (raw[b] - floors[b]) - (raw[a] - floors[a]) || a - b; });
+        for (var k = 0; k < left; k++) floors[order[k % order.length]] += 1;
+        others.forEach(function (j, k) { out[j] = floors[k]; });
+        return out;
+      }
+
+      function distribution(channels) {
+        var rows = channels.map(function (c) {
+          var revenue = PORTFOLIO_REVENUE * c.share / 100;
+          return { name: c.name, share: c.share, costRate: c.cost, revenue: revenue, cost: revenue * c.cost / 100 };
+        });
+        var totalCost = rows.reduce(function (s, r) { return s + r.cost; }, 0);
+        var shareTotal = rows.reduce(function (s, r) { return s + r.share; }, 0);
+        return { rows: rows, shareTotal: shareTotal, revenue: PORTFOLIO_REVENUE, totalCost: totalCost, afterCost: PORTFOLIO_REVENUE - totalCost, costRate: totalCost / PORTFOLIO_REVENUE * 100 };
+      }
+
+      function contribution(p) { return p.revenue - p.distribution - p.operations - p.property; }
+      function margin(p) { return p.revenue > 0 ? (contribution(p) / p.revenue * 100).toFixed(1).replace('-', '−') + '%' : '–'; }
+      function signClass(el, n) {
+        el.classList.toggle('sim-pos', Math.round(n) > 0);
+        el.classList.toggle('sim-neg', Math.round(n) < 0);
+      }
+
+      window.STRCommercialSimulation = {
+        PORTFOLIO_REVENUE: PORTFOLIO_REVENUE, CHANNELS: CHANNELS, PROPERTIES: PROPERTIES,
+        rebalanceShares: rebalanceShares, distribution: distribution, contribution: contribution, eur: eur
+      };
+
+      var root = document.getElementById('simulation');
+      if (!root) return;
+
+      // ---- Tabs ----
+      var tabs = [].slice.call(root.querySelectorAll('.sim-tab'));
+      function selectTab(tab, focus) {
+        tabs.forEach(function (t) {
+          var on = t === tab;
+          t.setAttribute('aria-selected', on ? 'true' : 'false');
+          t.tabIndex = on ? 0 : -1;
+          document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+        });
+        if (focus) tab.focus();
+      }
+      tabs.forEach(function (t, i) {
+        t.addEventListener('click', function () { selectTab(t, false); });
+        t.addEventListener('keydown', function (e) {
+          if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+            e.preventDefault();
+            selectTab(tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length], true);
+          }
+        });
+      });
+
+      // ---- A. Distribution economics ----
+      var channels = CHANNELS.map(function (c) { return { name: c.name, share: c.share, cost: c.cost }; });
+      var base = distribution(CHANNELS);
+      var rowsEl = [].slice.call(root.querySelectorAll('.sim-channel'));
+
+      function renderDistribution() {
+        var d = distribution(channels);
+        rowsEl.forEach(function (row, i) {
+          [].slice.call(row.querySelectorAll('input[data-kind="share"]')).forEach(function (inp) { if (document.activeElement !== inp || inp.type === 'range') inp.value = channels[i].share; });
+          [].slice.call(row.querySelectorAll('input[data-kind="cost"]')).forEach(function (inp) { if (document.activeElement !== inp || inp.type === 'range') inp.value = channels[i].cost; });
+          row.querySelector('[data-out="revenue"]').textContent = eur(d.rows[i].revenue);
+          row.querySelector('[data-out="cost"]').textContent = eur(d.rows[i].cost);
+        });
+        document.getElementById('sim-share-total').textContent = d.shareTotal + '%';
+        document.getElementById('sim-base-cost').textContent = eur(base.totalCost);
+        document.getElementById('sim-base-rate').textContent = base.costRate.toFixed(2) + '%';
+        document.getElementById('sim-base-net').textContent = eur(base.afterCost);
+        document.getElementById('sim-adj-cost').textContent = eur(d.totalCost);
+        document.getElementById('sim-adj-rate').textContent = d.costRate.toFixed(2) + '%';
+        document.getElementById('sim-adj-net').textContent = eur(d.afterCost);
+        var diffEl = document.getElementById('sim-diff');
+        var diff = d.afterCost - base.afterCost;
+        diffEl.textContent = eur(diff, true);
+        signClass(diffEl, diff);
+      }
+
+      function setShare(i, value) {
+        var next = rebalanceShares(channels.map(function (c) { return c.share; }), i, value);
+        channels.forEach(function (c, k) { c.share = next[k]; });
+        renderDistribution();
+      }
+      function setCost(i, value) {
+        channels[i].cost = clamp(Math.round(num(value) * 10) / 10, 0, COST_MAX);
+        renderDistribution();
+      }
+
+      rowsEl.forEach(function (row, i) {
+        [].slice.call(row.querySelectorAll('input')).forEach(function (inp) {
+          var kind = inp.getAttribute('data-kind');
+          var apply = kind === 'share' ? setShare : setCost;
+          if (inp.type === 'range') {
+            inp.addEventListener('input', function () { apply(i, inp.value); });
+          } else {
+            // Typed shares apply on commit (Enter / leaving the field), so
+            // the other channels are not rebalanced on every keystroke.
+            if (kind === 'cost') inp.addEventListener('input', function () { if (inp.value !== '') apply(i, inp.value); });
+            inp.addEventListener('change', function () { apply(i, inp.value); inp.value = kind === 'share' ? channels[i].share : channels[i].cost; });
+          }
+        });
+      });
+      document.getElementById('sim-dist-reset').addEventListener('click', function () {
+        channels = CHANNELS.map(function (c) { return { name: c.name, share: c.share, cost: c.cost }; });
+        renderDistribution();
+      });
+
+      // ---- B. Property profitability ----
+      var FIELDS = ['revenue', 'distribution', 'operations', 'property'];
+      var props = PROPERTIES.map(function (p) { return { name: p.name, revenue: p.revenue, distribution: p.distribution, operations: p.operations, property: p.property }; });
+      var selected = 0;
+      var propButtons = [].slice.call(root.querySelectorAll('.sim-prop'));
+      var fieldInputs = {};
+      FIELDS.forEach(function (f) { fieldInputs[f] = root.querySelector('#sim-prop-fields input[data-field="' + f + '"]'); });
+
+      function renderProperties(loadFields) {
+        propButtons.forEach(function (btn, i) {
+          btn.setAttribute('aria-pressed', i === selected ? 'true' : 'false');
+          var out = btn.querySelector('[data-out="contribution"]');
+          var c = contribution(props[i]);
+          out.textContent = eur(c);
+          signClass(out, c);
+        });
+        var p = props[selected], b = PROPERTIES[selected];
+        if (loadFields) FIELDS.forEach(function (f) { fieldInputs[f].value = p[f]; });
+        var c = contribution(p);
+        var cEl = document.getElementById('sim-prop-contribution');
+        cEl.textContent = eur(c);
+        signClass(cEl, c);
+        document.getElementById('sim-prop-label').textContent = p.name + ': contribution after the operating costs included';
+        document.getElementById('sim-prop-compare-title').textContent = p.name + ': initial vs adjusted';
+        FIELDS.concat(['contribution', 'margin']).forEach(function (f) {
+          var bEl = root.querySelector('[data-base="' + f + '"]');
+          var aEl = root.querySelector('[data-adj="' + f + '"]');
+          if (f === 'margin') { bEl.textContent = margin(b); aEl.textContent = margin(p); return; }
+          var bv = f === 'contribution' ? contribution(b) : b[f];
+          var av = f === 'contribution' ? contribution(p) : p[f];
+          bEl.textContent = eur(bv);
+          aEl.textContent = eur(av);
+          if (f === 'contribution') { signClass(bEl, bv); signClass(aEl, av); }
+        });
+      }
+
+      propButtons.forEach(function (btn, i) {
+        btn.addEventListener('click', function () { selected = i; renderProperties(true); });
+      });
+      FIELDS.forEach(function (f) {
+        var inp = fieldInputs[f];
+        inp.addEventListener('input', function () {
+          props[selected][f] = clamp(Math.round(num(inp.value)), 0, MONEY_MAX);
+          renderProperties(false);
+        });
+        inp.addEventListener('change', function () { inp.value = props[selected][f]; });
+      });
+      document.getElementById('sim-prop-reset').addEventListener('click', function () {
+        var b = PROPERTIES[selected];
+        FIELDS.forEach(function (f) { props[selected][f] = b[f]; });
+        renderProperties(true);
+      });
+
+      renderDistribution();
+      renderProperties(true);
+    })();
   </script>
 
 </body>
